@@ -1,0 +1,136 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+    <!-- 
+      <nav class="small-nav" align=right>
+        <button onclick="myFunction()">Claro/Obscuro 
+      </nav> 
+    -->
+
+  <!-- This part is for title in tab-->
+         
+      <title>Semana 1</title>
+      </head>  
+
+   <body class="fondo-body" ><h1 class="page-title"> Convergencia </h1>   
+   
+    <h1 class="page-subtitle">  Ley Fuerte de los Grandes Números</h1>
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+      <p>La Ley Fuerte de los Grandes Números establece que, bajo ciertas condiciones,
+        la media muestral de una muestra aleatoria grande de una población converge casi seguramente a la media poblacional.
+        Es decir, a medida que aumentamos el tamaño de la muestra, la media de la muestra se aproxima cada vez más a
+        la media poblacional.
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Ejemplo</h2>
+    <p>Supongamos que queremos estimar la media de altura de todos los estudiantes universitarios en la Ciudad de México.
+      Para hacerlo, tomamos una muestra aleatoria de 100 estudiantes y calculamos la media de altura de la muestra.
+      Es posible que la media muestral no sea exactamente igual a la media poblacional, pero la LFGN nos dice que a
+      medida que aumentamos el tamaño de la muestra, la media muestral se acercará cada vez más a la media poblacional. Es decir, si tomamos una muestra aleatoria más grande de 1,000 estudiantes, la media muestral estará aún más cerca de la media poblacional. Si tomamos una muestra aún más grande de 10,000 estudiantes, la media muestral estará aún más cerca de la media poblacional. En resumen, a medida que aumenta el tamaño de la muestra, la variación en la media muestral disminuye, lo que lleva a una mejor estimación de la media poblacional.
+    </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema (Ley Fuerte de los Grandes Números)</h2>
+      <p>Sea $X_{1}, X_{2},\ldots $ una sucesión  de variables aleatorias i.i.d. con $\mathbb{E}[X_{1}]=\mu < \infty$  entonces 
+        $$\displaystyle{\frac{S_{n}}{n} \overset{c.s.}{\longrightarrow} \mu}$$
+        Equivalentemente si denotamos $\overline{X}_{n}:= \frac{S_{n}}{n}$, la conclusion se puede escribir como:
+        $$\overline{X}_{n}  \overset{c.s}{\longrightarrow} N(0,1)$$
+      </p>
+    </div>
+
+    
+      </body>

@@ -1,0 +1,287 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+    <!-- 
+      <nav class="small-nav" align=right>
+        <button onclick="myFunction()">Claro/Obscuro 
+      </nav> 
+    -->
+
+  <!-- This part is for title in tab-->
+         
+      <title>Semana 1</title>
+      </head>  
+
+      <body class="fondo-body" ><h1 class="page-title"> Variables aleatorias</h1>   
+
+
+    <h1 class="page-subtitle"> Variables aleatorias</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+    <p>A grandes rasgos, una variable aleatoria es una función que actúa sobre un espacio de probabilidad 
+      $(\Omega, \mathscr{F}, \mathbb{P})$ y devuelve valores numéricos. Sin embargo, <strong>no cualquier</strong>
+      función puede considerarse una variable aleatoria. Básicamente, una función será una variable aleatoria si 
+      algunas de sus imágenes inversas son <strong>eventos de $\Omega$</strong>. Esto garantizará que se puede calcular 
+      la probabilidad de sus valores, y por tanto, podremos calcular la probabilidad de que la variable aleatoria tome
+      valores específicos.
+    </p>
+
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Es posible que nos interese algún valor 
+      numérico asociado a los resultados del experimento en cuestión.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Ejemplo</h2>
+      <p>Consideremos el experimento de lanzar una moneda $4$ veces de <b> manera equiprobable</b>, 
+        sabemos que su espacio muestral es:
+      </p>
+
+      <p>\[
+      \Omega = 
+      \begin{Bmatrix}
+      \mathrm{AAAA}, &amp; \mathrm{AAAS}, &amp; \mathrm{AASA}, &amp; \mathrm{ASAA}, \\
+      \mathrm{SAAA}, &amp; \mathrm{AASS}, &amp; \mathrm{ASAS}, &amp; \mathrm{SAAS}, \\
+      \mathrm{ASSA}, &amp; \mathrm{SASA}, &amp; \mathrm{SSAA}, &amp; \mathrm{SSSA}, \\
+      \mathrm{SSAS}, &amp; \mathrm{SASS}, &amp; \mathrm{ASSS}, &amp; \mathrm{SSSS}
+      \end{Bmatrix}.
+      \]
+      </p>
+
+      <p>y tomamos a $\mathscr{P}(\Omega)$ como σ-álgebra, y como medida a la medida de probabilidad clásica.</p>
+
+      <p>Una variable asociada a este experimento es <strong>la cantidad de águilas que salieron en los $4$ lanzamientos</strong>.
+        Esto podríamos definirlo como una <strong>función</strong> $X\colon \Omega \rightarrow \mathbb{R}$, tal que para cada $\omega \in \Omega$ 
+        se define:
+      </p>
+
+      <p>\[ X(\omega) = \text{ de $\mathrm{A}$&#8217;s en $\omega$}. \]</p>
+
+      <p>De este modo, se tiene que</p>
+
+      <p>
+      \begin{align*}
+      X(\mathrm{AAAS}) &= 3, \\
+      X(\mathrm{ASAS}) &= 2,\\
+      &  \hspace{0.45cm}\vdots\\
+      X(\mathrm{ASSS}) &= 1, \\
+      X(\mathrm{AAAA}) &= 4,
+      \end{align*}
+      </p>        
+
+      <p>Al ser una función, $X$ tiene todas las cualidades y propiedades de una función que viste en <strong>álgebra superior</strong>. 
+        En particular, hay un concepto que nos interesa mucho: la <strong>imagen inversa</strong> de cada uno de los valores que
+        toma $X$. 
+      </p>
+
+      <p>Recordemos que dado $B \subseteq \mathbb{R}$, la <strong>imagen inversa de $B$ bajo $X$</strong> es el 
+        conjunto:
+      
+        \[ X^{-1}[B] = \{ \, \omega \in \Omega \mid X(\omega) \in B \, \}. \]
+      </p>
+
+      <p>Cuando $B$ es un conjunto de la forma $B = \{ x \}$, con $x \in \mathbb{R}$, se tiene que</p>
+
+      <p>\[ X^{-1}[\{x \}] = \{ \, \omega \in \Omega \mid X(\omega) = x \, \}. \]</p>
+
+      <p>Por ejemplo, para la función $X$ como la definimos, podemos observar que:
+
+      \[ X^{-1}[\{ 2 \}] = \{ \, \omega \in \Omega \mid X(\omega) = 2 \, \} = \{ \mathrm{AASS}, \mathrm{ASAS}, \mathrm{SAAS}, \mathrm{ASSA}, \mathrm{SASA}, \mathrm{SSAA} \}. \]</p>
+
+      <p>Ahora, observa que $X^{-1}[{ 2 }] \in \mathscr{P}(\Omega)$, por lo que <strong>le podemos asignar una 
+        probabilidad</strong>. En consecuencia, se tiene que
+
+      \begin{align*} \mathbb{P}(X^{-1}[\{ 2 \}]) = \mathbb{P}(\{ \, \omega \in \Omega \mid X(\omega) = 2 \, \}) &amp;= \frac{|\{ \mathrm{AASS}, \mathrm{ASAS}, \mathrm{SAAS}, \mathrm{ASSA}, \mathrm{SASA}, \mathrm{SSAA} \}|}{|\Omega|} \\ &amp;= \frac{6}{16} \\[1.15em] &amp;= 0.375. \end{align*}</p>
+
+      <p>Gracias a esto, podemos decir que «la probabilidad de que $X$ tome el valor $2$ es $\frac{6}{16} = 0.375$».</p>
+
+      <p>Por lo tanto, <strong>le podemos asignar probabilidad a los posibles resultados de $X$</strong>.</p>
+
+
+      <p>Una <strong>notación</strong> muy frecuente en el contexto de la probabilidad es la siguiente: usaremos 
+        $(X \in B)$ para <strong>denotar</strong> a $\{ \, \omega \in \Omega \mid X(\omega) \in B \,\} = X^{-1}[B]$, 
+        de tal forma que
+
+        \[ \mathbb{P}(\{ \, \omega \in \Omega \mid X(\omega) \in B \,\}) = \mathbb{P}(X \in B). \]
+      </p>
+
+      <p>Similarmente, cuando $B = \{x\}$, con $x \in \mathbb{R}$, se adopta la notación $( X = x )$ para <strong>denotar</strong> al conjunto $\{ \, \omega \in \Omega \mid X(\omega) = x \,\} = X^{-1}{\left[\{ x \}\right]}$, de tal forma que</p>
+
+      <p>\[ \mathbb{P}(\{ \, \omega \in \Omega \mid X(\omega) = x \,\}) = \mathbb{P}(X = x). \]</p>
+
+      <p>Por lo tanto, en este ejemplo tenemos que $\mathbb{P}(X = 2) = 0.375$. Del mismo modo, se utilizará la notación 
+        $(X \leq x)$ para <strong>denotar</strong> a $\{ \, \omega \in \Omega \mid X(\omega) \leq x \, \} = X^{-1}[(-\infty, x]]$. 
+        Sin embargo, <strong>¡ten cuidado!</strong> Esta es una <strong>NOTACIÓN</strong> para facilitar la escritura de muchas de las
+        expresiones matemáticas que involucran variables aleatorias. Aunque resulte práctica, <strong>no olvides lo que representa 
+        realmente</strong>.</p>
+    </div>
+    
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Diremos que una función $X\colon\Omega \to \mathbb{R}$ 
+      es una <strong>variable aleatoria</strong> si para cada $B \in \mathscr{B}(\mathbb{R})$ se cumple que $X^{-1}[B] \in \mathscr{F}$.
+    </p>
+          
+    <p>Es decir, $X$ es una variable aleatoria si la <strong>imagen inversa</strong> bajo $X$ de <strong>cualquier evento</strong> del σ-álgebra de Borel, es un <strong>evento</strong> de $\mathscr{F}$.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    <p>En algunos contextos se usa la notación $X\colon(\Omega, \mathscr{F})\to(\mathbb{R}, \mathscr{B}(\mathbb{R}))$ para denotar a una variable aleatoria. Usando esta notación, se escribe explícitamente el σ-álgebra del dominio y del codominio de $X$.</p>
+
+    <p>Intuitivamente, una <strong>variable aleatoria </strong>es un <strong>valor numérico asociado</strong> al
+      <strong>resultado</strong> de un experimento aleatorio. Por ejemplo, cuando hicimos el experimento de lanzar
+      una moneda $4$ veces, el <strong>valor numérico</strong> asociado a cada uno de los posibles resultados del
+      experimento es <strong>la cantidad de águilas que salieron en los $4$ lanzamientos</strong>.
+    </p>
+
+    <p>
+    Además, previamente acordamos que los elementos de un σ-álgebra son aquellos que se <strong>pueden medir</strong>, pues el dominio de la medida $\mathbb{P}$ es el σ-álgebra. Esencialmente, la definición de <strong>variable aleatoria</strong> pide que la función <strong>preserve la medibilidad</strong>. Es decir, que si $A$ es un subconjunto <strong>medible</strong> del codominio de $X$ (esto es, $A \in \mathscr{B}(\mathbb{R})$), entonces $X^{-1}[A]$ debe de ser un subconjunto <strong>medible</strong> del dominio de $X$; es decir, $X^{-1}[A] \in \mathscr{F}$. De este modo,
+    \[ \mathbb{P}(X \in A) = \mathbb{P}(X^{-1}[A]) = \mathbb{P}(\{\, \omega\in\Omega\mid X(\omega) \in A \,\}), \]</p>
+
+    <p>es un valor que está bien definido, pues $X^{-1}[A] \in \mathscr{F}$ y $\mathrm{Dom}(\mathbb{P}) = \mathscr{F}$.</p>
+
+    </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+    <p>Sean $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y $X\colon\Omega\to\mathbb{R}$ una función. Si $\mathcal{G} \subseteq \mathbb{R}$ es un conjunto tal que $\sigma(\mathcal{G}) = \mathscr{B}(\mathbb{R})$, 
+      entonces las siguientes proposiciones son equivalentes:
+    </p>
+    
+    <ol><li>$X\colon\Omega\to\mathbb{R}$ es una variable aleatoria.</li><li>Para todo $A \in \mathcal{G}$ se cumple que $X^{-1}[A] \in \mathscr{F}$.</li></ol>
+
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    <p>Este teorema es de mucha utilidad, ya que dada una función $X\colon\Omega\to\mathbb{R}$, demostrar que $X$ es
+      una variable aleatoria es equivalente a demostrar que $X$ <strong>preserva la medibilidad</strong>
+      sobre una familia de conjuntos que genera a $\mathscr{B}(\mathbb{R})$, una tarea mucho más sencilla que hacerlo 
+      para <strong>todos</strong> los elementos del σ-álgebra de Borel.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Nota</h2>
+      <p>Previamente establecimos que $\mathscr{B}(\mathbb{R})$ es el σ-álgebra generado por varias familias de subconjuntos de $\mathbb{R}$.
+        En particular, $\mathscr{B}(\mathbb{R})$ puede generarse a partir de la familia de intervalos de la forma $(-\infty, x]$, 
+        con $x \in \mathbb{R}$. Por ello, gracias al teorema que demostramos, podemos caracterizar a una variable aleatoria como sigue:</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Diremos que una función $X\colon\Omega\to\mathbb{R}$ es una <strong>variable aleatoria</strong> si para cada $x \in \mathbb{R}$ se cumple que $X^{-1}[(-\infty, x]] \in \mathscr{F}$. Esto es,</p>
+    
+    <p>\[ \{ \, \omega \in \Omega \mid X(\omega) \leq x \, \} \in \mathscr{F}. \]</p>
+
+    </div>
+
+    <h1 class="page-subtitle"> Medida de probabilidad inducida por una variable aleatoria</h1>
+
+    <div class="nota-box"><h1 class="number-title"> introducción</h2>
+    <p>Dados $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y $X\colon\Omega\to\mathbb{R}$ una variable aleatoria, vimos que podíamos usar la medida de probabilidad $\mathbb{P}$ para medir la probabilidad de los subconjuntos de la forma $(-\infty, x]$ a través de sus imágenes inversas bajo $X$. De hecho, gracias a lo que discutimos al final de la sección pasada, resulta que esto se puede hacer para cualquier<strong> evento de $\mathbb{R}$</strong>, es decir, <strong>para todos los elementos de $\mathscr{B}(\mathbb{R})$</strong>. A la medida resultante para los eventos de $\mathbb{R}$ se le conoce como <strong>la medida de probabilidad inducida por $X$</strong>, y se define como sigue.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sean $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y $X\colon\Omega\to\mathbb{R}$ una variable aleatoria. La <strong>medida de probabilidad inducida por $X$</strong> es la medida de probabilidad $P_{X}: \mathscr{B}(\mathbb{R}) \to \mathbb{R}$ dada por</p>
+
+    <p>\begin{align*} \mathbb{P}_{X}(B) &amp;= \mathbb{P}(\{\, \omega \in \Omega \mid X(\omega) \in B \,\}), &amp; \text{para cada $B \in \mathscr{B}(\mathbb{R})$. } \end{align*}</p>
+    
+    <p>Equivalentemente, usando la <strong>notación</strong> probabilista para imágenes inversas, $P_{X}: \mathscr{B}(\mathbb{R}) \to \mathbb{R}$ es la función dada por</p>
+    
+    <p>\begin{align*}\mathbb{P}_{X}(B) &amp;= \mathbb{P}(X \in B), &amp; \text{para cada $B \in \mathscr{B}(\mathbb{R})$}. \end{align*}</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    <p> si $(\Omega, \mathscr{F}, \mathbb{P})$ es un espacio de probabilidad y $X\colon\Omega\to\mathbb{R}$ es una variable aleatoria, entonces $(\mathbb{R}, \mathscr{B}(\mathbb{R}),\mathbb{P}_{X})$ es un espacio de probabilidad.</p>
+    </div>
+    
+
+      </body>

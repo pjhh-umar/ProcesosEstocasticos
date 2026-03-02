@@ -1,0 +1,268 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+    <!-- 
+      <nav class="small-nav" align=right>
+        <button onclick="myFunction()">Claro/Obscuro 
+      </nav> 
+    -->
+
+  <!-- This part is for title in tab-->
+         
+      <title>Semana 1</title>
+      </head>  
+
+  <body class="fondo-body" ><h1 class="page-title"> $\sigma$-Álgebras </h1>   
+
+    <h1 class="page-subtitle"> $\lambda$ - sistemas </h1>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h1>
+      <p>Sea $\Omega$ un conjunto no vacio. Una familia no vacia de subconjuntos $\mathcal{F}$ de $\Omega$ (i.e. $\mathcal{F} \subseteq \mathcal{P}(\Omega)$) es un 
+        $\lambda$-sistema sobre $\Omega$ si cumple las siguientes propiedades:
+      </p>
+      <p>
+        <ol>
+          <li>$\Omega \in \mathcal{F}$</li><br>
+          <li>Si $A,B \in \mathcal{F}$ con $A \subseteq B$, entonces $B \setminus A \in \mathcal{F}$.</li><br>
+          <li>Si $(A_{n})_{n=1}^{\infty}$ es una colección númerable de  subconjuntos de $\mathcal{F}$ tales que $A_{i} \subseteq A_{i+1}$ para todo $i \in \mathbb{N}$, entonces $\displaystyle{\bigcup_{n=1}^{\infty} A_{n} \in \mathcal{F}}$.</li>
+        </ol>
+      </p>
+      <p>Algunas veces un $\lambda$-sistema es también llamado <b>sistema de Dynkin</b></p>
+    </div>
+
+    <h1 class="page-subtitle"> $\pi$ - sistemas </h1>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h1>
+      <p>Sea $\Omega$ un conjunto no vacio. Una familia no vacia de subconjuntos $\mathcal{F}$ de $\Omega$ ( i.e. $\mathcal{F} \subseteq \mathcal{P}(\Omega)$ ) es un $\pi$-sistema sobre $\Omega$ si es cerrada bajo intersecciones finitas i.e. si para todo $n \in \mathbb{N}$,  $A_{1}, A_{2}, \ldots, A_{n} \in \mathcal{F}$, entonces $\displaystyle{\bigcap_{i=1}^{n} A_{i} \in \mathcal{F}}$.
+    </div>
+
+  <h1 class="page-subtitle"> Álgebras</h1>
+
+  <div class="nota-box"><h1 class="number-title"> Definición</h1>
+    <p>Sea $\Omega$ un conjunto no vacio. Una colección de subconjuntos $\mathcal{F}$ de $\Omega$ ( i.e. $\mathcal{F} \subseteq \mathscr{P}(\Omega)$ ) es es un álgebra sobre $\Omega$ si cumple las siguientes propiedades:
+    </p>
+    <ol>
+      <li>$\Omega \in \mathcal{F}$.</li><br>
+      <li>Si $A \in \mathcal{F}$, entonces $\Omega \setminus A \in \mathcal{F}$.</li><br>
+      <li>Si $A_{1}, A_{2}, \ldots, A_{n} \in \mathcal{F}$, entonces $\displaystyle{\bigcup_{i=1}^{n} A_{i} \in \mathcal{F}}$.</li>
+    </ol>
+    <!-- <p>$A^{\mathsf{c}}$ es el complemento de $A$ respecto a $\Omega$, pues $A \subseteq \Omega$.</p> -->
+  </div>
+  
+
+
+  <h1 class="page-subtitle">$\sigma-\text{Álgebras}$</h1>
+
+  
+
+  <div class="nota-box"><h1 class="number-title"> Definición </h1>
+    <p>Sea $\Omega$ un conjunto no vacio. Una familia no vacia de subconjuntos $\mathcal{F}$ de $\Omega$ (i.e. $\mathcal{F} \subseteq \mathcal{P}(\Omega)$) es un $\sigma$-álgebra sobre $\Omega$ si cumple las siguientes propiedades:
+    </p>
+    <ol>
+      <li>$\Omega \in \mathcal{F}$.</li><br>
+      <li>Si $A \in \mathcal{F}$, entonces $\Omega \setminus A \in \mathcal{F}$.</li><br>
+      <li>Si $A_{1}, A_{2}, \ldots \in \mathcal{F}$, entonces $\displaystyle{\bigcup_{i=1}^{\infty} A_{i} \in \mathcal{F}}$.</li>
+    </ol>
+    </p>
+  </div>
+
+  
+  <!-- <div class="nota-box"><h1 class="number-title"> Proposición </h1>
+    <p>Una $\sigma$-álgebra es un $\lambda$-sistema y un $\pi$-sistema.</p>
+  </div> -->
+
+  <div class="nota-box"><h1 class="number-title"> Observación </h1>
+    <p>Sea $\Omega$ un conjunto no vacio y $\mathcal{F}$ una familia no vacia de subconjuntos de $\Omega$. $\mathcal{F}$ es una $\sigma$-álgebra si y sólo si es ambos un $\lambda$-sistema y un $\pi$-sistema.
+    </p>
+  </div>
+
+  <h1 class="page-subtitle">$\sigma-\text{Álgebras generadas}$</h1>
+
+  <div class="nota-box"><h1 class="number-title-definicion"> Introducción</h1>   
+
+    <p>Considera la siguiente situación. Supón que tenemos una familia de conjuntos $\mathscr{C} \subseteq \mathscr{P}(\Omega)$.
+      Piensa que esta familia de subconjuntos de $\Omega$ es muy importante. Al ser muy importante, nos gustaría poder «calificar» 
+      a todos sus elementos. Sin embargo, no sabemos si $\mathscr{C}$ es un σ-álgebra. ¿Será posible construir un σ-álgebra
+      $\mathscr{L}$ tal que $\mathscr{C} \subseteq \mathscr{L}$? La respuesta es sí, y está dada por el siguiente teorema.</p>
+    </p>
+  </div>
+
+  
+  <div class="nota-box"><h1 class="number-title"> Teorema </h1>
+    <p> Dado $\Omega$ un conjunto y $\mathscr{C}$ una familia de subconjuntos de
+      $\Omega$ ($\mathscr{C} \subseteq \mathscr{P}(\Omega)$), existe un único σ-álgebra sobre $\Omega$
+      de tamaño mínimo $\mathscr{L}$ tal que $\mathscr{C} \subseteq \mathscr{L}$.
+    </p>
+  </div>
+
+  <div class="nota-box"><h1 class="number-title"> Observaciones</h1>  
+    <ol>
+      <li>Podemos cronstruir σ-álgebras sobre cualquier conjunto.</li>
+      <li>Existe una cantidad abundante de σ-álgebras.</li>
+    </ol>
+  </div>
+
+  
+  <h1 class="page-subtitle">Teorema de las clases monótonas </h1>
+  
+  <div class="nota-box"><h1 class="number-title"> Definición</h1>
+    <p>Sea $\Omega$ un conjunto no vacio y $\mathcal{M}$ una familia no vacia de subconjuntos de $\Omega$. Se dice que $\mathcal{F}$ es una <b>clase monótona</b> de $\Omega$si esta es cerrada bajo uniones e intersecciones de sucesiones numerables monótonas. Esto es, 
+      <ol>
+        <li>Si $A_{1}, A_{2}, \ldots \in \mathcal{M}$ y $A_{i} \subseteq A_{i+1}$ para todo $i \in \mathbb{N}$, entonces $\displaystyle{\bigcup_{n=1}^{\infty} A_{n} \in \mathcal{M}}$
+        </li><br>
+        <li>Si $A_{1}, A_{2}, \ldots \in \mathcal{M}$ y $A_{i+1} \subseteq A_{i}$ para todo $i \in \mathbb{N}$, entonces $\displaystyle{\bigcap_{n=1}^{\infty} A_{n} \in \mathcal{M}}$</li>
+      </ol>
+
+    </p>
+  </div>
+
+  
+  <div class="nota-box"><h1 class="number-title"> Teorema</h1>  
+    <p>Sea $\Omega$ un conjunto no vacio. Si $\mathcal{F}_{0}$ es un álgebra sobre $\Omega$ y $\mathcal{F}$ es una clase monotona de $\Omega$. Si $\mathcal{F}_{0} \subseteq \mathcal{M}$, entonces $\sigma(\mathcal{F}) \subseteq \mathcal{M}$
+    </p>
+    <!-- <p><b>Dem:</b> Ciprian pag.25</p> -->
+  </div>
+
+  <h1 class="page-subtitle"> $\sigma-\text{Álgebra de Borel}$</h1>
+
+  <div class="nota-box"><h1 class="number-title-definicion"> Introducción </h1>  
+    <p>El ejemplo anterior exhibe una manera de construir el σ-álgebra generado por una familia finita de conjuntos. 
+      Sin embargo, esto se torna más abstracto cuando la familia no es finita. En particular, cuando 
+      $\Omega = \mathbb{R}$, sería interesante pensar en el σ-álgebra generado por la familia de intervalos 
+      de la siguiente forma:
+    </p>
+    
+    <p>\[ \mathscr{C}_{1} = \left\lbrace (-\infty, b] \mid b \in \mathbb{R} \right\rbrace. \]</p>
+    
+    <p>Es decir, $\mathscr{C}_{1}$ es la familia de todos los intervalos no acotados por la izquierda, y cerrados por la derecha.</p>
+    
+    <p>En el contexto de la probabilidad es muy natural que, dado $b \in \mathbb{R}$, planteemos la siguiente situación. 
+      Si $x$ es el resultado de algún experimento donde el espacio muestral es $\mathbb{R}$ ¿es cierto que $x \leq b$?
+      O dicho en otras palabras, ¿es cierto que $x \in (-\infty, b]$? Por ejemplo, «¿es cierto que el precio de un activo
+      queda por debajo de algún valor fijo?» Esta es una pregunta que surgiría cuando entras en el contrato
+      de un producto financiero derivado.
+    </p>
+    
+    <p>Observa que $\mathscr{C}_{1}$ no es un σ-álgebra, así que habría preguntas sobre $x$ que no podríamos contestar
+      dentro de $\mathscr{C}_{1}$. Por ejemplo, $(-\infty, b]^{\mathsf{c}} = (b, \infty)$ 
+    </p>
+    
+    <p>El σ-álgebra generado por esta última familia es muy importante, y es conocido como el <strong>σ-álgebra de Borel</strong> 
+      en $\mathbb{R}$ y es comúnmente denotado por $\mathscr{B}(\mathbb{R})$. Curiosamente, resulta que la manera en que
+      obtuvimos a $\mathscr{B}(\mathbb{R})$ no es la única manera de hacerlo. Por ejemplo, sea $\mathscr{C}_{2}$ 
+      la siguiente familia de conjuntos:
+    </p>
+
+    <p>\[ \mathscr{C}_{2} = {\left\lbrace (a, b] \mid a, b \in \mathbb{R} \land a &lt; b \right\rbrace}. \]</p>
+
+
+
+<p>¿Cuál será el σ-álgebra generado por $\mathscr{C}_{2}$?
+  </div>
+
+
+  
+
+  <div class="nota-box"><h1 class="number-title"> Observación</h1>  
+    <p><p>Más aún, $\mathscr{B}(\mathbb{R})$ resulta ser el σ-álgebra generado por otras familias de intervalos muy parecidas.
+      Las siguientes familias son algunas de ellas:</p>
+    <p>\begin{align*}<br>\mathscr{C}_{3} &amp;= \left\lbrace [a, b) \mid a, b \in \mathbb{R} \land a &lt; b\right\rbrace, \\<br>\mathscr{C}_{4} &amp;= \left\lbrace (a, b) \mid a, b \in \mathbb{R} \land a &lt; b \right\rbrace, \\<br>\mathscr{C}_{5} &amp;= \left\lbrace [a, b] \mid a, b \in \mathbb{R} \land a &lt; b \right\rbrace, \\<br>\mathscr{C}_{6} &amp;= \left\lbrace (a, \infty) \mid a \in \mathbb{R} \right\rbrace, \\<br>\mathscr{C}_{7} &amp;= \left\lbrace [a, \infty) \mid a \in \mathbb{R} \right\rbrace, \\<br>\mathscr{C}_{8} &amp;= \left\lbrace (-\infty, b) \mid b \in \mathbb{R} \right\rbrace.<br>\end{align*}</p>
+    <p>Todas las familias anteriores generan el mismo σ-álgebra: $\mathscr{B}(\mathbb{R})$</p>
+    </div> 
+
+
+      </body>

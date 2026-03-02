@@ -1,0 +1,220 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+    <!-- 
+      <nav class="small-nav" align=right>
+        <button onclick="myFunction()">Claro/Obscuro 
+      </nav> 
+    -->
+
+  <!-- This part is for title in tab-->
+         
+      <title>Semana 1</title>
+      </head>  
+
+      <body class="fondo-body" ><h1 class="page-title"> Espacio muestral </h1>   
+
+<!-- 
+        <h1 class="page-subtitle">Fenomeno aleatorio</h1>   
+
+
+        <div class="nota-box"><h1 class="number-title"> Tema 1</h1>  
+        <p>
+          Contenido
+        </p>
+      
+        </div>
+      
+  
+  
+      <div class="nota-box"><h1 class="number-title"> subtitulo</h1> 
+        
+        <p>Contenido.</p>
+        
+      </div> -->
+
+      
+    <h1 class="page-subtitle"> Fenomeno aleatorio</h1>
+  
+    <div class="nota-box"><h1 class="number-title"> Definición</h1>
+      <p>Un <b>fenómeno aleatorio</b> o <b>experimento aleatorio</b> es todo aquel fenómeno cuyo resultado se
+        conoce únicamente hasta que este ha concluido. </p>
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Ejemplo</h1>
+      <p>Si tomas una moneda y la lanzas al aire, ¿puedes saber con anterioridad cuál de sus caras caerá arriba? 
+        A menos que seas clarividente, la respuesta es no. Así, el lanzamiento de una moneda puede pensarse como
+        un fenómeno aleatorio. Conocerás su resultado únicamente hasta que el lanzamiento haya concluido
+      </p>
+    </div>
+
+    <h1 class="page-subtitle"> Espacio muestral</h1>
+    
+    <div class="nota-box"><h1 class="number-title"> Definición</h1>
+      <p>Al conjunto de todos los posibles resultados de un experimento aleatorio se le llama <b>espacio muestral.
+      </b> 
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h1>
+      <p>Dado un fenómeno o experimento aleatorio, el <strong>espacio muestral</strong> de dicho fenómeno
+      es el conjunto cuyos elementos son todos los posibles resultados del fenómeno, y será denotado por $\Omega$.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Nota</h1>
+      <p>Nuestra intención será cuantificar qué tan <em>probable </em>es que ocurra uno o más de estos resultados. 
+        Esto lo haremos asignando una «calificación» entre 0 y 1 a ciertos subconjuntos <em>importantes</em> de $\Omega$. 
+        Así, la «calificación» será 0 para lo más improbable, y 1 para lo más probable. Pero, ¿a qué me refiero por
+        subconjuntos <em>importantes?</em>
+      </p>
+  </div>
+
+  <h1 class="page-subtitle"> Eventos</h1>
+
+  <div class="nota-box"><h1 class="number-title"> Definición</h1>
+    <p>Sea $\xi$ un experimento aleatorio con espacio muestral $\Omega$. Se le llama <b>evento</b> o <b>suceso</b> a cualquier subconjunto del espacio muestral. Se dice que un evento es <b>simple</b> si consta de un único resultado. En cambio un evento es <b>compuesto</b> si consta de dos o más resultados.
+    </p>
+  </div>
+
+  <div class="nota-box"><h1 class="number-title"> Definición</h1>
+    <p>Sean $\omega \in \Omega$  y $A \subseteq \Omega$.
+      <ol>
+        <li> Si $\omega \in A$, se dice que <b>ocurre el evento $A$</b>.</li><br>
+        <li> Si $\omega \not \in A$, se dice que <b>no ocurre el evento $A$</b>.</li>
+      </ol>
+    </p>
+    <p>A el evento $\emptyset$ se le llama <b>evento imposible</b>  y el evento $\Omega$ <b>evento seguro</b>.</p>
+  </div>
+
+  <div class="nota-box"><h1 class="number-title"> Observación</h1>
+    <p>
+      El objetivo es calcular la probabilidad de que ocurran los distintos eventos en un experimento aleatorio.
+    </p>
+  </div>
+
+  <div class="nota-box"><h1 class="number-title"> Definición</h1>
+    <p>
+      Sea $\{A_n \}$ una sucesión de eventos de $\Omega$. Se definen los siguientes <b>conjuntos límite</b>
+      \begin{align*}
+      \displaystyle{\limsup A_n}&:=\displaystyle{ \bigcap_{n=1}^\infty \bigcup_{m=n}^\infty A_m}\\
+      &=\{w\in \Omega \colon w \in A_n \text{ para un número infinito de valores de } n \}\\
+      &=\{A_n \text{ i.o.} \}.\\
+      & \\
+      \displaystyle{\liminf A_n } &:=\displaystyle{ \bigcup_{n=1}^\infty \bigcap_{m=n}^\infty A_m}\\
+      &=\{w\in \Omega \colon w \in A_n \text{ para  todos excepto un número finito de valores de } n \}\\
+      &=\{A_n \text{ ult.} \}.
+      \end{align*}
+    </p>
+  </div>
+
+  <div class="nota-box"><h1 class="number-title"> Definición</h1>
+    <p>
+      Sea $\{ A_n\}$ una sucesión de eventos. Se satisfacen:
+    </p>
+    <p>
+      <ol>
+        <li> $\liminf A_n \subseteq \limsup A_n$,</li><br>
+        <li> $\left( \liminf A_n  \right)^{c}=  \limsup \left(A_n\right)^{c}$,</li><br>
+        <li> $\left( \limsup A_n  \right)^{c}=  \liminf \left(A_n\right)^{c}$. </li>
+    </p>
+  </div>
+
+
+         
+  
+      </body>

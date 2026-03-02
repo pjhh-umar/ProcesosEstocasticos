@@ -1,0 +1,181 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+            
+      <title>Ejercicios propuestos examen ordinario </title>
+      </head>  
+
+
+
+  <body class="fondo-body" ><h1 class="page-title-ejercicios-propuestos"> Ejercicios propuestos examen ordinario </h1>   
+
+
+    
+    <div class="nota-box"><h1 class="number-title-ejercicio"> Ejercicio</h1> 
+      <p>Sea $(A,d)$ es un espacio métrico y $B\subseteq A$. Prueba que si $\mathrm{diam}(B) < r$,  entonces
+        $B \subseteq B_r(b_0)$ para algun $b_{0} \in B$.
+          
+      </p>
+    </div>
+
+    <div class="definicion-box"><h1 class="number-title-definicion"> Definición </h1>
+      <h3> Función de Lipschitz </h3>
+      
+      <p>Sean $(A,d_A)$ y $(B,d_B)$ espacios métricos. Una función $f \colon A \to B$ es una <b>función de Lipschitz</b>
+        si existe una constante $K>0$ tal que:
+        $$d_B(f(x),f(y)) \leq K d_{A}(x,y), \quad \text{para todo } x,y \in A$$ 
+      </p>
+
+    </div>
+    
+    <div class="nota-box"><h1 class="number-title-ejercicio"> Ejercicio</h1> 
+      <p>Sean $(A,d)$ un espacio métrico, $B,C \subseteq A$ y $x,y \in A$.
+        
+        <ol>
+          <li>Prueba que si $B \cap C \neq \emptyset $, entonces $d(B,C)=0$.</li><br>
+          <li>Prueba que el recíproco del inciso anterior no necesariamente es cierto. 
+            <p><b>Sugerencia:</b> Usa subconjuntos de $\mathbb{R}$ para dar un contraejemplo.</p>
+          </li>
+          <li>Prueba que la función $x \mapsto d(x,A)$ es una función de Lipschitz.
+            <p><b>Sugerencia:</b> Verifica que: $|d(x,A) - d(y,A)| \leq d(x,y)$</p>
+          </li>
+        </ol> 
+          
+      </p>
+    </div>
+    
+    <div class="nota-box">
+      <h1 class="number-title-ejercicio"> Ejercicio</h1> 
+      <p>
+          
+      </p>
+    </div>
+    
+    <div class="nota-box">
+      <h1 class="number-title-ejercicio"> Ejercicio</h1> 
+      <p>
+          
+      </p>
+    </div>
+    
+    <div class="nota-box">
+      <h1 class="number-title-ejercicio"> Ejercicio</h1> 
+      <p>
+          
+      </p>
+    </div>
+    
+    <div class="nota-box">
+      <h1 class="number-title-ejercicio"> Ejercicio</h1> 
+      <p>
+          
+      </p>
+    </div>
+    
+    <div class="nota-box">
+      <h1 class="number-title-ejercicio"> Ejercicio</h1> 
+      <p>
+          
+      </p>
+    </div>
+</body>

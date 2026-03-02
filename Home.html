@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="./main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="./style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+            
+      <title>Probabilidad I</title>
+      </head>  
+          
+        <body class="fondo-body" >
+          
+        <div class="info-profesor-box">
+            <!-- <div class="informacion_profesor">  -->
+              <div class="title_nombre">Profesor: Pablo Jorge Hernández Hernández</div>
+              <div class="subtitle_nombre">Instituto de Investigación de Matemáticas y Actuaría (IIMA)</div>
+              <div class="subtitle_nombre">Cubículo #5</div>            
+            <!-- </div> -->
+        </div>
+
+      <div class="info-box" style = "font-family: 'Oldenburg', cursive;">
+        <center><h1 class="titulo">Temario</h1></center>
+
+          <ol class="lista">
+  <li>Espacios de probabilidad.</li>
+  <ol class="sublista">
+    <li>Experimento aleatorio y espacio muestral.</li>
+    <li>Eventos aleatorios, eventos medibles, σ-álgebras.</li>
+    <li>Medida de probabilidad. Definición axiomática y propiedades varias.</li>
+    <li>Probabilidad condicional e independencia.</li>
+  </ol>
+
+  <li>Variables aleatorias.</li>
+  <ol class="sublista">
+    <li>Definición formal, clasificación y ejemplos.</li>
+    <li>Función de distribución.</li>
+    <li>Función de distribución acumulada.</li>
+    <li>Función masa y función de densidad.</li>
+    <li>Momentos.</li>
+    <li>Desigualdades básicas.</li>
+    <li>Función generadora de momentos y función característica.</li>
+  </ol>
+
+  <li>Sucesiones de variables aleatorias.</li>
+  <ol class="sublista">
+    <li>Convergencia en probabilidad.</li>
+    <li>Convergencia en distribución.</li>
+    <li>Convergencia casi segura.</li>
+  </ol>
+
+  <li>Simulación.</li>
+  <ol class="sublista">
+    <li>Generación de números pseudoaleatorios.</li>
+    <li>Simulación de realizaciones variables aleatorias.</li>
+    <ol class="subsublista">
+      <li>Método de inversión.</li>
+      <li>Método de aceptación-rechazo.</li>
+    </ol>
+  </ol>
+</ol>
+
+        
+      
+      </div>
+ 
+      <div class="info-box"  style = "font-family: 'Oldenburg', cursive;">
+    <center><h1 class="titulo">Bibliografía</h1></center>
+      <br>
+      <b><font>Básica</font></b>
+      <ol class="lista">
+        <li>Chung K. L. (1996) <i>Teoría elemental de la probabilidad y de los procesos estocásticos</i>, España: Reverté.</li>
+        <li>Feller W. (1995) <i>Introducción a la teoría de probabilidades y sus aplicaciones</i>, México: Limusa.</li>
+        <li>Harris B. (1995) <i>Theory of probability</i>, USA: Addison Wesley.</li>
+        <li>Hogg R., Tanis E.A. (2000) <i>Probability and statistical inference</i>, USA: Prentice Hall College Div. 6ta ed.</li>
+        <li>Leemis L. (2011) <i>Probability</i>, Virginia: The College of William & Mary.</li>
+        <li>Mood A., Graybill F., Boes D. (1996) <i>Introduction to theory of statistics</i>, USA: McGraw-Hill.</li>
+        <li>Meyer P. L. (1998) <i>Probabilidad y aplicaciones estadísticas</i>, México: Addison Wesley.</li>
+      </ol>
+
+      <b><font>Consulta</font></b>
+      <ol class="lista">
+        <li>Parzen E. (1997) <i>Teoría moderna de probabilidades y sus aplicaciones</i>, México: Limusa.</li>
+        <li>Sheldon M. R. (1995) <i>Introduction to probability and its applications</i>, USA: Academic P.</li>
+        <li>Sheldon M. R. (2001) <i>A first course in probability</i>, USA: Prentice Hall.</li>
+        <li>Roussas G. (2002) <i>An introduction to probability and statistic</i>, USA: Academic Press.</li>
+      </ol>
+
+  </div>
+
+
+      </body>
+  </html>

@@ -1,0 +1,223 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+    <!-- 
+      <nav class="small-nav" align=right>
+        <button onclick="myFunction()">Claro/Obscuro 
+      </nav> 
+    -->
+
+  <!-- This part is for title in tab-->
+         
+      <title>Semana 1</title>
+      </head>  
+
+   <body class="fondo-body" ><h1 class="page-title"> Distribución conjunta de variables aleatorias</h1>   
+   
+    <h1 class="page-subtitle">  Vectores Gaussianos</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Definición </h2>
+      <p>Un vector aleatorio $X=(X_1,\ldots,  X_n)$ definido en un espacio de probabilidad $(\Omega, \mathscr{F},\mathbb{P})$
+        es <b>Gaussiano</b> si toda combinación lineal de sus componentes es una variable aleatoria Gaussiana. Esto es, para 
+        cualesquiera $\alpha_{1},\ldots,\alpha_{n}\in \mathbb{R}$ la variables aleatoria 
+        $$\alpha_{1} X_{1} + \alpha_{2} X_{2} + \cdots + \alpha_{n} X_{n} $$
+        es Gaussiana.
+      </p>
+      </div>
+
+
+      <div class="nota-box"><h1 class="number-title"> Proposición</h2>
+        <p>
+          <ol>
+            <li>Si  $X=(X_1,\ldots,  X_n)$ es un vector aleatoria Gaussiano, entonces para cada $i=1,\ldots,n$ la variable aleatoria 
+              $X_{i}$ es Gaussiana.</li><br>
+              <li>Si $X_1, \ldots,  X_n$ son variables aleatorias reales  Gaussianas  e 
+                independientes, entonces el vector $X=(X_1, \ldots,  X_n)$ es un vector Gaussiano.
+              </li>
+          </ol>
+        </p>
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Observación</h2>
+        <p>Recordemos que la media y la varianza caracterizan a la distribución de una variable aleatoria 
+          (unidimensional). En el caso multidimensional, la media (la cual ahora es un vector) y 
+          la <em>matriz de covarianzas</em>  van a determinar completamente la distribución de un vector Gaussiano.
+        </p>
+        
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Definición</h2>
+        <p>Si $X$ una variable aleatoria. Se define la <b>varianza  o dispersión$ de  $X$</b> como:
+        $$\mathrm{Var}(X):= \mathbf{E}[(X -\mu_{X})^{2}]=\mathbf{E}(X) - \mu_{X}^{2}  $$
+        donde $\mu_{X}=\mathbf{E}(X)$.
+       </p>
+        
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Definición</h2>
+        <p>Si $X,Y$ variables aleatorias. Se define la <b>covarianza entre $X$ y $Y$</b> como 
+          la cantidad:
+        $$\mathrm{Cov}(X,Y):= \mathbf{E}[(X -\mu_{X})(Y -\mu_{Y}) ] $$
+        donde $\mu_{X}=\mathbf{E}(X)$ y $\mu_{Y}:= \mathbf{E}(Y)$
+       </p>
+        
+      </div>
+
+
+      <div class="nota-box"><h1 class="number-title"> Definición</h2>
+        <p>Si $X,Y$ variables aleatorias. Se define el  <b>coeficiente de correlación entre $X$ y $Y$</b> como 
+          la cantidad:
+        \begin{align*}
+        \rho =\mathrm{Corr}(X,Y)
+        := \frac{\mathrm{Cov}(X,Y)}{\sqrt{\mathrm{Var}(X)\cdot \mathrm{Var}(Y) }}
+        =\frac{\mathbf{E}[(X -\mu_{X})(Y -\mu_{Y})]}{\sqrt{\mathbf{E}[(X -\mu_{X})^{2}]\mathbf{E}[(Y -\mu_{Y})^{2}}]}
+        \end{align*}
+        donde $\mu_{X}=\mathbf{E}(X)$ y $\mu_{Y}:= \mathbf{E}(Y)$
+  
+       </p>
+        
+      </div>
+
+
+      <div class="nota-box" id="def:matrix_covarianza"><h2 class="number-title"> Definición</h2>
+        <p>Si $X=(X_1,\ldots,  X_n)$ es un vector aleatorio, entonces
+          <ol>
+            <li>La <b>media del vector aleatoria</b> $X$ se define como:
+              $$\mathbf{E}(X):= (\mathbf{E}(X_1),\ldots, \mathbf{E} (X_n))$$
+            </li><br>
+            <li><b>La matriz de covarianzas</b> del vector aleatorio $X$ se denota por $\left( \Lambda_{X}(i,j) \right)_{i,j = 1,\ldots,n}$ 
+              y para cualesquiera $i,j=1,2,\ldots,n$ se define la entrada $(i,j)$ de la matriz $\Lambda_{X}$ como:
+              $$\Lambda_{X}(i,j):= \mathrm{Cov}(X_{i}, X_{j})$$   
+              
+            </li>
+
+          </ol>
+        </p>
+        
+      </div>
+
+
+      <h1 class="page-subtitle"> Densidad de un vector Gaussiano</h1>
+
+      
+      <div class="nota-box"><h1 class="number-title"> Proposición</h2>
+        <p>Sea  $X=(X_1, X_2\ldots,  X_n)$ un vector aleatorio <b>Gaussiano</b> con componentes independientes. Supomgamos que 
+          para toda $i=1,\ldots,n$, se tiene que:
+          $$X_{i}\sim \mathrm{N}(\mu_{i},\sigma_{i}^{2})$$
+          Entonces la funcion de densidad del vector $X$ esta dada por:
+          
+          $$f(x_{1},\ldots,x_{n}) = \displaystyle{ \frac{1}{(2\pi)^{\frac{n}{2}}\sigma_{1} \cdots \sigma_{n}}  }  \exp\left( \displaystyle{-\left[\displaystyle{ \frac{(x-\mu_{1})^{2}}{2\sigma_{1}^{2}}  + \cdots + \frac{(x-\mu_{n})^{2}}{2\sigma_{n}^{2}}  }\right]}\right) $$
+
+        </p>
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Nota</h2>
+      <p>Cuando las componentes del vector aleatorio  $X=(X_1, X_2\ldots,  X_n)$ no son independientes entonces se tiene el siguiente resultado:</p>
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+        <p>Sea  $X=(X_1, X_2\ldots,  X_n)$ un vector aleatorio <b>Gaussiano</b> con $\mu=\mathbb{E}(X)$ 
+          y matriz de covarianza denotada por $\Lambda_{X}$. Si $\Lambda_{X}$ es invertible, entonces 
+          $X$ admite la  siguiente funcion de densidad:
+          
+          $$f(x) = \displaystyle{ \frac{1}{(2\pi)^{\frac{n}{2}}\left( \mathrm{det}(\Lambda_{X})\right)^{\frac{1}{2}}}}  \exp\left(\displaystyle{-\frac{1}{2} (x-\mu)^{T}\Lambda_{X}^{-1}} (x-\mu)\right) $$
+          para todo $x\in \mathbb{R}^{}$
+
+        </p>
+      </div>
+
+      </body>

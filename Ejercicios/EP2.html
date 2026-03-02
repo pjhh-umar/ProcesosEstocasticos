@@ -1,0 +1,687 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 2 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+        
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+            
+<title>Ejercicios propuestos segundo examen parcial</title>
+</head>  
+
+<body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos segundo examen parcial</h1>   
+
+  <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A$ y $B$ dos eventos con probabilidad positiva tales que $A \subset B$. Demuestre que:</p>
+  <ol class="two-column">
+    <li>$\mathbb{P}(A \mid B) = \dfrac{\mathbb{P}(A)}{\mathbb{P}(B)}$.</li><br>
+    <li>$\mathbb{P}(B \mid A) = 1$.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A$ y $B$ dos eventos de probabilidad positiva tales que $\mathbb{P}(A \mid B) < \mathbb{P}(A)$. Demuestre que $\mathbb{P}(B \mid A) < \mathbb{P}(B)$.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A$ y $B$ eventos con probabilidad positiva tales que $\mathbb{P}(A) = \mathbb{P}(B)$. Demuestre que $\mathbb{P}(A \mid B) = \mathbb{P}(B \mid A)$.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Un dado desbalanceado está hecho de tal forma que la probabilidad de obtener el número $k$ es igual a $ck$, en donde $c$ es una constante y $k \in \{1,2,3,4,5,6\}$. Un experimento aleatorio consiste en lanzar dicho dado. Dado que se obtiene un número par, ¿cuál es la probabilidad de que se obtenga el número $2$?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>En una ciudad se publican los periódicos $A$, $B$ y $C$. Una encuesta reciente muestra que 20% de los habitantes adultos de la ciudad lee $A$, 16% lee $B$, 14% lee $C$, 8% lee $A$ y $B$, 5% lee $A$ y $C$, 4% lee $B$ y $C$ y 2% lee $A$, $B$ y $C$. Si se elige un adulto al azar, calcule:</p>
+  <ol>
+    <li>La probabilidad de que no lea ninguno de los periódicos.</li><br>
+    <li>La probabilidad de que lea exactamente uno de los periódicos.</li><br>
+    <li>La probabilidad de que lea al menos $A$ y $B$ sabiendo que lee al menos uno de los 3 periódicos.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Dada una población formada exclusivamente por hermanos gemelos, consideremos el experimento aleatorio consistente en seleccionar primero una pareja de hermanos gemelos al azar y después, también al azar, uno de los hermanos de esa pareja. Supongamos que la probabilidad de que los hermanos gemelos seleccionados sean del mismo sexo es igual a $0.7$ y que la probabilidad de que la persona seleccionada, en la segunda parte del experimento, sea de sexo masculino es igual a $0.4$.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Las letras A, A, A, C, E, I, M, M, T, T se colocan al azar, una después de la otra. 
+     ¿Cuál es la probabilidad de que se obtenga la palabra MATEMATICA?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Un ropero contiene 10 pares (distintos) de zapatos. Si se escogen al azar 5 zapatos, 
+     ¿cuál es la probabilidad de que la muestra contenga exactamente uno de los pares originales?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Un ropero contiene 10 pares (distintos) de zapatos. Si se escogen al azar 3 zapatos, 
+     ¿cuál es la probabilidad de que se obtengan 2 que formen un par?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>De una caja que contiene $n$ pares (distintos) de zapatos se seleccionan al azar $2r$ zapatos con 
+     $2r &lt; n$. Encuentre la probabilidad de que con los zapatos seleccionados:</p>
+  <ol class="two-column">
+    <li>no se forme algún par,</li><br>
+    <li>se forme exactamente un par.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A$ y $B$ dos eventos independientes tales que la probabilidad de que ocurran simultáneamente es 
+     $\displaystyle{\frac{1}{6}}$ y la probabilidad de que ninguno ocurra es 
+     $\displaystyle{\frac{1}{3}}$. Encuentre $\mathbb{P}(A)$ y $\mathbb{P}(B)$.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A$ y $B$ dos eventos independientes y supongamos $\mathbb{P}(A) = \displaystyle{\frac{1}{2}}$ y 
+     $\mathbb{P}(A \cup B) = \displaystyle{\frac{7}{10}}$. Encuentre $\mathbb{P}(B)$.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A$ y $B$ dos eventos relativos a un experimento aleatorio. Supongamos que 
+     $\mathbb{P}(A) = 0.4$, $\mathbb{P}(A \cup B) = 0.7$ y sea $p = \mathbb{P}(B)$.</p>
+  <ol>
+    <li>¿Para qué valor de $p$ son $A$ y $B$ mutuamente excluyentes?</li><br>
+    <li>¿Para qué valor de $p$ son $A$ y $B$ independientes?</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Un experimento aleatorio consiste en lanzar un par de dados, uno blanco y uno azul. 
+     Sea $A$ el evento “se obtiene 1 o 2 con el dado blanco” y sea $B$ el evento 
+     “la suma de los números que se obtienen es igual a 7”. 
+     ¿Son $A$ y $B$ eventos independientes? Justifique su respuesta.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Muestre con un ejemplo que es posible tener 3 eventos $A$, $B$ y $C$ tales que
+     $$\mathbb{P}(A \cap B \cap C) = \mathbb{P}(A)\mathbb{P}(B)\mathbb{P}(C)$$
+     pero de tal manera que estos eventos no sean independientes.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A$ y $B$ dos eventos independientes. Demuestre que también son independientes:</p>
+  <ol class="three-column">
+    <li>$A^{c}$ y $B^{c}$.</li><br>
+    <li>$A$ y $B^{c}$.</li><br>
+    <li>$A^{c}$ y $B$.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A$, $B$ y $C$ tres eventos relativos a un experimento aleatorio.  
+     ¿Cuáles de las siguientes aseveraciones son verdaderas?</p>
+  <ol>
+    <li>$\mathbb{P}(B \mid A) + \mathbb{P}(B^{c} \mid A) = 1$.</li><br>
+    <li>$\mathbb{P}(B \mid A) + \mathbb{P}(B \mid A^{c}) = 1$.</li><br>
+    <li>Si $A$ y $B$ son independientes, entonces $\mathbb{P}(A \cap B \mid C) = \mathbb{P}(A \mid C)\,\mathbb{P}(B \mid C).$
+    </li><br>
+    <li>Si $\mathbb{P}(A \mid B) = \mathbb{P}(B)$, entonces $A$ y $B$ son independientes.</li><br>
+    <li>Si $\mathbb{P}(A) = \mathbb{P}(B)$, entonces $\mathbb{P}(A \mid B) = \mathbb{P}(B \mid A)$.</li><br>
+    <li>Si $\mathbb{P}(A \mid B) = \mathbb{P}(B \mid A)$, entonces $\mathbb{P}(A) = \mathbb{P}(B)$.</li><br>
+    <li>Si $\mathbb{P}(A) = \mathbb{P}(B) = p$, entonces $\mathbb{P}(A \cap B) \leq p^{2}$.</li><br>
+  </ol>
+En todos los casos, justifíque su respuesta, ya sea demostrando que la 
+aseveración es verdadera o dando un contraejemplo que muestre que la aseveración es falsa.
+</div>
+
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sean $A, B \in \mathcal{F}$. Pruebe que
+    $$\mathbb{P}(A \cup B) + \mathbb{P}(A \cup B^{c}) + \mathbb{P}(A^{c} \cup B) + \mathbb{P}(A^{c} \cup B^{c}) = 3.$$
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A, B, C$ tres eventos en $(\Omega, \mathcal{F}, \mathbb{P})$. Pruebe que
+    $$\mathbb{P}(A \cap B) \geq \mathbb{P}(A) - \mathbb{P}(B^{c})$$
+    y que
+    $$\mathbb{P}(A \cap B \cap C) \geq 1 - \mathbb{P}(A^{c}) - \mathbb{P}(B^{c}) - \mathbb{P}(C^{c}).$$
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Una caja contiene cinco bolas blancas y tres bolas rojas. Se extrae al azar una bola y se vuelve a colocar en la caja
+     junto con dos bolas adicionales del mismo color que la bola que no fue extraída.  
+     Sabiendo que la segunda bola extraída es roja, ¿cuál es el color más probable de la primera bola?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Una prueba de laboratorio médico detecta con probabilidad $0.95$ cierta enfermedad $M$ cuando la enfermedad efectivamente está presente. 
+     Por otra parte, la prueba también indica un resultado positivo para el $1\%$ de las personas sin la enfermedad que se han hecho la prueba. 
+     Suponemos que el $0.5\%$ de la población padece la enfermedad $M$.  
+     Se elige al azar una persona para la cual el resultado de la prueba fue positivo.  
+     ¿Cuál es la probabilidad de que dicha persona esté enferma?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Se lanzan dos dados justos. ¿Cuál es la probabilidad condicional de que al menos uno caiga en $6$ dado que los dados muestran números distintos?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Si se lanzan dos dados justos, ¿cuál es la probabilidad condicional de que el primero caiga en $6$ dado que la suma de los valores obtenidos es $i$? Calcule la probabilidad para todos los valores de $i$ entre $2$ y $12$.</p>
+</div>
+
+<!-- <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Use la Ecuación (2.1) para calcular, en una mano de bridge, la probabilidad condicional de que Este tenga $3$ espadas dado que Norte y Sur tienen en conjunto un total de $8$ espadas.</p>
+</div> -->
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>¿Cuál es la probabilidad de que al menos uno de un par de dados justos caiga en $6$, dado que la suma de los valores obtenidos es $i$, $i = 2,3,\ldots,12$?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Una urna contiene $6$ bolas blancas y $9$ negras. Si se seleccionan al azar $4$ bolas sin reemplazo, ¿cuál es la probabilidad de que las primeras $2$ seleccionadas sean blancas y las últimas $2$ sean negras?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Considere una urna que contiene $12$ bolas, de las cuales $8$ son blancas. Se extrae una muestra de tamaño $4$:</p>
+  <p>(i) con reemplazo; (ii) sin reemplazo. ¿Cuál es la probabilidad condicional (en cada caso) de que la primera y la tercera bola extraídas sean blancas dado que la muestra contiene exactamente $3$ bolas blancas?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>El rey proviene de una familia con $2$ hijos. ¿Cuál es la probabilidad de que el otro hijo sea su hermana?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Una pareja tiene $2$ hijos. ¿Cuál es la probabilidad de que ambos sean niñas si se sabe que el mayor de los dos es una niña?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Considere $3$ urnas. La urna $A$ contiene $2$ bolas blancas y $4$ rojas; la urna $B$ contiene $8$ bolas blancas y $4$ rojas; y la urna $C$ contiene $1$ bola blanca y $3$ rojas. Si se selecciona $1$ bola de cada urna, ¿cuál es la probabilidad de que la bola elegida de la urna $A$ sea blanca dado que exactamente $2$ bolas blancas fueron seleccionadas en total?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Se seleccionan al azar, sin reemplazo, $3$ cartas de una baraja ordinaria de $52$ naipes. Calcule la probabilidad condicional de que la primera carta sea una espada dado que la segunda y la tercera cartas son espadas.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Se seleccionan al azar, sin reemplazo, $2$ cartas de una baraja ordinaria de $52$ naipes. Sea $B$ el evento “las dos cartas son ases”; sea $A_3$ el evento “se extrae el as de espadas”; y sea $A$ el evento “se extrae al menos un as”. Determine:</p>
+  <ol class="two-column">
+    <li>$\mathbb{P}(B \mid A_3)$.</li><br>
+    <li>$\mathbb{P}(B \mid A)$.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Una estudiante de actuaría planea presentar los tres exámenes de actuaría en el próximo verano. Presentará el primer examen en junio. Si lo aprueba, entonces presentará el segundo examen en julio y, si también aprueba el segundo, presentará el tercer examen en septiembre. Si no aprueba algún examen, entonces no se le permite presentar los demás. Se sabe que la probabilidad de que apruebe el primer examen es $0.9$; dado que aprueba el primero, la probabilidad condicional de que apruebe el segundo es $0.8$; y dado que aprueba el primero y el segundo, la probabilidad condicional de que apruebe el tercero es $0.7$.</p>
+  <ol>
+    <li>¿Cuál es la probabilidad de que apruebe los tres exámenes?</li><br>
+    <li>Dado que no aprobó los tres exámenes, ¿cuál es la probabilidad condicional de que haya reprobado el segundo examen?</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Una baraja ordinaria de $52$ cartas (que contiene $4$ ases) se reparte al azar en $4$ manos de $13$ cartas cada una. Nos interesa determinar $p$, la probabilidad de que cada mano contenga exactamente un as. Sea $E_i$ el evento “la $i$-ésima mano tiene exactamente un as”. Determine
+    $$p = \mathbb{P}(E_1 \cap E_2 \cap E_3 \cap E_4)$$
+    usando la regla de multiplicación.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Una urna contiene inicialmente $5$ bolas blancas y $7$ negras. Cada vez que se selecciona una bola, se observa su color y se regresa a la urna junto con $2$ bolas adicionales del mismo color. Calcule la probabilidad de que:</p>
+  <ol >
+    <li>las primeras $2$ bolas seleccionadas sean negras y las siguientes $2$ sean blancas;</li><br>
+    <li>entre las primeras $4$ bolas seleccionadas, exactamente $2$ sean negras.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Un embarazo ectópico es el doble de probable en una mujer embarazada fumadora que en una no fumadora. Si el $32\%$ de las mujeres en edad reproductiva son fumadoras, ¿qué porcentaje de las mujeres con embarazos ectópicos son fumadoras?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>El $98\%$ de todos los bebés sobreviven al parto. Sin embargo, el $15\%$ de todos los nacimientos son por cesárea (C), y cuando se realiza una cesárea, el bebé sobrevive el $96\%$ de las veces. Si una mujer embarazada elegida al azar no tiene una cesárea, ¿cuál es la probabilidad de que su bebé sobreviva?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>En cierta comunidad, el $36\%$ de las familias tiene un perro y el $22\%$ de las familias que tienen perro también tienen gato. Además, el $30\%$ de las familias tiene gato.</p>
+  <ol>
+    <li>Encuentre la probabilidad de que una familia elegida al azar tenga tanto perro como gato.</li><br>
+    <li>Determine la probabilidad condicional de que una familia elegida al azar tenga perro dado que tiene gato.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>En cierta ciudad, el $46\%$ de los votantes se clasifica como Independiente, el $30\%$ se clasifica como Liberal y el $24\%$ se clasifica como Conservador. En una elección local reciente, el $35\%$ de los Independientes, el $22\%$ de los Liberales y el $58\%$ de los Conservadores votaron por el candidato ganador. Dado que un votante elegido al azar votó por el ganador, ¿cuál es la probabilidad de que sea Conservador?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Un dado justo se lanza dos veces. ¿Cuál es la probabilidad de que al menos uno de los dos lanzamientos sea un seis dado que la suma de los dos lanzamientos es al menos 10?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Jen llamará a Cathy el sábado con una probabilidad de 60%. Ella llamará a Cathy el domingo con una probabilidad de 80%. La probabilidad de que no llame en ninguno de los dos días es 10%. ¿Cuál es la probabilidad de que llame el domingo dado que llama el sábado?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Suponga que $\mathbb{P}(A) = \mathbb{P}(B) = 0.9$. Dé una cota inferior útil para $\mathbb{P}(B \mid A)$.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Se extraen dos cartas distintas, una a la vez, de una baraja de $52$ cartas. La primera carta elegida es el as de espadas. ¿Cuál es la probabilidad de que la segunda carta no sea ni un as ni una espada?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>En el $10\%$ de los días, la computadora de Sam no funciona. Si la computadora no funciona, entonces enciende la televisión y, independientemente del estado de la computadora, en el $30\%$ de los días no encuentra nada interesante en la televisión. Si no encuentra nada interesante en la televisión, llama a su esposa al trabajo. Independientemente de la programación de televisión y del estado de la computadora, en el $75\%$ de todas las ocasiones ella no contesta el teléfono. En ese caso, Sam se acuesta a las 8:00 PM. ¿En qué porcentaje de días Sam se acuesta a las 8:00 PM?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>¿Cuál es la probabilidad de que cuatro cartas extraídas al azar de una baraja sean de denominaciones diferentes, dado que son de palos distintos?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>En una urna hay tres bolas negras, cuatro bolas verdes y cinco bolas rojas. Se extraen dos bolas al azar de la urna y se sabe que son del mismo color. ¿Cuál es la probabilidad de que ambas sean rojas?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>En un juego de bridge, Norte y Sur tienen entre ambos todos los ases. ¿Cuál es la probabilidad de que uno tenga un as y el otro tenga tres?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Tres correctores de estilo independientes leerán un manuscrito.
+    Las probabilidades de que detecten un error particular son, respectivamente, 
+    $0.92$, $0.85$ y $0.95$. ¿Cuál es la probabilidad de que el error no sea detectado 
+    por ninguno?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Se eligen dos números sin reemplazo del conjunto $\{1,2,\ldots,100\}$. 
+    ¿Cuál es la probabilidad de que el menor de los dos números sea mayor que $20$ si 
+    el mayor es menor que $60$?
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Si $\displaystyle{\mathbb{P}(A) = 0.4}$, $\displaystyle{\mathbb{P}(B) = 0.2}$ y
+    $\displaystyle{\mathbb{P}(C) = 0.3}$, calcule la probabilidad
+    $\displaystyle{\mathbb{P}(A \cup B \cup C)}$ cuando los eventos $A$, $B$ y $C$ son:
+  </p>
+  <ol class="two-column">
+    <li>Mutuamente disjuntos por pares.</li><br>
+    <li>Independientes.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Demuestre que el evento $A$ es independiente de sí mismo si, y sólo si, 
+    $\displaystyle{\mathbb{P}(A) = 0}$ o $\displaystyle{\mathbb{P}(A) = 1}$.
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Considere dos eventos $A$ y $B$ (y luego tres eventos $A$, $B$ y $C$):</p>
+  <ol>
+    <li>Para cualesquiera dos eventos $A$ y $B$, demuestre que 
+      $\displaystyle{\mathbb{P}(A \cap B) \geq \mathbb{P}(A) + \mathbb{P}(B) - 1}$.</li><br>
+    <li>Si $A$ y $B$ son disjuntos, demuestre que son independientes si, y sólo si, 
+      al menos una de $\displaystyle{\mathbb{P}(A)}$ o $\displaystyle{\mathbb{P}(B)}$ es cero.</li><br>
+    <li>Si los eventos $A$, $B$ y $C$ son mutuamente disjuntos por pares, 
+      ¿bajo qué condiciones son independientes?</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Suponga que los eventos $A_1$, $A_2$ y $B_1$ son independientes, que los eventos 
+    $A_1$, $A_2$ y $B_2$ son independientes, y que $B_1 \cap B_2 = \emptyset$. 
+    Demuestre que los eventos $A_1$, $A_2$ y $B_1 \cup B_2$ son independientes.
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Considere tres eventos $A$, $B$ y $C$ tales que 
+    $\displaystyle{\mathbb{P}(A) = \mathbb{P}(B) = \mathbb{P}(C) = \frac{1}{2}}$, 
+    $\displaystyle{\mathbb{P}(A \cap B) = \mathbb{P}(A \cap C) = \mathbb{P}(B \cap C) = \frac{1}{4}}$ 
+    y $\displaystyle{\mathbb{P}(A \cap B \cap C) = \frac{1}{6}}$.
+  </p>
+  <ol>
+    <li>Determine si estos eventos son independientes o no. Justifique su respuesta.</li><br>
+    <li>Con los valores dados en el inciso anterior, calcule las probabilidades
+      $\displaystyle{\mathbb{P}(A^{c})}$, 
+      $\displaystyle{\mathbb{P}(A \cup B)}$, 
+      $\displaystyle{\mathbb{P}(A \cap B^{c})}$, 
+      $\displaystyle{\mathbb{P}(A \cup B \cup C)}$ y 
+      $\displaystyle{\mathbb{P}(A^{c} \cap B^{c} \cap C^{c})}$.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Para los eventos $A$, $B$, $C$ y sus complementos, suponga que:
+  </p>
+<ul class="three-column">
+  <li>$\displaystyle{\mathbb{P}(A \cap B \cap C) = \frac{1}{16}}$</li><br>
+  <li>$\displaystyle{\mathbb{P}(A^{c} \cap B \cap C) = \frac{2}{16}}$</li><br>
+  <li>$\displaystyle{\mathbb{P}(A \cap B^{c} \cap C) = \frac{5}{16}}$</li><br>
+  <li>$\displaystyle{\mathbb{P}(A \cap B \cap C^{c}) = \frac{3}{16}}$</li><br>
+  <li>$\displaystyle{\mathbb{P}(A^{c} \cap B^{c} \cap C) = \frac{1}{16}}$</li><br>
+  <li>$\displaystyle{\mathbb{P}(A^{c} \cap B \cap C^{c}) = \frac{1}{16}}$</li><br>
+  <li>$\displaystyle{\mathbb{P}(A \cap B^{c} \cap C^{c}) = \frac{2}{16}}$</li><br>
+  <li>$\displaystyle{\mathbb{P}(A^{c} \cap B^{c} \cap C^{c}) = \frac{1}{16}}$</li><br>
+</ul>
+
+  <ol >
+    <li>Calcule las probabilidades $\displaystyle{\mathbb{P}(A)}$, 
+      $\displaystyle{\mathbb{P}(B)}$ y $\displaystyle{\mathbb{P}(C)}$.</li><br>
+    <li>Determine si los eventos $A$, $B$ y $C$ son independientes.</li><br>
+    <li>Calcule la probabilidad condicional $\displaystyle{\mathbb{P}(A \mid B)}$.</li><br>
+    <li>Determine si los eventos $A$ y $B$ son independientes.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Si los eventos $A_1, \ldots, A_n$ son independientes, demuestre que
+    $$\mathbb{P}\!\left(\bigcup_{j=1}^{n} A_j\right)
+      = 1 - \prod_{j=1}^{n} \mathbb{P}(A_j^{c}).$$
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Se lanzan una vez tres monedas, cada una con probabilidad $\displaystyle{p}$ de caer en cara.
+    Usted gana si las tres monedas muestran la misma cara (todas caras o todas cruces).
+  </p>
+  <ol class="two-column">
+    <li>¿Cuál es la probabilidad de ganar?</li><br>
+    <li>¿Cuáles son las respuestas numéricas del inciso anterior para 
+      $\displaystyle{p = 0.5}$ y $\displaystyle{p = 0.4}$?</li><br>
+  </ol>
+</div>
+
+
+<!-- <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sam, Fred y Vishy, en ese orden, se turnan para disparar a la diana (bull’s eye). Sus tasas de acierto son $20\%$, $30\%$ y $40\%$, respectivamente. ¿Cuáles son las probabilidades de que cada uno haga el primer impacto en la diana?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p><strong>Canal de comunicación.</strong> Una señal pasa a través de tres redes de filtrado. La señal puede ser un signo $+$ o un signo $-$. Cada red tiene una probabilidad $p$ de transmitir la señal tal como fue recibida y una probabilidad $1 - p$ de transmitirla con el signo cambiado. Suponga que las redes funcionan independientemente. Si una señal se recibe como $+$, ¿cuál es la probabilidad de que haya sido enviada como $+$? Puede suponer que la probabilidad a priori es $50\%$ de que haya sido enviada como $+$.</p>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Una mujer que busca empleo estima que tiene 0.9 de probabilidad de recibir la oferta si recibe una recomendación fuerte, 0.4 si recibe una recomendación moderada y 0.1 si recibe una recomendación débil. Ella estima además que las probabilidades de que la recomendación sea fuerte, moderada o débil son .7, .2 y .1, respectivamente.</p>
+  <ol class="two-column">
+    <li>¿Qué certeza tiene de que recibirá la nueva oferta de trabajo?</li><br>
+    <li>Dado que recibe la oferta, ¿qué tan probable es que haya recibido una recomendación fuerte? ¿moderada? ¿débil?</li><br>
+    <li>Dado que no recibe la oferta, ¿qué tan probable es que haya recibido una recomendación fuerte? ¿moderada? ¿débil?</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Una estudiante de secundaria espera ansiosamente recibir correo que le indique si ha sido aceptada en cierta universidad. Ella estima las siguientes probabilidades condicionales de recibir notificación cada día de la próxima semana, dado que es aceptada o rechazada:</p>
+
+  <p>
+  Day — \mathbb{P}(mail|accepted) — \mathbb{P}(mail|rejected):<br>
+  Monday .15 — .05<br>
+  Tuesday .20 — .10<br>
+  Wednesday .25 — .10<br>
+  Thursday .15 — .15<br>
+  Friday .10 — .20<br>
+  </p>
+
+  <p>Ella estima que su probabilidad de ser aceptada es .6.</p>
+
+  <ol class="two-column">
+    <li>¿Cuál es la probabilidad de que reciba correo el lunes?</li><br>
+    <li>¿Cuál es la probabilidad condicional de que haya recibido correo el martes dado que no recibe correo el lunes?</li><br>
+    <li>Si no hay correo hasta el miércoles, ¿cuál es la probabilidad condicional de que sea aceptada?</li><br>
+    <li>¿Cuál es la probabilidad condicional de que sea aceptada si llega correo el jueves?</li><br>
+    <li>¿Cuál es la probabilidad condicional de que sea aceptada si no llega correo esa semana?</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Un sistema en paralelo funciona siempre que al menos uno de sus componentes funcione. Considere un sistema en paralelo de <i>n</i> componentes, y suponga que cada componente funciona independientemente con probabilidad $\displaystyle{\frac{1}{2}}$. Encuentre la probabilidad condicional de que el componente 1 funcione dado que el sistema está funcionando.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Si tuviera que construir un modelo matemático para los eventos E y F (como en las partes (a) a (e)), ¿asumiría que son independientes? Explique su razonamiento.</p>
+  <ol class="two-column">
+    <li>E es el evento de que una mujer de negocios tiene ojos azules, y F es el evento de que su secretaria tiene ojos azules.</li><br>
+    <li>E es el evento de que un profesor posee un automóvil, y F es el evento de que aparece listado en la guía telefónica.</li><br>
+    <li>E es el evento de que un hombre mide menos de 6 pies, y F es el evento de que pesa más de 200 libras.</li><br>
+    <li>E es el evento de que una mujer vive en los Estados Unidos, y F es el evento de que vive en el hemisferio occidental.</li><br>
+    <li>E es el evento de que lloverá mañana, y F es el evento de que lloverá pasado mañana.</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>En una clase, hay 4 niños de primer año, 6 niñas de primer año y 6 niños de segundo año. ¿Cuántas niñas de segundo año deben estar presentes para que el sexo y el año escolar sean independientes cuando se selecciona un estudiante al azar?</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Suponga que recolecta continuamente cupones y que hay m tipos diferentes. Suponga que cada vez que se obtiene un cupón, es del tipo i con probabilidad $p_i$, $i = 1,\ldots,m$. Suponga que ha recolectado su n-ésimo cupón. ¿Cuál es la probabilidad de que sea un nuevo tipo?</p>
+  <p><b>Hint:</b> Condicione en el tipo del cupón.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Un modelo simplificado del precio de una acción supone que en cada día el precio sube 1 unidad con probabilidad p o baja 1 unidad con probabilidad 1−p. Los cambios en días distintos se asumen independientes.</p>
+  <ol class="two-column">
+    <li>¿Cuál es la probabilidad de que después de 2 días el precio esté en su valor original?</li><br>
+    <li>¿Cuál es la probabilidad de que después de 3 días el precio haya aumentado en 1 unidad?</li><br>
+    <li>Dado que después de 3 días el precio ha aumentado en 1 unidad, ¿cuál es la probabilidad de que haya subido en el primer día?</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Suponga que queremos generar el resultado del lanzamiento de una moneda justa, pero solo disponemos de una moneda sesgada que cae en cara con probabilidad desconocida p.</p>
+  <p>Considere el siguiente procedimiento:</p>
+  <ol class="">
+    <li>Lance la moneda.</li><br>
+    <li>Vuélvala a lanzar.</li><br>
+    <li>Si ambos lanzamientos dan el mismo resultado, regrese al paso 1.</li><br>
+    <li>De lo contrario, el resultado del último lanzamiento es el resultado del experimento.</li><br>
+  </ol>
+</div> -->
+
+
+
+
+
+<!-- Donde aparecerá la fecha de la última modificación -->
+<footer>
+  <center>
+   <p id="ultima-actualizacion"></p>
+  </center>
+</footer>
+<script>
+// Obtenemos la fecha y hora de la última modificación del documento
+const fechaModificacion = new Date(document.lastModified);
+
+// Opciones para formatear la fecha (por ejemplo, DD/MM/AAAA)
+const opcionesFecha = { day: '2-digit', month: '2-digit', year: 'numeric' };
+const fechaFormateada = fechaModificacion.toLocaleDateString('es-ES', opcionesFecha);
+
+// Obtenemos la hora (HH:MM:SS)
+const horaFormateada = fechaModificacion.toLocaleTimeString('es-ES', {
+    hour: '2-digit', minute: '2-digit'
+});
+
+// Insertamos la fecha y la hora en el elemento con el ID "ultima-modificacion"
+document.getElementById("ultima-actualizacion").textContent = `Última actualización: ${fechaFormateada}`;
+</script>
+
+
+
+</body>

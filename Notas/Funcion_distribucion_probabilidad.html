@@ -1,0 +1,188 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+    <!-- 
+      <nav class="small-nav" align=right>
+        <button onclick="myFunction()">Claro/Obscuro 
+      </nav> 
+    -->
+
+  <!-- This part is for title in tab-->
+         
+      <title>Semana 1</title>
+      </head>  
+
+      <body class="fondo-body" ><h1 class="page-title"> Función distribución de Probabilidad</h1>   
+    <h1 class="page-subtitle"> Funciones de Distribución de Probabilidad</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+    <p>Una vez que hemos introducido el concepto de <strong>variable aleatoria</strong>, nos toca ver qué nuevas definiciones surgen a partir de este. Un primer concepto que surge es la <strong>función de distribución</strong>. A grandes rasgos, dado un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$, en la entrada anterior vimos que una función $X\colon\Omega\to\mathbb{R}$ <strong>debe de satisfacer que para cualquier $x \in \mathbb{R}$, $X^{-1}[(-\infty, x]]$ es un evento de $\Omega$</strong>. Básicamente, esta condición era <strong>suficiente</strong> para concluir que para cada $B \in \mathscr{B}(\mathbb{R})$ se cumple que $X^{-1}[B] \in \mathscr{F}$. En otras palabras, <strong>la imagen inversa de cualquier evento de $\mathbb{R}$ es un evento de $\Omega$</strong>.</p>
+
+    <p>De manera similar, lo que haremos será definir la probabilidad de los eventos de la forma $(X \leq x)$, con $x \in \mathbb{R}$. No lo veremos aquí (porque no tenemos las herramientas suficientes para hacerlo), pero resulta que asignarle probabilidad a esos eventos captura toda la información relevante sobre una variable aleatoria. Esto nos permitirá prescindir por completo de muchos detalles de la variable aleatoria, y centrar nuestra atención en el conjunto de valores que puede tomar.</p>
+    </div>
+
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sea $F\colon\mathbb{R}\to\mathbb{R}$ una función. Diremos que $F$ es una <strong>función de distribución de probabilidad</strong> si:</p>
+
+    <ol>
+      <li>$F$ es <strong>no-decreciente</strong>. Esto es, para cada $a, b \in \mathbb{R}$, si $a &lt; b$ entonces $F(a) \leq F(b)$.</li>
+      <li>$F$ es <strong>continua por la derecha</strong>. Es decir, para cada $a \in \mathbb{R}$ se cumple que\[ \lim_{x\to a^{+}} F(x) = F(a). \]</li>
+      <li>Se cumple que\[ \lim_{x\to\infty} F(x) = 1 \quad\text{y}\quad \lim_{x\to -\infty} F(x) = 0. \]</li>
+    </ol>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    
+    <p>Una función <strong>no requiere de ningún contexto adicional</strong> para considerarse una función 
+      de distribución de probabilidad. Es decir, para que una función $F\colon\mathbb{R}\to\mathbb{R}$ sea considerada
+      una función de distribución de probabilidad, simplemente debe de ser <strong>no-decreciente</strong>,
+      <strong>continua por la derecha</strong> y <strong>sus límites a $\infty$ y $-\infty$ deben de ser $1$ 
+      y $0$</strong>, respectivamente.
+    </p>
+    </div>
+
+
+    <h1 class="page-subtitle">  Función de distribución de una variable aleatoria</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+      <p>Dada cualquier variable aleatoria $X$ sobre un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$, 
+        hay una función muy importante asociada a $X$: su función de distribución, definida como sigue.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y sea $X\colon\Omega\to\mathbb{R}$ una variable aleatoria.
+      La <strong>función de distribución de $X$</strong> es la función $F_{X}\colon\mathbb{R}\to[0,1]$ dada por</p>
+    
+      <p>\[ F_{X}(x) = \mathbb{P}(\{\, \omega\in\Omega \mid X(\omega) \leq x \,\}) = \mathbb{P}(X \leq x), \quad \text{para cada $x \in \mathbb{R}$}. \]</p>
+
+      <p>$F_{X}$ también es llamada la <strong>función de distribución acumulada de $X$</strong>, que en inglés se abrevia como <strong>CDF</strong> (<em>cumulative distribution function</em>).</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+      <p>Es decir, dada una variable aleatoria $X$, su <strong>función de distribución</strong> devuelve la probabilidad de que $X$
+        sea menor o igual a $x$, para cada $x \in\mathbb{R}$. Como seguramente ya sospechas por el nombre de $F_{X}$,
+        resulta que $F_{X}$ es una <strong>función de distribución de probabilidad</strong>. Este hecho es demostrado
+        el siguiente teorema.
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y sea $X\colon\Omega\to\mathbb{R}$ una variable aleatoria. 
+      Entonces $F_{X}\colon\mathbb{R}\to[0,1]$ es una <strong>función de distribución de probabilidad</strong>.
+    </p>
+    </div>
+
+    <h1 class="page-subtitle">  Importancia de una función de distribución de probabilidad</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+    <p>Por el teorema anterior, vimos que <strong>la <em>función de distribución</em> de cualquier variable aleatoria es también una <em>función de distribución de probabilidad</em></strong>. Es decir, que si tienes un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$ y una variable aleatoria $X\colon\Omega\to\mathbb{R}$, la función de distribución de $X$, $F_{X}\colon\mathbb{R}\to[0,1]$, es una función de distribución de probabilidad.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Nota</h2>
+        <p>Por otro lado, ahora imagina que te encuentras con una función $F\colon\mathbb{R}\to\mathbb{R}$ que es una <strong>función de distribución de probabilidad</strong>. No obstante, observa que no sabes <strong>nada más</strong> sobre esta función. Es decir, no hay ninguna variable aleatoria ni un espacio de probabilidad a la vista&#8230; ¿Será posible que $F$ provenga de alguna variable aleatoria $X$ definida sobre un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$?</p>
+        <p>En otras palabras: dada $F\colon\mathbb{R}\to\mathbb{R}$ una función de distribución de probabilidad, ¿siempre existen un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$ y una variable aleatoria $X\colon\Omega\to\mathbb{R}$ tal que $F$ es la función de distribución de $X$? ¡La respuesta es que <strong>sí</strong>! A grandes rasgos, $F$ define la probabilidad de los eventos de la forma $(-\infty, x]$, para cada $x \in \mathbb{R}$. Esto resulta suficiente para definir por completo la medida de probabilidad inducida por una variable aleatoria $X$&#8230; pero, <strong>¿cuál variable aleatoria $X$?</strong> De manera <strong>canónica</strong>, siempre puede utilizarse la variable aleatoria <strong>identidad</strong> sobre $\Omega = \mathbb{R}$, que es la función $X\colon\mathbb{R}\to\mathbb{R}$ tal que para cada $\omega\in\mathbb{R}$, $X(\omega) = \omega$. De este modo, la medida de probabilidad inducida por $X$ es <strong>la misma que la medida en el dominio de $X$</strong>, que en este caso es $\mathbb{R}$ con $\mathscr{B}(\mathbb{R})$ como σ-álgebra, y usando la medida determinada por $F$.</p>
+        <p><strong>¡CUIDADO!</strong> Esto <strong>NO</strong> significa que <strong>todas</strong> las variables aleatorias son simplemente la función identidad. Lo que significa es que <strong>siempre</strong> que tengas una <strong>función de distribución de probabilidad</strong> $F\colon\mathbb{R}\to\mathbb{R}$, está garantizado que <strong>existen</strong> un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$ y una variable aleatoria $X\colon\Omega\to\mathbb{R}$ de tal forma que $F$ es la <strong>función de distribución de $X$</strong>. La existencia está garantizada porque, <strong>al menos</strong>, siempre se puede usar la <strong>función identidad</strong> de $\mathbb{R}$ en $\mathbb{R}$ como variable aleatoria, pero puede haber otras distintas cuya función de distribución también es $F$.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+      <p>el espacio de probabilidad que subyace a una variable aleatoria <strong>realmente no importa</strong>. Por ello, en muchos libros de probabilidad (y en este mismo curso), no le prestan atención a esto. Comúnmente, te dan una función $F$ que es una función de distribución de probabilidad, y te dicen <strong>«sea $X$ una variable aleatoria con distribución $F$»</strong>. Con eso es suficiente, pues $F$ determina las probabilidades de todos los eventos que involucran a $X$, sin importar quiénes son $X$ y el espacio de probabilidad sobre el que ésta se define.</p>
+    </div>
+
+          
+
+      </body>

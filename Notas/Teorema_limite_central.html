@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+    <!-- 
+      <nav class="small-nav" align=right>
+        <button onclick="myFunction()">Claro/Obscuro 
+      </nav> 
+    -->
+
+  <!-- This part is for title in tab-->
+         
+      <title>Semana 1</title>
+      </head>  
+
+      <body class="fondo-body" ><h1 class="page-title"> El Teorema del límite central</h1>   
+   
+   
+          
+    <h1 class="page-subtitle">  El teorema del límite central</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+      <!-- <h2 class="number-title"> Teorema del Limite central</h2> -->
+
+      <p>El <b>Teorema del Límite Central</b> (<b><em>TLC</em></b> ) es uno de los teoremas fundamentales 
+        de la Probabilidad, este teorema die que si $S_{n}$ es la suma de $n$ variables aleatorias 
+        independientes entonces la distribución de $S_n$ es bien aproximada por la distribución  Gaussiana.
+      </p>
+      
+      <p>Una de las interpretaciones mas importantes del  <b>Teorema del Límite Central</b> (<b><em>TLC</em></b> ) 
+        es que si tomamos muchas <em>muestras aleatorias</em> de una población grande 
+        y calculamos la media de cada muestra, la distribución de estas medias será aproximadamente normal de la distribución 
+        original de la población.
+      </p>
+
+      <p>La importancia del TLC es que nos permite hacer inferencias sobre la población a partir 
+        de una muestra aleatoria. En particular, nos permite estimar la media y la varianza de la población,
+        y hacer pruebas de hipótesis sobre la media de la población.
+      </p>
+
+      <p>Además, el TLC es una de las razones por las que la <b>distribución normal</b> es tan importante en Estadística. 
+        Muchas variables aleatorias en la vida real se distribuyen normalmente, o se pueden aproximar por una distribución 
+        normal gracias al TLC. Esto significa que podemos utilizar la distribución normal para modelar y analizar una
+        amplia variedad de fenómenos, desde el precio de las acciones hasta el peso de los estudiantes en una población.
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Ejemplo</h2>
+    <p>Si estás analizando los precios de las pólizas de seguros de una compañía, puedes tomar
+      una muestra  grande y calcular la media de los precios. Si la muestra es lo suficientemente grande, 
+      puedes estar seguro de que la media de la muestra se aproximará a la media de los precios de la compañía
+      en su conjunto. Entonces, puedes utilizar la distribución normal para calcular la probabilidad de que
+      el precio medio de una póliza caiga dentro de ciertos límites.
+    </p>
+    </div>
+
+    
+    <div class="nota-box"><h1 class="number-title"> Teorema (Teorema del Límite Central)</h2>
+      <p>Sea $X_{1}, X_{2},\ldots $ una sucesión  de variables aleatorias i.i.d. con media finita y varianza finita $\sigma^{2}$ 
+        no cero. Si $S_{n}:= X_{1} + X_{2} + \cdots X_{n}$, para cada $n\in \mathbb{N}$,  entonces 
+        $$\displaystyle{\frac{S_{n} - n \mu }{\sqrt{n \sigma^{2}}}} \overset{d}{\longrightarrow} N(0,1)$$
+        Equivalentemente si denotamos $\overline{X}_{n}:= \frac{S_{n}}{n}$, la conclusion se puede escribir como:
+        $$\displaystyle{\frac{\overline{X}_{n} - \mu }{\displaystyle{\frac{\sigma}{\sqrt{n}}}}} \overset{d}{\longrightarrow} N(0,1)$$
+
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    <p>El teorema se estableció por primera vez para de las variables aleatorias de Bernoulli. 
+      Pronto se demostró para variables aleatorias generales. Sin embargo, el teorema sigue siendo cierto,
+      bajo ciertas condiciones, incluso si el las  variables aleatorias individuales tienen diferentes distribuciones.
+    </p>
+    </div>
+
+      </body>

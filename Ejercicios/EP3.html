@@ -1,0 +1,278 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 3 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>  
+        
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+            
+      <title>Ejercicios propuestos tercer examen parcial  </title>
+      </head>  
+
+
+
+  <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos tercer examen parcial </h1>   
+
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sea $\{A_n : n \in \mathbb{N}\}$ una sucesión de eventos. Demuestre que
+  </p>
+  <ol class="two-column">
+    <li>
+      $\displaystyle{\left(\liminf_{n\to\infty} A_n\right)^c
+      = \limsup_{n\to\infty} A_n^c.}$
+    </li><br>
+
+    <li>
+      $\displaystyle{\left(\limsup_{n\to\infty} A_n\right)^c
+      = \liminf_{n\to\infty} A_n^c.}$
+    </li><br>
+
+    <li>
+      $\displaystyle{\mathbb{P}\!\left(\liminf_{n\to\infty} A_n\right)
+      = 1 - \mathbb{P}\!\left(\limsup_{n\to\infty} A_n^c\right).}$
+    </li><br>
+
+    <li>
+      $\displaystyle{\mathbb{P}\!\left(\limsup_{n\to\infty} A_n\right)
+      = 1 - \mathbb{P}\!\left(\liminf_{n\to\infty} A_n^c\right).}$
+    </li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sea $\{A_n : n \in \mathbb{N}\}$ una sucesión de eventos. Demuestre que
+  </p>
+  <ol class="two-column">
+    <li>
+      $\displaystyle{\lim_{n\to\infty} A_n = A
+      \;\Longleftrightarrow\;
+      \lim_{n\to\infty} A_n^c = A^c.}$
+    </97li><br>
+
+    <li>
+      $\displaystyle{\lim_{n\to\infty} A_n = A
+      \;\Longleftrightarrow\;
+      \lim_{n\to\infty} \mathbf{1}_{A_n} = \mathbf{1}_A.}$
+    </li><br>
+  </ol>
+  <p>
+    El símbolo $\mathbf{1}_A$ denota la función indicadora del conjunto $A$.
+    Véase el apéndice al final del texto para la definición y algunas propiedades
+    de esta función.
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Suponga que $\displaystyle{\lim_{n \to \infty} A_n = A}$ y 
+    $\displaystyle{\lim_{n \to \infty} B_n = B}$. 
+    Diga falso o verdadero. Demuestre en cada caso.
+  </p>
+  <ol>
+    <li>
+      $\displaystyle{\lim_{n \to \infty} \lim_{m \to \infty} (A_n \cap B_m) = A \cap B.}$
+    </li><br>
+    <li>
+      $\displaystyle{\lim_{n \to \infty} \lim_{m \to \infty} (A_n \cup B_m) = A \cup B.}$
+    </li><br>
+    <li>
+      $\displaystyle{\lim_{n \to \infty} \lim_{m \to \infty} (A_n - B_m) = A - B.}$
+    </li><br>
+    <li>
+      $\displaystyle{\lim_{n \to \infty} \lim_{m \to \infty} (A_n \triangle B_m) = A \triangle B.}$
+    </li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Medida de probabilidad discreta. Sea $\{x_n : n \in \mathbb{N}\}$ una sucesión de números reales y sea
+    $\{a_n : n \in \mathbb{N}\}$ otra sucesión de números reales no negativos tal que
+    $\displaystyle{\sum_{n=1}^{\infty} a_n = 1}$.
+    Demuestre que la función $\mathbb{P} : \mathcal{B}(\mathbb{R}) \to [0,1]$ definida de la siguiente forma es una medida de probabilidad:
+  </p>
+  <p>
+    $\displaystyle{\mathbb{P}(A) = \sum_{n=1}^{\infty} a_n \, \mathbf{1}_{\{n : x_n \in A\}}(n).}$
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sean $\mathbb{P}$ y $\mathbb{Q}$ dos medidas de probabilidad definidas sobre una misma 
+    $\sigma$-álgebra. Demuestre que $\alpha \mathbb{P} + (1-\alpha)\mathbb{Q}$ es una
+    medida de probabilidad para cada $\alpha \in [0,1]$.
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sea $\mathbb{\mathbb{P}}$ una medida de probabilidad. Determine si las siguientes funciones también son medidas de probabilidad:
+  </p>
+  <ol class="two-column">
+    <li>$1 - \mathbb{P}.$</li><br>
+    <li>$\displaystyle{\frac{1 + \mathbb{P}}{2}.}$</li><br>
+    <li>$\mathbb{\mathbb{P}}^2.$</li><br>
+    <li>$|\mathbb{P}|.$</li><br>
+    <li>$4\mathbb{P}(1 - \mathbb{P}).$</li><br>
+    <li>$\sqrt{\mathbb{P}}.$</li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Determine si las siguientes funciones son medidas de probabilidad.
+  </p>
+  <ol class="two-column">
+    <li>
+      $\mathbb{P}(\Omega) = 1$ y $\mathbb{P}(A) = 0$ para cualquier otro evento $A$.
+    </li><br>
+    <li>
+      $\mathbb{P}(\emptyset) = 0$ y $\mathbb{P}(A) = 1$ para cualquier otro evento $A$.
+    </li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Considere el espacio medible $(\mathbb{N}, 2^{\mathbb{N}})$.
+    Demuestre en cada caso que $\mathbb{P}$ es una medida de probabilidad.
+    Para cada $A \in 2^{\mathbb{N}}$ defina:
+  </p>
+  <ol class="two-column">
+    <li>
+      $\displaystyle{\mathbb{P}(A) = \sum_{n \in A} \frac{2}{3^n}.}$
+    </li><br>
+    <li>
+      $\displaystyle{\mathbb{P}(A) = \sum_{n \in A} \frac{1}{2^n}.}$
+    </li><br>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sea $\Omega = \{1, \ldots, n\}$ y considere el espacio medible $(\Omega, 2^{\Omega})$.
+    Investigue en cada caso si $\mathbb{P}$ es una medida de probabilidad.
+    Para cada $A \in 2^{\Omega}$ defina:
+  </p>
+  <ol class="two-column">
+    <li>
+      $\displaystyle{\mathbb{P}(A) = \sum_{k \in A} \frac{2k}{n(n+1)}.}$
+    </li><br>
+    <li>
+      $\displaystyle{\mathbb{P}(A) = \prod_{k \in A} \left(1 - \frac{1}{k}\right).}$
+    </li><br>
+  </ol>
+</div>
+
+
+
+</body>

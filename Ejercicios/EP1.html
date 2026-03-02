@@ -1,0 +1,357 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+        
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+            
+<title>Ejercicios propuestos primer examen parcial</title>
+</head>  
+
+<body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos primer examen parcial</h1>   
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Describe el espacio muestral correspondiente a cada uno de los siguientes experimentos aleatorios:</p>
+  <ol>
+    <li>El experimento aleatorio consiste en observar el sexo de un recién nacido.</li><br>
+
+    <li>El experimento aleatorio consiste en registrar el orden de llegada en una carrera con 7 caballos numerados del 1 al 7.</li><br>
+
+    <li>El experimento aleatorio consiste en lanzar dos monedas y observar el resultado de cada una (cara o cruz).</li><br>
+
+    <li>El experimento aleatorio consiste en lanzar dos dados y registrar el número que aparece en la cara superior de cada uno.</li><br>
+
+    <li>El experimento aleatorio consiste en medir, en horas, la vida útil de un transistor.</li><br>
+  </ol>
+</div>
+
+
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Demuestre que $\mathcal{F}$ es una álgebra de subconjuntos de $\Omega$ si, y sólo si, cumple las siguientes condiciones:</p>
+  <ol>
+    <li>$\Omega \in \mathcal{F}$</li>
+    <li>Si $A, B \in \mathcal{F}$, entonces $A - B \in \mathcal{F}$</li>
+  </ol>
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\Omega$ un conjunto cualquiera no vacio y $\mathcal{F}$ una fanilia de subconjuntos de $\Omega$.
+    Demuestre que si $\mathcal{F}$  es una $\sigma$-álgebra, entonces es un $\mathcal{F}$ álgebra</p>
+</div>
+
+
+<div class="nota-box"><h1 class="number-title-practica">  Ejercicio </h1>
+<p>Sea $\Omega$ un conjunto cualquiera no vacio y $A$ y $B$ subconjuntos de $\Omega$. Prueba que cada una de las siguientes
+  colecciones es una $\sigma$-álgebra de subconjuntos de $\Omega$.</p>
+  <ol>
+    <li>$\mathcal{F}_{1} = \{ \emptyset, \Omega\}$</li>
+    <li>$\mathcal{F}_{2} = \{ \emptyset, A, A^{c},  \Omega\}$ </li>
+    <li>$\mathcal{F}_{3} = \mathcal{P}(\Omega)$</li>
+    <li>$\mathcal{F}_{4} = \{\emptyset, A, B, A^c, B^c, B - A, (B - A)^c, \Omega\}$, donde $A \subseteq B$.</li>
+  </ol>
+</div>
+
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\Omega$ un conjunto no numerable. Demuestre que la colección  
+  $$\mathcal{F} = \{A \subseteq \Omega : A \text{ o } A^c \text{ es finito o numerable}\}$$
+  es una $\sigma$-álgebra de subconjuntos de $\Omega$.</p>
+</div>
+
+
+
+
+<div class="nota-box"><h1 class="number-title-practica">  Ejercicio </h1>
+  <p>Si $\mathcal{A}$ es un álgebra sobre $\Omega$ de subconjuntos de $\Omega$, prueba que:</p>
+  <ol>
+    <li>$\emptyset \in \mathcal{A}.$</li>
+    <li>Si $A, B \in \mathcal{A}$, entonces $A \cap B \in \mathcal{A}.$</li>
+    <li>Para cualquier número natural $n \in \mathbb{N}$, si $A_1, \ldots, A_n \in \mathcal{A}$, entonces $\displaystyle{\bigcup_{i=1}^{n} A_i} \in \mathcal{A}.$</li>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Demuestre que $\mathcal{F}$ es una $\sigma$-álgebra de subconjuntos de $\Omega$ si, y sólo si, satisface las siguientes propiedades:</p>
+  <ol>
+    <li>$\emptyset \in \mathcal{F}.$</li>
+    <li>$A \in \mathcal{F} \Rightarrow A^c \in \mathcal{F}.$</li>
+    <li>Si $A_1, A_2, \ldots \in \mathcal{F}$, entonces $\displaystyle{\bigcap_{n=1}^{\infty} A_n \in \mathcal{F}}.$</li>
+  </ol>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Demuestre que $\mathcal{F}$ es una $\sigma$-álgebra de subconjuntos de $\Omega$ si, y sólo si, satisface las siguientes propiedades:</p>
+  <ol>
+    <li>$\Omega \in \mathcal{F}.$</li>
+    <li>$A, B \in \mathcal{F} \Rightarrow A - B \in \mathcal{F}.$</li>
+    <li>Si $A_1, A_2, \ldots \in \mathcal{F}$, entonces $\displaystyle{\bigcap_{n=1}^{\infty} A_n \in \mathcal{F}}.$</li>
+  </ol>
+</div>
+
+<!-- <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A_1, \ldots, A_n$ eventos de un espacio muestral $\Omega$. Demuestre que el conjunto de elementos de $\Omega$ que pertenecen a exactamente $k$ de estos eventos es un evento, $1 \leq k \leq n.$</p>
+</div> -->
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\Omega$ un conjunto cualquiera no vacio y $\mathcal{F}$ una $\sigma$-álgebra de subconjuntos de $\Omega$. 
+    <ol>
+      <li>Demuestre que la colección $\mathcal{F}^c := \{ F^c : F \in \mathcal{F} \}$
+        es una $\sigma$-álgebra de subconjuntos de $\Omega$.
+        </li>
+      <li>Prueba que $\mathcal{F}^c$ y $\mathcal{F}$ coinciden.</li>
+    </ol>
+
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\Omega = \{a, b, c, d\}$, y sean $A = \{a, b\}$ y $B = \{b, c\}$. Defina la colección $\mathcal{C} = \{A, B\}$.</p>
+  <ol>
+    <li>Prueba que $\mathcal{C}$ no es una $\sigma$-álgebra de subconjuntos de $\Omega$..</li>
+    <li>Encuentre $\sigma(\mathcal{C})$.</li>  
+  </ol> 
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\mathcal{F}$ una $\sigma$-álgebra de subconjuntos de $\Omega$ y sea $A$ un elemento de $\mathcal{F}$. 
+    Demuestre que la colección $\{A \cap F : F \in \mathcal{F}\}$ es una $\sigma$-álgebra de subconjuntos de $A$.</p>
+
+  <p><b>Notación:</b> Se denota a esta colección por $\mathcal{F}_A$ ó $\mathcal{A} \cap \mathcal{F}$.</p>
+</div>
+
+
+<!-- 
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $\Omega_1$ y $\Omega_2$ dos conjuntos arbitrarios, y sea $X : \Omega_1 \to \Omega_2$ una función en donde $(\Omega_2, \mathcal{F}_2)$ es un espacio medible. Demuestre que la siguiente colección es una $\sigma$-álgebra de subconjuntos de $\Omega_1$:</p>
+  <p>$X^{-1}\mathcal{F}_2 = \{X^{-1}F : F \in \mathcal{F}_2\}.$</p>
+</div> -->
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\Omega$ un conjunto no vacio. ¿Es la diferencia de dos $\sigma$-álgebras una $\sigma$-álgebra de subconjuntos de $\Omega$.? Demuestre o proporcione un contraejemplo.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\Omega$ un conjunto no vacio. Sean $\mathcal{F}_1$ y $\mathcal{F}_2$ dos $\sigma$-álgebras de subconjuntos de $\Omega$. 
+    Demuestre que $\mathcal{F}_1 \cup \mathcal{F}_2$ no necesariamente es una $\sigma$-álgebra de subconjuntos de $\Omega$.. 
+    <!-- Para ello considere el espacio $\Omega = \{1, 2, 3\}$ y las $\sigma$-álgebras $\mathcal{F}_1 = \{\emptyset, \{1\}, \{2,3\}, \Omega\}$ y $\mathcal{F}_2 = \{\emptyset, \{1,2\}, \{3\}, \Omega\}.$</p> -->
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\Omega$ un conjunto no vacio. Sean $\mathcal{F}_1$ y $\mathcal{F}_2$ dos $\sigma$-álgebras de subconjuntos de $\Omega$ 
+    tales que $\mathcal{F}_1 \subseteq \mathcal{F}_2$. Demuestre que $\mathcal{F}_1 \cup \mathcal{F}_2$ es una $\sigma$-álgebra.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\Omega$ un conjunto no vacio y $T$ un conjunto arbitrario distinto del vacío. 
+    Suponga que para cada $t \in T$ se tiene una $\sigma$-álgebra $\mathcal{F}_t$ de subconjuntos de $\Omega$. 
+    Demuestre detalladamente que $\displaystyle{\bigcap_{t \in T} \mathcal{F}_t}$ es una $\sigma$-álgebra de subconjuntos de $\Omega$.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A, B \subseteq \Omega$ arbitrarios. Demuestre que la cardinalidad de $\sigma\{A, B\}$ es a lo sumo $16$.</p>
+</div> 
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sean $A, B \subseteq \Omega$ arbitrarios. Encuentre explícitamente todos los elementos de $\sigma\{A, B\}$. Por el ejercicio anterior, el total de elementos en $\sigma\{A, B\}$ es, en el caso más general, $16$.</p>
+</div>
+
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\{A_1, \ldots, A_n\}$ una partición finita de $\Omega$.
+    Demuestre que la cardinalidad de $\sigma(\{A_1, \ldots, A_n\})$ es $\displaystyle{2^n}$.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Demuestre que toda $\sigma$-álgebra de un espacio muestral finito contiene un número par de elementos.</p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\{A, B, C\}$ una partición de $\Omega$. Encuentre explícitamente los ocho elementos de $\sigma(\{A, B, C\})$.</p>
+</div>
+
+<!-- <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\mathcal{C}$ una colección de subconjuntos de $\Omega$. Diga falso o verdadero justificando en cada caso:</p>
+  <ol>
+    <li>$\mathcal{C} \subseteq \sigma(\mathcal{C}) \subseteq 2^{\Omega}$</li>
+  </ol>
+</div> -->
+
+<!-- <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Demuestre que $2^{\Omega}$ es una $\sigma$-álgebra de subconjuntos de $\Omega$ y que no existe una $\sigma$-álgebra de subconjuntos de $\Omega$ que sea más grande.</p>
+</div> -->
+
+<!-- <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Sea $\Omega$ un conjunto, $\mathcal{F}$ una $\sigma$-álgebra de subconjuntos de $\Omega$ y sea $A$ un evento cualquiera. De cada una de las dos expresiones siguientes determine la que es notacionalmente correcta. Explique su respuesta.</p>
+  <ol>
+    <li>$\Omega \in \mathcal{F}$ ó $\Omega \subseteq \mathcal{F}$</li>
+    <li>$A \in \Omega$ ó $A \subseteq \Omega$</li>
+    <li>$\emptyset \in \mathcal{F}$ ó $\emptyset \subseteq \mathcal{F}$</li>
+    <li>$A \in \mathcal{F}$ ó $A \subseteq \mathcal{F}$</li>
+  </ol>
+</div> -->
+
+
+
+
+
+<!-- <div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p><strong>Álgebra $\not\Rightarrow$ $\sigma$-álgebra.</strong> Sea $\Omega = (0,1]$ y defina la colección $\mathcal{F}$ de subconjuntos de la forma</p>
+  <p>$$
+  \bigcup_{i=1}^{n} (a_i, b_i],
+  $$</p>
+  <p>en donde $(a_i, b_i] \subseteq (0,1]$ con $(a_i, b_i] \cap (a_j, b_j] = \emptyset$ para $i \neq j$ y $n \in \mathbb{N}$. Demuestre que $\mathcal{F}$ es una álgebra pero no una $\sigma$-álgebra.</p>
+</div> -->
+
+
+
+
+<!-- Donde aparecerá la fecha de la última modificación -->
+<footer>
+  <center>
+   <p id="ultima-actualizacion"></p>
+  </center>
+</footer>
+<script>
+// Obtenemos la fecha y hora de la última modificación del documento
+const fechaModificacion = new Date(document.lastModified);
+
+// Opciones para formatear la fecha (por ejemplo, DD/MM/AAAA)
+const opcionesFecha = { day: '2-digit', month: '2-digit', year: 'numeric' };
+const fechaFormateada = fechaModificacion.toLocaleDateString('es-ES', opcionesFecha);
+
+// Obtenemos la hora (HH:MM:SS)
+const horaFormateada = fechaModificacion.toLocaleTimeString('es-ES', {
+    hour: '2-digit', minute: '2-digit'
+});
+
+// Insertamos la fecha y la hora en el elemento con el ID "ultima-modificacion"
+document.getElementById("ultima-actualizacion").textContent = `Última actualización: ${fechaFormateada}`;
+</script>
+
+
+
+</body>

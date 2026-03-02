@@ -1,0 +1,215 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+    <!-- 
+      <nav class="small-nav" align=right>
+        <button onclick="myFunction()">Claro/Obscuro 
+      </nav> 
+    -->
+
+  <!-- This part is for title in tab-->
+         
+      <title>Semana 1</title>
+      </head>  
+
+      <body class="fondo-body" ><h1 class="page-title"> Espacio de probabilidad </h1>   
+
+    <h1 class="page-subtitle"> Medida de probabilidad</h1>  <div class="nota-box"><h1 class="number-title"> Introducción</h2>  
+      <p>En la última sesión demostramos un teorema de vital importancia que permite construir un σ-álgebra a 
+        partir de cualquier familia dada de conjuntos. Con esto, ya tenemos los objetos necesarios para empezar
+        a tratar con el concepto de «medida». Anteriormente comentamos que un σ-álgebra es el conjunto cuyos elementos
+        son a los que podremos «calificar», es decir, los que podremos medir. En esta sesión describiremos la noción 
+        de «medir» los elementos de un σ-álgebra dado.
+      </p>
+      
+      <p>Dado un espacio muestral $\Omega$ y $\mathscr{F}$ un σ-álgebra sobre $\Omega$, pretendemos asignar a cada 
+        $A \in \mathscr{F}$ un valor numérico. Para ello, en matemáticas utilizamos funciones. En este caso,
+        necesitaremos una función que exprese nuestra noción de «probabilidad de ocurrencia». A cada elemento 
+        $A \in \mathscr{F}$ se le asignará un valor $\mathbb{P}(A) \in \mathbb{R}$ que deberá estar en el intervalo 
+        $[0,1]$. Así, el $0$ representará lo <strong>menos probable posible</strong>, y el $1$ lo 
+        <strong>más probable posible</strong>. Esta discusión da lugar a la definición de medida de probabilidad.</p>
+      
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+      <p></strong>Sea $\Omega$ un conjunto y $\mathscr{F}$ un σ-álgebra sobre $\Omega$. Diremos que una función
+        $\mathbb{P}\colon\mathscr{F} \longrightarrow \mathbb{R}$ es una <strong>medida de probabilidad</strong> si
+        cumple las siguientes propiedades:
+        <ol>
+          <li>Para todo $A \in \mathscr{F}$ se cumple que $\mathbb{P}(A) \geq 0$. Esto es, $\mathbb{P}$ es
+            <strong>no-negativa</strong>.</li><li>Si $\left\lbrace A_{n} \right\rbrace_{n=1}^{\infty}$ es una familia
+            numerable de conjuntos ajenos dos a dos de $\mathscr{F}$, 
+            entonces<br>\[ \mathbb{P}\left( \bigcup_{n=1}^{\infty} A_{n} \right) = \sum_{n=1}^{\infty} \mathbb{P}(A_{n}). \]
+            Esta propiedad es conocida como <strong>σ-aditividad</strong>. Es decir, $\mathbb{P}$ es <strong>σ-aditiva</strong>.
+          </li>
+          <li>$\mathbb{P}(\emptyset) = 0$ y $\mathbb{P}(\Omega) = 1$.</li>
+        </ol>
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>    
+      <p>Por <strong>familia numerable de conjuntos ajenos dos a dos</strong>, queremos decir que se cumple que</p>
+      <p>\[ \forall i, j \in \mathbb{N}\colon (i \neq j \implies A_{i} \cap A_{j} = \emptyset). \]</p>
+      <p>Es decir, que para cualesquiera índices $i$ y $j$, si $i$ es distinto de $j$, entonces los conjuntos $A_{i}$ y $A_{j}$ 
+        son ajenos.</p>  
+    </div>
+
+    <h1 class="page-subtitle"> Espacio de probabilidad</h1>
+  
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+      <p>En resumidas cuentas, una medida de probabilidad es cualquier función que satisface las tres propiedades de 
+        la definición anterior. Además, si $\Omega$ es un conjunto, $\mathscr{F}$ un σ-álgebra sobre $\Omega$, y 
+        $\mathbb{P}\colon\mathscr{F} \longrightarrow \mathbb{R}$ es una medida de probabilidad, la 
+        terna $(\Omega, \mathscr{F}, \mathbb{P})$ recibe el nombre de <strong>espacio de probabilidad</strong>.
+        Es decir, a partir de ahora, cuando digamos que «$(\Omega, \mathscr{F}, \mathbb{P})$ es un espacio de probabilidad»,
+        se entenderá que $\Omega$, $\mathscr{F}$ y $\mathbb{P}$ son los objetos que corresponden.</p>
+    </div>
+
+
+    <div class="nota-box"><h1 class="number-title"> Observacion</h2>
+      <p>Recuerda que el <strong>espacio muestral </strong>de un fenómeno aleatorio es el conjunto $\Omega$.
+        Los elementos de este conjunto son todos los resultados posibles del fenómeno. Luego, tomaremos a $\mathscr{F}$,
+        que es un <strong>σ-álgebra</strong> sobre $\Omega$. Finalmente, sobre $\mathscr{F}$ se define la <strong>medida
+        de probabilidad </strong>$\mathbb{P}\colon \mathscr{F} \longrightarrow \mathbb{R}$.
+      </p>
+  
+
+  
+      <p>Pero, ¿por qué se define la medida sobre el σ-álgebra? ¿Por qué no la definimos directamente sobre $\Omega$?
+        Recuerda que los elementos de un σ-álgebra, a los cuales llamaremos <strong>eventos</strong>, son subconjuntos de $\Omega$.
+        De las propiedades de un σ-álgebra sabemos que un evento $A \in \mathscr{F}$ burdamente cumple lo siguiente:
+        Dado cualquier $\omega \in \Omega$ (es decir, dado cualquiera de los resultados posibles del fenómeno aleatorio),
+        la pregunta «¿es cierto que $\omega \in A$» tiene respuesta. Por ello, cuando nuestra medida de probabilidad asigne 
+        el número $\mathbb{P}(A)$ al conjunto $A$, ese número expresa <strong>cuál es la probabilidad de que sea cierto 
+        que $\omega \in A$</strong>. En otras palabras, entre $0$ y $1$, ¿qué tan probable es que ocurra cualquiera de 
+        los resultados en $A$? La respuesta será $\mathbb{P}(A)$. Por este motivo, el número $\mathbb{P}(A)$ suele leerse 
+        como <strong>«la probabilidad del evento $A$»</strong>, o simplemente, <strong>«la probabilidad de $A$»</strong>.</p>
+    </div>
+
+    <h1 class="page-subtitle"> Propiedades de una Medida de Probabilidad</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Para cualquier evento $A \in \mathscr{F}$ se cumple que</p>
+    <p>\[ \mathbb{P}(A^{\mathsf{c}}) = 1 − \mathbb{P}(A). \]</p>
+    </div>
+    
+
+    
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Sean $A$, $B \in \mathscr{F}$ eventos cualesquiera. Entonces se cumple que</p>
+
+    <p>\[ \mathbb{P}(A \cup B) + \mathbb{P}(A \cap B) = \mathbb{P}(A) + \mathbb{P}(B). \]</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+      <p>Alternativamente, la expresión que obtuvimos en esta proposición puede escribirse como sigue.</p>
+      
+      <p>\[ \mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) − \mathbb{P}(A \cap B), \]</p>
+      
+      <p>que corresponde a «quitar» la parte que contamos más de una vez en la probabilidad de $A \cup B$. 
+        <!-- En resumen, esta proposición nos da una expresión para calcular la probabilidad de cualquier unión de dos eventos sin necesidad de que estos sean ajenos. Esta propiedad es conocida como el <strong>principio de inclusión-exclusión </strong>para $2$ eventos.</p> -->
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema (Principio de inclusion exclusión)</h2>
+      Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Entonces para cualquier $n \in \mathbb{N}$ y cualesquiera eventos $A_{1}$, $A_{2}$, …, $A_{n} \in \mathscr{F}$, se cumple que</p>
+      <p>\begin{align*}<br>\mathbb{P}{\left( \bigcup_{i=1}^{n} A_{i} \right)} = \sum_{i=1}^{n}\mathbb{P}(A_{i}) − \sum_{i &lt; j} \mathbb{P}(A_{i} \cap A_{j}) + \sum_{i &lt; j &lt; k} \mathbb{P}(A_{i} \cap A_{j} \cap A_{k}) + \cdots + (-1)^{n+1} \mathbb{P}{\left( \bigcap_{i=1}^{n} A_{i} \right)},<br>\end{align*}</p>
+      <p>que puede escribirse de forma cerrada como sigue:</p>
+      <p>\begin{align*}<br>\mathbb{P}{\left( \bigcup_{i=1}^{n} A_{i} \right)} = \sum_{k=1}^{n}{\left[ (-1)^{k+1} \sum_{\substack{I \subseteq \{1, \ldots, n\} \\ |I| = k}} \mathbb{P}{\left( \bigcap_{j \in I} A_{j} \right)} \right]}.<br>\end{align*}</p>
+    </div>
+
+
+      </body>

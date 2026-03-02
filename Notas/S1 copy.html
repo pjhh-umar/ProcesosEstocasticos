@@ -1,0 +1,865 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src=".../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Probabilidad I</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src=".../Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Examenes.html"> Archivos </a> </li> -->
+            <li> <a href="https://pjhh-umar.github.io/ProbabilidadUNO/Links.html"> Links</a> </li>
+          </ul>
+          </nav>
+
+    <nav class="top-nav">
+      <ul>
+        <li> <a href="https://pjhh-ciencias.github.io//ProbabilidadUNO//Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io//ProbabilidadUNO//Informacion_General.html">Información</a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io//ProbabilidadUNO//Notas.html"> Notas  </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io//ProbabilidadUNO//Ejercicios.html"> Ejercicios</a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io//ProbabilidadUNO//Enlaces_externos.html"> Links </a> </li>
+      </ul>
+      </nav>
+    <!-- 
+      <nav class="small-nav" align=right>
+        <button onclick="myFunction()">Claro/Obscuro 
+      </nav> 
+    -->
+
+  <!-- This part is for title in tab-->
+         
+      <title>Semana 1</title>
+      </head>  
+
+      <body class="fondo-body" ><h1 class="page-title"> Semana 1 </h1>   
+
+
+        <h1 class="page-subtitle">Fenomeno aleatorio</h1>   
+
+
+        <div class="nota-box"><h1 class="number-title"> Tema 1</h1>  
+        <p>
+          Contenido
+        </p>
+      
+        </div>
+      
+  
+  
+      <div class="nota-box"><h1 class="number-title"> subtitulo</h2> 
+        
+        <p>Contenido.</p>
+        
+      </div>
+
+      
+    <h1 class="page-subtitle"> Fenomeno aleatorio</h1>
+  
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+      <p>Un <b>fenómeno aleatorio</b> es todo aquel fenómeno cuyo resultado se
+        conoce únicamente hasta que este ha concluido. </p>
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Ejemplo</h2>
+      <p>Si tomas una moneda y la lanzas al aire, ¿puedes saber con anterioridad cuál de sus caras caerá arriba? 
+        A menos que seas clarividente, la respuesta es no. Así, el lanzamiento de una moneda puede pensarse como
+        un fenómeno aleatorio. Conocerás su resultado únicamente hasta que el lanzamiento haya concluido
+      </p>
+    </div>
+
+    <h1 class="page-subtitle"> Espacio muestral</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+      <p>Dado un fenómeno o experimento aleatorio, el <strong>espacio muestral</strong> de dicho fenómeno
+      es el conjunto cuyos elementos son todos los posibles resultados del fenómeno, y será denotado por $\Omega$</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Nota</h2>
+      <p>Nuestra intención será cuantificar qué tan <em>probable </em>es que ocurra uno o más de estos resultados. 
+        Esto lo haremos asignando una «calificación» entre 0 y 1 a ciertos subconjuntos <em>importantes</em> de $\Omega$. 
+        Así, la «calificación» será 0 para lo más improbable, y 1 para lo más probable. Pero, ¿a qué me refiero por
+        subconjuntos <em>importantes?</em>
+      </p>
+  </div>
+         
+  
+  <h1 class="page-subtitle"> Álgebras</h1>
+
+  <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>
+    </strong>Sea $\mathscr{F}$ una colección de subconjuntos de un conjunto $\Omega$ (i.e. $\mathscr{F} \subseteq \mathscr{P}(\Omega)$). Diremos que $\mathscr{F}$ es un <strong>álgebra sobre</strong> $\Omega$ si cumple las siguientes propiedades:</p>
+    <ol><li>$\Omega \in \mathscr{F}$.</li><li>Si $A \in \mathscr{F}$, entonces $A^{\mathsf{c}} \in \mathscr{F}$.</li><li>Si $A_{1}, A_{2}, \ldots, A_{n} \in \mathscr{F}$, entonces $\bigcup_{i=1}^{n} A_{i} \in \mathscr{F}$.</li></ol>
+    <!-- <p>$A^{\mathsf{c}}$ es el complemento de $A$ respecto a $\Omega$, pues $A \subseteq \Omega$.</p> -->
+  </div>
+  
+
+
+  <h1 class="page-subtitle">$\sigma-\text{Álgebras}$</h1>
+
+  
+
+  <div class="nota-box"><h1 class="number-title"> Definición </h2>
+    <p>
+    </strong>Sea $\mathscr{F}$ una colección de subconjuntos de un conjunto $\Omega$ (es decir, $\mathscr{F} \subseteq \mathscr{P}(\Omega)$). Diremos que $\mathscr{F}$ es un <strong>σ</strong>&#8211;<strong>álgebra sobre</strong> $\Omega$ (se lee «sigma-álgebra sobre omega», su plural es «sigma-álgebras») si cumple las siguientes propiedades:</p>
+    <ol><li>$\Omega \in \mathscr{F}$.</li><li>Si $A \in \mathscr{F}$, entonces $A^{\mathsf{c}} \in \mathscr{F}$.</li><li>Si $A_{1}, A_{2}, \ldots \in \mathscr{F}$, entonces $\bigcup_{i=1}^{\infty} A_{i} \in \mathscr{F}$.</li></ol>
+    </p>
+  </div>
+
+
+  <h1 class="page-subtitle">$\sigma-\text{Álgebras generadas}$</h1>
+
+
+  
+  <div class="nota-box"><h1 class="number-title-definicion"> Introducción</h1>   
+
+    <p>Considera la siguiente situación. Supón que tenemos una familia de conjuntos $\mathscr{C} \subseteq \mathscr{P}(\Omega)$.
+      Piensa que esta familia de subconjuntos de $\Omega$ es muy importante. Al ser muy importante, nos gustaría poder «calificar» 
+      a todos sus elementos. Sin embargo, no sabemos si $\mathscr{C}$ es un σ-álgebra. ¿Será posible construir un σ-álgebra
+      $\mathscr{L}$ tal que $\mathscr{C} \subseteq \mathscr{L}$? La respuesta es sí, y está dada por el siguiente teorema.</p>
+    </p>
+  </div>
+
+  
+  <div class="nota-box"><h1 class="number-title"> Teorema </h2>
+    <p> Dado $\Omega$ un conjunto y $\mathscr{C}$ una familia de subconjuntos de
+      $\Omega$ ($\mathscr{C} \subseteq \mathscr{P}(\Omega)$), existe un único σ-álgebra sobre $\Omega$
+      de tamaño mínimo $\mathscr{L}$ tal que $\mathscr{C} \subseteq \mathscr{L}$.
+    </p>
+  </div>
+
+  <div class="nota-box"><h1 class="number-title"> Observaciones</h2>  
+    <ol>
+      <li>Podemos cronstruir σ-álgebras sobre cualquier conjunto.</li>
+      <li>Existe una cantidad abundante de σ-álgebras.</li>
+    </ol>
+  </div>
+
+  <h1 class="page-subtitle"> $\sigma-\text{Álgebra de Borel}$</h1>
+
+  <div class="nota-box"><h1 class="number-title-definicion"> Introducción </h2>  
+    <p>El ejemplo anterior exhibe una manera de construir el σ-álgebra generado por una familia finita de conjuntos. 
+      Sin embargo, esto se torna más abstracto cuando la familia no es finita. En particular, cuando 
+      $\Omega = \mathbb{R}$, sería interesante pensar en el σ-álgebra generado por la familia de intervalos 
+      de la siguiente forma:
+    </p>
+    
+    <p>\[ \mathscr{C}_{1} = \left\lbrace (-\infty, b] \mid b \in \mathbb{R} \right\rbrace. \]</p>
+    
+    <p>Es decir, $\mathscr{C}_{1}$ es la familia de todos los intervalos no acotados por la izquierda, y cerrados por la derecha.</p>
+    
+    <p>En el contexto de la probabilidad es muy natural que, dado $b \in \mathbb{R}$, planteemos la siguiente situación. 
+      Si $x$ es el resultado de algún experimento donde el espacio muestral es $\mathbb{R}$ ¿es cierto que $x \leq b$?
+      O dicho en otras palabras, ¿es cierto que $x \in (-\infty, b]$? Por ejemplo, «¿es cierto que el precio de un activo
+      queda por debajo de algún valor fijo?» Esta es una pregunta que surgiría cuando entras en el contrato
+      de un producto financiero derivado.
+    </p>
+    
+    <p>Observa que $\mathscr{C}_{1}$ no es un σ-álgebra, así que habría preguntas sobre $x$ que no podríamos contestar
+      dentro de $\mathscr{C}_{1}$. Por ejemplo, $(-\infty, b]^{\mathsf{c}} = (b, \infty)$ 
+    </p>
+    
+    <p>El σ-álgebra generado por esta última familia es muy importante, y es conocido como el <strong>σ-álgebra de Borel</strong> 
+      en $\mathbb{R}$ y es comúnmente denotado por $\mathscr{B}(\mathbb{R})$. Curiosamente, resulta que la manera en que
+      obtuvimos a $\mathscr{B}(\mathbb{R})$ no es la única manera de hacerlo. Por ejemplo, sea $\mathscr{C}_{2}$ 
+      la siguiente familia de conjuntos:
+    </p>
+
+    <p>\[ \mathscr{C}_{2} = {\left\lbrace (a, b] \mid a, b \in \mathbb{R} \land a &lt; b \right\rbrace}. \]</p>
+
+
+
+<p>¿Cuál será el σ-álgebra generado por $\mathscr{C}_{2}$?
+  </div>
+
+
+  
+
+  <div class="nota-box"><h1 class="number-title"> Observación</h2>  
+    <p><p>Más aún, $\mathscr{B}(\mathbb{R})$ resulta ser el σ-álgebra generado por otras familias de intervalos muy parecidas.
+      Las siguientes familias son algunas de ellas:</p>
+    <p>\begin{align*}<br>\mathscr{C}_{3} &amp;= \left\lbrace [a, b) \mid a, b \in \mathbb{R} \land a &lt; b\right\rbrace, \\<br>\mathscr{C}_{4} &amp;= \left\lbrace (a, b) \mid a, b \in \mathbb{R} \land a &lt; b \right\rbrace, \\<br>\mathscr{C}_{5} &amp;= \left\lbrace [a, b] \mid a, b \in \mathbb{R} \land a &lt; b \right\rbrace, \\<br>\mathscr{C}_{6} &amp;= \left\lbrace (a, \infty) \mid a \in \mathbb{R} \right\rbrace, \\<br>\mathscr{C}_{7} &amp;= \left\lbrace [a, \infty) \mid a \in \mathbb{R} \right\rbrace, \\<br>\mathscr{C}_{8} &amp;= \left\lbrace (-\infty, b) \mid b \in \mathbb{R} \right\rbrace.<br>\end{align*}</p>
+    <p>Todas las familias anteriores generan el mismo σ-álgebra: $\mathscr{B}(\mathbb{R})$</p>
+    </div> 
+
+    <h1 class="page-subtitle"> Medida de probabilidad</h1>  <div class="nota-box"><h1 class="number-title"> Introducción</h2>  
+      <p>En la última sesión demostramos un teorema de vital importancia que permite construir un σ-álgebra a 
+        partir de cualquier familia dada de conjuntos. Con esto, ya tenemos los objetos necesarios para empezar
+        a tratar con el concepto de «medida». Anteriormente comentamos que un σ-álgebra es el conjunto cuyos elementos
+        son a los que podremos «calificar», es decir, los que podremos medir. En esta sesión describiremos la noción 
+        de «medir» los elementos de un σ-álgebra dado.
+      </p>
+      
+      <p>Dado un espacio muestral $\Omega$ y $\mathscr{F}$ un σ-álgebra sobre $\Omega$, pretendemos asignar a cada 
+        $A \in \mathscr{F}$ un valor numérico. Para ello, en matemáticas utilizamos funciones. En este caso,
+        necesitaremos una función que exprese nuestra noción de «probabilidad de ocurrencia». A cada elemento 
+        $A \in \mathscr{F}$ se le asignará un valor $\mathbb{P}(A) \in \mathbb{R}$ que deberá estar en el intervalo 
+        $[0,1]$. Así, el $0$ representará lo <strong>menos probable posible</strong>, y el $1$ lo 
+        <strong>más probable posible</strong>. Esta discusión da lugar a la definición de medida de probabilidad.</p>
+      
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+      <p></strong>Sea $\Omega$ un conjunto y $\mathscr{F}$ un σ-álgebra sobre $\Omega$. Diremos que una función
+        $\mathbb{P}\colon\mathscr{F} \longrightarrow \mathbb{R}$ es una <strong>medida de probabilidad</strong> si
+        cumple las siguientes propiedades:
+        <ol>
+          <li>Para todo $A \in \mathscr{F}$ se cumple que $\mathbb{P}(A) \geq 0$. Esto es, $\mathbb{P}$ es
+            <strong>no-negativa</strong>.</li><li>Si $\left\lbrace A_{n} \right\rbrace_{n=1}^{\infty}$ es una familia
+            numerable de conjuntos ajenos dos a dos de $\mathscr{F}$, 
+            entonces<br>\[ \mathbb{P}\left( \bigcup_{n=1}^{\infty} A_{n} \right) = \sum_{n=1}^{\infty} \mathbb{P}(A_{n}). \]
+            Esta propiedad es conocida como <strong>σ-aditividad</strong>. Es decir, $\mathbb{P}$ es <strong>σ-aditiva</strong>.
+          </li>
+          <li>$\mathbb{P}(\emptyset) = 0$ y $\mathbb{P}(\Omega) = 1$.</li>
+        </ol>
+      </p>
+
+
+    </div>
+
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    
+      <p>Por <strong>familia numerable de conjuntos ajenos dos a dos</strong>, queremos decir que se cumple que</p>
+      <p>\[ \forall i, j \in \mathbb{N}\colon (i \neq j \implies A_{i} \cap A_{j} = \emptyset). \]</p>
+      <p>Es decir, que para cualesquiera índices $i$ y $j$, si $i$ es distinto de $j$, entonces los conjuntos $A_{i}$ y $A_{j}$ 
+        son ajenos.</p>
+    </div>
+
+    <h1 class="page-subtitle"> Espacio de probabilidad</h1>
+  
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+      <p>En resumidas cuentas, una medida de probabilidad es cualquier función que satisface las tres propiedades de 
+        la definición anterior. Además, si $\Omega$ es un conjunto, $\mathscr{F}$ un σ-álgebra sobre $\Omega$, y 
+        $\mathbb{P}\colon\mathscr{F} \longrightarrow \mathbb{R}$ es una medida de probabilidad, la 
+        terna $(\Omega, \mathscr{F}, \mathbb{P})$ recibe el nombre de <strong>espacio de probabilidad</strong>.
+        Es decir, a partir de ahora, cuando digamos que «$(\Omega, \mathscr{F}, \mathbb{P})$ es un espacio de probabilidad»,
+        se entenderá que $\Omega$, $\mathscr{F}$ y $\mathbb{P}$ son los objetos que corresponden.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observacion</h2>
+      <p>Recuerda que el <strong>espacio muestral </strong>de un fenómeno aleatorio es el conjunto $\Omega$.
+        Los elementos de este conjunto son todos los resultados posibles del fenómeno. Luego, tomaremos a $\mathscr{F}$,
+        que es un <strong>σ-álgebra</strong> sobre $\Omega$. Finalmente, sobre $\mathscr{F}$ se define la <strong>medida
+        de probabilidad </strong>$\mathbb{P}\colon \mathscr{F} \longrightarrow \mathbb{R}$.
+      </p>
+  
+  
+      <p>Pero, ¿por qué se define la medida sobre el σ-álgebra? ¿Por qué no la definimos directamente sobre $\Omega$?
+        Recuerda que los elementos de un σ-álgebra, a los cuales llamaremos <strong>eventos</strong>, son subconjuntos de $\Omega$.
+        De las propiedades de un σ-álgebra sabemos que un evento $A \in \mathscr{F}$ burdamente cumple lo siguiente:
+        Dado cualquier $\omega \in \Omega$ (es decir, dado cualquiera de los resultados posibles del fenómeno aleatorio),
+        la pregunta «¿es cierto que $\omega \in A$» tiene respuesta. Por ello, cuando nuestra medida de probabilidad asigne 
+        el número $\mathbb{P}(A)$ al conjunto $A$, ese número expresa <strong>cuál es la probabilidad de que sea cierto 
+        que $\omega \in A$</strong>. En otras palabras, entre $0$ y $1$, ¿qué tan probable es que ocurra cualquiera de 
+        los resultados en $A$? La respuesta será $\mathbb{P}(A)$. Por este motivo, el número $\mathbb{P}(A)$ suele leerse 
+        como <strong>«la probabilidad del evento $A$»</strong>, o simplemente, <strong>«la probabilidad de $A$»</strong>.</p>
+    </div>
+
+    <h1 class="page-subtitle"> Propiedades de una Medida de Probabilidad</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Para cualquier evento $A \in \mathscr{F}$ se cumple que</p>
+    <p>\[ \mathbb{P}(A^{\mathsf{c}}) = 1 − \mathbb{P}(A). \]</p>
+    </div>
+    
+
+    
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Sean $A$, $B \in \mathscr{F}$ eventos cualesquiera. Entonces se cumple que</p>
+
+    <p>\[ \mathbb{P}(A \cup B) + \mathbb{P}(A \cap B) = \mathbb{P}(A) + \mathbb{P}(B). \]</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+      <p>Alternativamente, la expresión que obtuvimos en esta proposición puede escribirse como sigue.</p>
+      
+      
+      
+      <p>\[ \mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) − \mathbb{P}(A \cap B), \]</p>
+      
+      
+      
+      <p>que corresponde a «quitar» la parte que contamos más de una vez en la probabilidad de $A \cup B$. 
+        <!-- En resumen, esta proposición nos da una expresión para calcular la probabilidad de cualquier unión de dos eventos sin necesidad de que estos sean ajenos. Esta propiedad es conocida como el <strong>principio de inclusión-exclusión </strong>para $2$ eventos.</p> -->
+    </div>
+
+   
+
+
+    <div class="nota-box"><h1 class="number-title"> Teorema (Principio de inclusion exclusión)</h2>
+      Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Entonces para cualquier $n \in \mathbb{N}$ y cualesquiera eventos $A_{1}$, $A_{2}$, …, $A_{n} \in \mathscr{F}$, se cumple que</p>
+      <p>\begin{align*}<br>\mathbb{P}{\left( \bigcup_{i=1}^{n} A_{i} \right)} = \sum_{i=1}^{n}\mathbb{P}(A_{i}) − \sum_{i &lt; j} \mathbb{P}(A_{i} \cap A_{j}) + \sum_{i &lt; j &lt; k} \mathbb{P}(A_{i} \cap A_{j} \cap A_{k}) + \cdots + (-1)^{n+1} \mathbb{P}{\left( \bigcap_{i=1}^{n} A_{i} \right)},<br>\end{align*}</p>
+      <p>que puede escribirse de forma cerrada como sigue:</p>
+      <p>\begin{align*}<br>\mathbb{P}{\left( \bigcup_{i=1}^{n} A_{i} \right)} = \sum_{k=1}^{n}{\left[ (-1)^{k+1} \sum_{\substack{I \subseteq \{1, \ldots, n\} \\ |I| = k}} \mathbb{P}{\left( \bigcap_{j \in I} A_{j} \right)} \right]}.<br>\end{align*}</p>
+    </div>
+
+
+    <h1 class="page-subtitle"> Variables aleatorias</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+    <p>A grandes rasgos, una variable aleatoria es una función que actúa sobre un espacio de probabilidad 
+      $(\Omega, \mathscr{F}, \mathbb{P})$ y devuelve valores numéricos. Sin embargo, <strong>no cualquier</strong>
+      función puede considerarse una variable aleatoria. Básicamente, una función será una variable aleatoria si 
+      algunas de sus imágenes inversas son <strong>eventos de $\Omega$</strong>. Esto garantizará que se puede calcular 
+      la probabilidad de sus valores, y por tanto, podremos calcular la probabilidad de que la variable aleatoria tome
+      valores específicos.
+    </p>
+
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Es posible que nos interese algún valor 
+      numérico asociado a los resultados del experimento en cuestión.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Ejemplo</h2>
+      <p>Consideremos el experimento de lanzar una moneda $4$ veces de <b> manera equiprobable</b>, 
+        sabemos que su espacio muestral es:
+      </p>
+
+      <p>\[
+      \Omega = 
+      \begin{Bmatrix}
+      \mathrm{AAAA}, &amp; \mathrm{AAAS}, &amp; \mathrm{AASA}, &amp; \mathrm{ASAA}, \\
+      \mathrm{SAAA}, &amp; \mathrm{AASS}, &amp; \mathrm{ASAS}, &amp; \mathrm{SAAS}, \\
+      \mathrm{ASSA}, &amp; \mathrm{SASA}, &amp; \mathrm{SSAA}, &amp; \mathrm{SSSA}, \\
+      \mathrm{SSAS}, &amp; \mathrm{SASS}, &amp; \mathrm{ASSS}, &amp; \mathrm{SSSS}
+      \end{Bmatrix}.
+      \]
+      </p>
+
+      <p>y tomamos a $\mathscr{P}(\Omega)$ como σ-álgebra, y como medida a la medida de probabilidad clásica.</p>
+
+      <p>Una variable asociada a este experimento es <strong>la cantidad de águilas que salieron en los $4$ lanzamientos</strong>.
+        Esto podríamos definirlo como una <strong>función</strong> $X\colon \Omega \rightarrow \mathbb{R}$, tal que para cada $\omega \in \Omega$ 
+        se define:
+      </p>
+
+      <p>\[ X(\omega) = \text{ de $\mathrm{A}$&#8217;s en $\omega$}. \]</p>
+
+      <p>De este modo, se tiene que</p>
+
+      <p>
+      \begin{align*}
+      X(\mathrm{AAAS}) &= 3, \\
+      X(\mathrm{ASAS}) &= 2,\\
+      &  \hspace{0.45cm}\vdots\\
+      X(\mathrm{ASSS}) &= 1, \\
+      X(\mathrm{AAAA}) &= 4,
+      \end{align*}
+      </p>        
+
+      <p>Al ser una función, $X$ tiene todas las cualidades y propiedades de una función que viste en <strong>álgebra superior</strong>. 
+        En particular, hay un concepto que nos interesa mucho: la <strong>imagen inversa</strong> de cada uno de los valores que
+        toma $X$. 
+      </p>
+
+      <p>Recordemos que dado $B \subseteq \mathbb{R}$, la <strong>imagen inversa de $B$ bajo $X$</strong> es el 
+        conjunto:
+      
+        \[ X^{-1}[B] = \{ \, \omega \in \Omega \mid X(\omega) \in B \, \}. \]
+      </p>
+
+      <p>Cuando $B$ es un conjunto de la forma $B = \{ x \}$, con $x \in \mathbb{R}$, se tiene que</p>
+
+      <p>\[ X^{-1}[\{x \}] = \{ \, \omega \in \Omega \mid X(\omega) = x \, \}. \]</p>
+
+      <p>Por ejemplo, para la función $X$ como la definimos, podemos observar que:
+
+      \[ X^{-1}[\{ 2 \}] = \{ \, \omega \in \Omega \mid X(\omega) = 2 \, \} = \{ \mathrm{AASS}, \mathrm{ASAS}, \mathrm{SAAS}, \mathrm{ASSA}, \mathrm{SASA}, \mathrm{SSAA} \}. \]</p>
+
+      <p>Ahora, observa que $X^{-1}[{ 2 }] \in \mathscr{P}(\Omega)$, por lo que <strong>le podemos asignar una 
+        probabilidad</strong>. En consecuencia, se tiene que
+
+      \begin{align*} \mathbb{P}(X^{-1}[\{ 2 \}]) = \mathbb{P}(\{ \, \omega \in \Omega \mid X(\omega) = 2 \, \}) &amp;= \frac{|\{ \mathrm{AASS}, \mathrm{ASAS}, \mathrm{SAAS}, \mathrm{ASSA}, \mathrm{SASA}, \mathrm{SSAA} \}|}{|\Omega|} \\ &amp;= \frac{6}{16} \\[1.15em] &amp;= 0.375. \end{align*}</p>
+
+      <p>Gracias a esto, podemos decir que «la probabilidad de que $X$ tome el valor $2$ es $\frac{6}{16} = 0.375$».</p>
+
+      <p>Por lo tanto, <strong>le podemos asignar probabilidad a los posibles resultados de $X$</strong>.</p>
+
+
+      <p>Una <strong>notación</strong> muy frecuente en el contexto de la probabilidad es la siguiente: usaremos 
+        $(X \in B)$ para <strong>denotar</strong> a $\{ \, \omega \in \Omega \mid X(\omega) \in B \,\} = X^{-1}[B]$, 
+        de tal forma que
+
+        \[ \mathbb{P}(\{ \, \omega \in \Omega \mid X(\omega) \in B \,\}) = \mathbb{P}(X \in B). \]
+      </p>
+
+      <p>Similarmente, cuando $B = \{x\}$, con $x \in \mathbb{R}$, se adopta la notación $( X = x )$ para <strong>denotar</strong> al conjunto $\{ \, \omega \in \Omega \mid X(\omega) = x \,\} = X^{-1}{\left[\{ x \}\right]}$, de tal forma que</p>
+
+      <p>\[ \mathbb{P}(\{ \, \omega \in \Omega \mid X(\omega) = x \,\}) = \mathbb{P}(X = x). \]</p>
+
+      <p>Por lo tanto, en este ejemplo tenemos que $\mathbb{P}(X = 2) = 0.375$. Del mismo modo, se utilizará la notación 
+        $(X \leq x)$ para <strong>denotar</strong> a $\{ \, \omega \in \Omega \mid X(\omega) \leq x \, \} = X^{-1}[(-\infty, x]]$. 
+        Sin embargo, <strong>¡ten cuidado!</strong> Esta es una <strong>NOTACIÓN</strong> para facilitar la escritura de muchas de las
+        expresiones matemáticas que involucran variables aleatorias. Aunque resulte práctica, <strong>no olvides lo que representa 
+        realmente</strong>.</p>
+    </div>
+    
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Diremos que una función $X\colon\Omega \to \mathbb{R}$ 
+      es una <strong>variable aleatoria</strong> si para cada $B \in \mathscr{B}(\mathbb{R})$ se cumple que $X^{-1}[B] \in \mathscr{F}$.
+    </p>
+          
+    <p>Es decir, $X$ es una variable aleatoria si la <strong>imagen inversa</strong> bajo $X$ de <strong>cualquier evento</strong> del σ-álgebra de Borel, es un <strong>evento</strong> de $\mathscr{F}$.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    <p>En algunos contextos se usa la notación $X\colon(\Omega, \mathscr{F})\to(\mathbb{R}, \mathscr{B}(\mathbb{R}))$ para denotar a una variable aleatoria. Usando esta notación, se escribe explícitamente el σ-álgebra del dominio y del codominio de $X$.</p>
+
+    <p>Intuitivamente, una <strong>variable aleatoria </strong>es un <strong>valor numérico asociado</strong> al
+      <strong>resultado</strong> de un experimento aleatorio. Por ejemplo, cuando hicimos el experimento de lanzar
+      una moneda $4$ veces, el <strong>valor numérico</strong> asociado a cada uno de los posibles resultados del
+      experimento es <strong>la cantidad de águilas que salieron en los $4$ lanzamientos</strong>.
+    </p>
+
+    <p>
+    Además, previamente acordamos que los elementos de un σ-álgebra son aquellos que se <strong>pueden medir</strong>, pues el dominio de la medida $\mathbb{P}$ es el σ-álgebra. Esencialmente, la definición de <strong>variable aleatoria</strong> pide que la función <strong>preserve la medibilidad</strong>. Es decir, que si $A$ es un subconjunto <strong>medible</strong> del codominio de $X$ (esto es, $A \in \mathscr{B}(\mathbb{R})$), entonces $X^{-1}[A]$ debe de ser un subconjunto <strong>medible</strong> del dominio de $X$; es decir, $X^{-1}[A] \in \mathscr{F}$. De este modo,
+    \[ \mathbb{P}(X \in A) = \mathbb{P}(X^{-1}[A]) = \mathbb{P}(\{\, \omega\in\Omega\mid X(\omega) \in A \,\}), \]</p>
+
+    <p>es un valor que está bien definido, pues $X^{-1}[A] \in \mathscr{F}$ y $\mathrm{Dom}(\mathbb{P}) = \mathscr{F}$.</p>
+
+    </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+    <p>Sean $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y $X\colon\Omega\to\mathbb{R}$ una función. Si $\mathcal{G} \subseteq \mathbb{R}$ es un conjunto tal que $\sigma(\mathcal{G}) = \mathscr{B}(\mathbb{R})$, 
+      entonces las siguientes proposiciones son equivalentes:
+    </p>
+    
+    <ol><li>$X\colon\Omega\to\mathbb{R}$ es una variable aleatoria.</li><li>Para todo $A \in \mathcal{G}$ se cumple que $X^{-1}[A] \in \mathscr{F}$.</li></ol>
+
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    <p>Este teorema es de mucha utilidad, ya que dada una función $X\colon\Omega\to\mathbb{R}$, demostrar que $X$ es
+      una variable aleatoria es equivalente a demostrar que $X$ <strong>preserva la medibilidad</strong>
+      sobre una familia de conjuntos que genera a $\mathscr{B}(\mathbb{R})$, una tarea mucho más sencilla que hacerlo 
+      para <strong>todos</strong> los elementos del σ-álgebra de Borel.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Nota</h2>
+      <p>Previamente establecimos que $\mathscr{B}(\mathbb{R})$ es el σ-álgebra generado por varias familias de subconjuntos de $\mathbb{R}$.
+        En particular, $\mathscr{B}(\mathbb{R})$ puede generarse a partir de la familia de intervalos de la forma $(-\infty, x]$, 
+        con $x \in \mathbb{R}$. Por ello, gracias al teorema que demostramos, podemos caracterizar a una variable aleatoria como sigue:</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad. Diremos que una función $X\colon\Omega\to\mathbb{R}$ es una <strong>variable aleatoria</strong> si para cada $x \in \mathbb{R}$ se cumple que $X^{-1}[(-\infty, x]] \in \mathscr{F}$. Esto es,</p>
+    
+    <p>\[ \{ \, \omega \in \Omega \mid X(\omega) \leq x \, \} \in \mathscr{F}. \]</p>
+
+    </div>
+
+    <h1 class="page-subtitle"> Medida de probabilidad inducida por una variable aleatoria</h1>
+
+    <div class="nota-box"><h1 class="number-title"> introducción</h2>
+    <p>Dados $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y $X\colon\Omega\to\mathbb{R}$ una variable aleatoria, vimos que podíamos usar la medida de probabilidad $\mathbb{P}$ para medir la probabilidad de los subconjuntos de la forma $(-\infty, x]$ a través de sus imágenes inversas bajo $X$. De hecho, gracias a lo que discutimos al final de la sección pasada, resulta que esto se puede hacer para cualquier<strong> evento de $\mathbb{R}$</strong>, es decir, <strong>para todos los elementos de $\mathscr{B}(\mathbb{R})$</strong>. A la medida resultante para los eventos de $\mathbb{R}$ se le conoce como <strong>la medida de probabilidad inducida por $X$</strong>, y se define como sigue.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sean $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y $X\colon\Omega\to\mathbb{R}$ una variable aleatoria. La <strong>medida de probabilidad inducida por $X$</strong> es la medida de probabilidad $P_{X}: \mathscr{B}(\mathbb{R}) \to \mathbb{R}$ dada por</p>
+
+    <p>\begin{align*} \mathbb{P}_{X}(B) &amp;= \mathbb{P}(\{\, \omega \in \Omega \mid X(\omega) \in B \,\}), &amp; \text{para cada $B \in \mathscr{B}(\mathbb{R})$. } \end{align*}</p>
+    
+    <p>Equivalentemente, usando la <strong>notación</strong> probabilista para imágenes inversas, $P_{X}: \mathscr{B}(\mathbb{R}) \to \mathbb{R}$ es la función dada por</p>
+    
+    <p>\begin{align*}\mathbb{P}_{X}(B) &amp;= \mathbb{P}(X \in B), &amp; \text{para cada $B \in \mathscr{B}(\mathbb{R})$}. \end{align*}</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    <p> si $(\Omega, \mathscr{F}, \mathbb{P})$ es un espacio de probabilidad y $X\colon\Omega\to\mathbb{R}$ es una variable aleatoria, entonces $(\mathbb{R}, \mathscr{B}(\mathbb{R}),\mathbb{P}_{X})$ es un espacio de probabilidad.</p>
+    </div>
+    
+
+    <h1 class="page-subtitle"> Funciones de Distribución de Probabilidad</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+    <p>Una vez que hemos introducido el concepto de <strong>variable aleatoria</strong>, nos toca ver qué nuevas definiciones surgen a partir de este. Un primer concepto que surge es la <strong>función de distribución</strong>. A grandes rasgos, dado un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$, en la entrada anterior vimos que una función $X\colon\Omega\to\mathbb{R}$ <strong>debe de satisfacer que para cualquier $x \in \mathbb{R}$, $X^{-1}[(-\infty, x]]$ es un evento de $\Omega$</strong>. Básicamente, esta condición era <strong>suficiente</strong> para concluir que para cada $B \in \mathscr{B}(\mathbb{R})$ se cumple que $X^{-1}[B] \in \mathscr{F}$. En otras palabras, <strong>la imagen inversa de cualquier evento de $\mathbb{R}$ es un evento de $\Omega$</strong>.</p>
+
+    <p>De manera similar, lo que haremos será definir la probabilidad de los eventos de la forma $(X \leq x)$, con $x \in \mathbb{R}$. No lo veremos aquí (porque no tenemos las herramientas suficientes para hacerlo), pero resulta que asignarle probabilidad a esos eventos captura toda la información relevante sobre una variable aleatoria. Esto nos permitirá prescindir por completo de muchos detalles de la variable aleatoria, y centrar nuestra atención en el conjunto de valores que puede tomar.</p>
+    </div>
+
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sea $F\colon\mathbb{R}\to\mathbb{R}$ una función. Diremos que $F$ es una <strong>función de distribución de probabilidad</strong> si:</p>
+
+    <ol>
+      <li>$F$ es <strong>no-decreciente</strong>. Esto es, para cada $a, b \in \mathbb{R}$, si $a &lt; b$ entonces $F(a) \leq F(b)$.</li>
+      <li>$F$ es <strong>continua por la derecha</strong>. Es decir, para cada $a \in \mathbb{R}$ se cumple que\[ \lim_{x\to a^{+}} F(x) = F(a). \]</li>
+      <li>Se cumple que\[ \lim_{x\to\infty} F(x) = 1 \quad\text{y}\quad \lim_{x\to -\infty} F(x) = 0. \]</li>
+    </ol>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    
+    <p>Una función <strong>no requiere de ningún contexto adicional</strong> para considerarse una función 
+      de distribución de probabilidad. Es decir, para que una función $F\colon\mathbb{R}\to\mathbb{R}$ sea considerada
+      una función de distribución de probabilidad, simplemente debe de ser <strong>no-decreciente</strong>,
+      <strong>continua por la derecha</strong> y <strong>sus límites a $\infty$ y $-\infty$ deben de ser $1$ 
+      y $0$</strong>, respectivamente.
+    </p>
+    </div>
+
+
+    <h1 class="page-subtitle">  Función de distribución de una variable aleatoria</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+      <p>Dada cualquier variable aleatoria $X$ sobre un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$, 
+        hay una función muy importante asociada a $X$: su función de distribución, definida como sigue.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Definición</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y sea $X\colon\Omega\to\mathbb{R}$ una variable aleatoria.
+      La <strong>función de distribución de $X$</strong> es la función $F_{X}\colon\mathbb{R}\to[0,1]$ dada por</p>
+    
+      <p>\[ F_{X}(x) = \mathbb{P}(\{\, \omega\in\Omega \mid X(\omega) \leq x \,\}) = \mathbb{P}(X \leq x), \quad \text{para cada $x \in \mathbb{R}$}. \]</p>
+
+      <p>$F_{X}$ también es llamada la <strong>función de distribución acumulada de $X$</strong>, que en inglés se abrevia como <strong>CDF</strong> (<em>cumulative distribution function</em>).</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+      <p>Es decir, dada una variable aleatoria $X$, su <strong>función de distribución</strong> devuelve la probabilidad de que $X$
+        sea menor o igual a $x$, para cada $x \in\mathbb{R}$. Como seguramente ya sospechas por el nombre de $F_{X}$,
+        resulta que $F_{X}$ es una <strong>función de distribución de probabilidad</strong>. Este hecho es demostrado
+        el siguiente teorema.
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+    <p>Sea $(\Omega, \mathscr{F}, \mathbb{P})$ un espacio de probabilidad y sea $X\colon\Omega\to\mathbb{R}$ una variable aleatoria. 
+      Entonces $F_{X}\colon\mathbb{R}\to[0,1]$ es una <strong>función de distribución de probabilidad</strong>.
+    </p>
+    </div>
+
+    <h1 class="page-subtitle">  Importancia de una función de distribución de probabilidad</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+    <p>Por el teorema anterior, vimos que <strong>la <em>función de distribución</em> de cualquier variable aleatoria es también una <em>función de distribución de probabilidad</em></strong>. Es decir, que si tienes un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$ y una variable aleatoria $X\colon\Omega\to\mathbb{R}$, la función de distribución de $X$, $F_{X}\colon\mathbb{R}\to[0,1]$, es una función de distribución de probabilidad.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Nota</h2>
+        <p>Por otro lado, ahora imagina que te encuentras con una función $F\colon\mathbb{R}\to\mathbb{R}$ que es una <strong>función de distribución de probabilidad</strong>. No obstante, observa que no sabes <strong>nada más</strong> sobre esta función. Es decir, no hay ninguna variable aleatoria ni un espacio de probabilidad a la vista&#8230; ¿Será posible que $F$ provenga de alguna variable aleatoria $X$ definida sobre un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$?</p>
+        <p>En otras palabras: dada $F\colon\mathbb{R}\to\mathbb{R}$ una función de distribución de probabilidad, ¿siempre existen un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$ y una variable aleatoria $X\colon\Omega\to\mathbb{R}$ tal que $F$ es la función de distribución de $X$? ¡La respuesta es que <strong>sí</strong>! A grandes rasgos, $F$ define la probabilidad de los eventos de la forma $(-\infty, x]$, para cada $x \in \mathbb{R}$. Esto resulta suficiente para definir por completo la medida de probabilidad inducida por una variable aleatoria $X$&#8230; pero, <strong>¿cuál variable aleatoria $X$?</strong> De manera <strong>canónica</strong>, siempre puede utilizarse la variable aleatoria <strong>identidad</strong> sobre $\Omega = \mathbb{R}$, que es la función $X\colon\mathbb{R}\to\mathbb{R}$ tal que para cada $\omega\in\mathbb{R}$, $X(\omega) = \omega$. De este modo, la medida de probabilidad inducida por $X$ es <strong>la misma que la medida en el dominio de $X$</strong>, que en este caso es $\mathbb{R}$ con $\mathscr{B}(\mathbb{R})$ como σ-álgebra, y usando la medida determinada por $F$.</p>
+        <p><strong>¡CUIDADO!</strong> Esto <strong>NO</strong> significa que <strong>todas</strong> las variables aleatorias son simplemente la función identidad. Lo que significa es que <strong>siempre</strong> que tengas una <strong>función de distribución de probabilidad</strong> $F\colon\mathbb{R}\to\mathbb{R}$, está garantizado que <strong>existen</strong> un espacio de probabilidad $(\Omega, \mathscr{F}, \mathbb{P})$ y una variable aleatoria $X\colon\Omega\to\mathbb{R}$ de tal forma que $F$ es la <strong>función de distribución de $X$</strong>. La existencia está garantizada porque, <strong>al menos</strong>, siempre se puede usar la <strong>función identidad</strong> de $\mathbb{R}$ en $\mathbb{R}$ como variable aleatoria, pero puede haber otras distintas cuya función de distribución también es $F$.</p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+      <p>el espacio de probabilidad que subyace a una variable aleatoria <strong>realmente no importa</strong>. Por ello, en muchos libros de probabilidad (y en este mismo curso), no le prestan atención a esto. Comúnmente, te dan una función $F$ que es una función de distribución de probabilidad, y te dicen <strong>«sea $X$ una variable aleatoria con distribución $F$»</strong>. Con eso es suficiente, pues $F$ determina las probabilidades de todos los eventos que involucran a $X$, sin importar quiénes son $X$ y el espacio de probabilidad sobre el que ésta se define.</p>
+    </div>
+
+          
+    <h1 class="page-subtitle">  El teorema del límite central</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+      <!-- <h2 class="number-title"> Teorema del Limite central</h2> -->
+
+      <p>El <b>Teorema del Límite Central</b> (<b><em>TLC</em></b> ) es uno de los teoremas fundamentales 
+        de la Probabilidad, este teorema die que si $S_{n}$ es la suma de $n$ variables aleatorias 
+        independientes entonces la distribución de $S_n$ es bien aproximada por la distribución  Gaussiana.
+      </p>
+      
+      <p>Una de las interpretaciones mas importantes del  <b>Teorema del Límite Central</b> (<b><em>TLC</em></b> ) 
+        es que si tomamos muchas <em>muestras aleatorias</em> de una población grande 
+        y calculamos la media de cada muestra, la distribución de estas medias será aproximadamente normal de la distribución 
+        original de la población.
+      </p>
+
+      <p>La importancia del TLC es que nos permite hacer inferencias sobre la población a partir 
+        de una muestra aleatoria. En particular, nos permite estimar la media y la varianza de la población,
+        y hacer pruebas de hipótesis sobre la media de la población.
+      </p>
+
+      <p>Además, el TLC es una de las razones por las que la <b>distribución normal</b> es tan importante en Estadística. 
+        Muchas variables aleatorias en la vida real se distribuyen normalmente, o se pueden aproximar por una distribución 
+        normal gracias al TLC. Esto significa que podemos utilizar la distribución normal para modelar y analizar una
+        amplia variedad de fenómenos, desde el precio de las acciones hasta el peso de los estudiantes en una población.
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Ejemplo</h2>
+    <p>Si estás analizando los precios de las pólizas de seguros de una compañía, puedes tomar
+      una muestra  grande y calcular la media de los precios. Si la muestra es lo suficientemente grande, 
+      puedes estar seguro de que la media de la muestra se aproximará a la media de los precios de la compañía
+      en su conjunto. Entonces, puedes utilizar la distribución normal para calcular la probabilidad de que
+      el precio medio de una póliza caiga dentro de ciertos límites.
+    </p>
+    </div>
+
+    
+    <div class="nota-box"><h1 class="number-title"> Teorema (Teorema del Límite Central)</h2>
+      <p>Sea $X_{1}, X_{2},\ldots $ una sucesión  de variables aleatorias i.i.d. con media finita y varianza finita $\sigma^{2}$ 
+        no cero. Si $S_{n}:= X_{1} + X_{2} + \cdots X_{n}$, para cada $n\in \mathbb{N}$,  entonces 
+        $$\displaystyle{\frac{S_{n} - n \mu }{\sqrt{n \sigma^{2}}}} \overset{d}{\longrightarrow} N(0,1)$$
+        Equivalentemente si denotamos $\overline{X}_{n}:= \frac{S_{n}}{n}$, la conclusion se puede escribir como:
+        $$\displaystyle{\frac{\overline{X}_{n} - \mu }{\displaystyle{\frac{\sigma}{\sqrt{n}}}}} \overset{d}{\longrightarrow} N(0,1)$$
+
+      </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Observación</h2>
+    <p>El teorema se estableció por primera vez para de las variables aleatorias de Bernoulli. 
+      Pronto se demostró para variables aleatorias generales. Sin embargo, el teorema sigue siendo cierto,
+      bajo ciertas condiciones, incluso si el las  variables aleatorias individuales tienen diferentes distribuciones.
+    </p>
+    </div>
+
+    
+    <h1 class="page-subtitle"> Convergencia Casi-Seguramente</h1>
+    
+    <div class="nota-box"><h1 class="number-title"> Definición (Convergencia Casi-Seguramente)</h2>
+      <p>La sucesion  $X_{1}, X_{2},\ldots $   de variables aleatorias <b>converge a $X$ casi seguramente</b> 
+        si  
+        $$\mathbb{P}\left(X_{n} \longrightarrow X\right)= \mathbb{P}\left(\{ \omega \in \Omega \colon X_{n}(\omega) \longrightarrow X(\omega) \}\right)=1$$ 
+        en otras palabras, si existe un conjunto $N \in \mathscr{F}$ tal que $\mathbb{P}(N)=0$ y para todo $\omega \in N^{c}$, 
+        la sucesión $(X_{n}(\omega))_{n\geq 1}$ converge a $X(\omega)$.
+      </p>
+
+    </div>
+
+    <h1 class="page-subtitle">  Ley Fuerte de los Grandes Números</h1>
+    <div class="nota-box"><h1 class="number-title"> Introducción</h2>
+      <p>La Ley Fuerte de los Grandes Números establece que, bajo ciertas condiciones,
+        la media muestral de una muestra aleatoria grande de una población converge casi seguramente a la media poblacional.
+        Es decir, a medida que aumentamos el tamaño de la muestra, la media de la muestra se aproxima cada vez más a
+        la media poblacional.
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Ejemplo</h2>
+    <p>Supongamos que queremos estimar la media de altura de todos los estudiantes universitarios en la Ciudad de México.
+      Para hacerlo, tomamos una muestra aleatoria de 100 estudiantes y calculamos la media de altura de la muestra.
+      Es posible que la media muestral no sea exactamente igual a la media poblacional, pero la LFGN nos dice que a
+      medida que aumentamos el tamaño de la muestra, la media muestral se acercará cada vez más a la media poblacional. Es decir, si tomamos una muestra aleatoria más grande de 1,000 estudiantes, la media muestral estará aún más cerca de la media poblacional. Si tomamos una muestra aún más grande de 10,000 estudiantes, la media muestral estará aún más cerca de la media poblacional. En resumen, a medida que aumenta el tamaño de la muestra, la variación en la media muestral disminuye, lo que lleva a una mejor estimación de la media poblacional.
+    </p>
+    </div>
+
+    <div class="nota-box"><h1 class="number-title"> Teorema (Ley Fuerte de los Grandes Números)</h2>
+      <p>Sea $X_{1}, X_{2},\ldots $ una sucesión  de variables aleatorias i.i.d. con $\mathbb{E}[X_{1}]=\mu < \infty$  entonces 
+        $$\displaystyle{\frac{S_{n}}{n} \overset{c.s.}{\longrightarrow} \mu}$$
+        Equivalentemente si denotamos $\overline{X}_{n}:= \frac{S_{n}}{n}$, la conclusion se puede escribir como:
+        $$\overline{X}_{n}  \overset{c.s}{\longrightarrow} N(0,1)$$
+      </p>
+    </div>
+
+    
+
+    <h1 class="page-subtitle">  Distribucion conjunta</h1>
+
+    <div class="nota-box" id="def:distribucion_conjunta"><h2 class="number-title"> Definición </h2>
+    <p> Sean $X_1, X_2\ldots,  X_n$ variables  aleatorias. Se define la <b>función de distribución conjunta</b> de $X_1, \ldots,  X_n$ como la función 
+      $F \colon \mathbb{R}^{n} \to [0,1]$ que se denota y definida por:
+      $$F_{X_{1},  \ldots, X_{n}}( \vec{x}):= \mathbb{P}(X_{1} \leq x_{1},  \ldots, X_{n} \leq x_{n})$$
+      donde $\vec{x}:=(x_{1}, \ldots, x_{n})  \in \mathbb{R}^{n}$
+    </p>
+    <!-- <p>A la medida de probabilidad aleatoria $\mathbb{P}_{X_1, X_2\ldots,  X_n} (B)$ inducida por las variables aleatorias 
+      $X_1, X_2\ldots,  X_n$ se le conoce como la <b>distribución conjunta de $X_1, X_2\ldots,  X_n$</b>
+    </p> -->
+    </div>
+
+
+    <h1 class="page-subtitle">  Distribuciones marginales</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Definición </h2>
+    <p> Sea $X=(X_1, X_2\ldots,  X_n)$ un vector aleatorio. Para cualquier subconjunto $\{i_{1},\ldots,i_{k} \}$ de $\{1,\ldots,n\}$
+      la <b>distribución del vector</b> del vector $(X_{i_1}, X_{i_2}\ldots,  X_{i_k})$ es llamada <b>distribución marginal </b>
+       y esta puede ser calculada de la distribución completa. En particular, la distribución de las variables aleatorias 
+       $X_i$ para $i\in \{ 1,2,\ldots,n\}$ es llamada la $i$-ésima istribucion maginal de $X$.
+    </p>
+    </div>
+
+    <h1 class="page-subtitle">  Vectores Gaussianos</h1>
+
+    <div class="nota-box"><h1 class="number-title"> Definición </h2>
+      <p>Un vector aleatorio $X=(X_1,\ldots,  X_n)$ definido en un espacio de probabilidad $(\Omega, \mathscr{F},\mathbb{P})$
+        es <b>Gaussiano</b> si toda combinación lineal de sus componentes es una variable aleatoria Gaussiana. Esto es, para 
+        cualesquiera $\alpha_{1},\ldots,\alpha_{n}\in \mathbb{R}$ la variables aleatoria 
+        $$\alpha_{1} X_{1} + \alpha_{2} X_{2} + \cdots + \alpha_{n} X_{n} $$
+        es Gaussiana.
+      </p>
+      </div>
+
+
+      <div class="nota-box"><h1 class="number-title"> Proposición</h2>
+        <p>
+          <ol>
+            <li>Si  $X=(X_1,\ldots,  X_n)$ es un vector aleatoria Gaussiano, entonces para cada $i=1,\ldots,n$ la variable aleatoria 
+              $X_{i}$ es Gaussiana.</li><br>
+              <li>Si $X_1, \ldots,  X_n$ son variables aleatorias reales  Gaussianas  e 
+                independientes, entonces el vector $X=(X_1, \ldots,  X_n)$ es un vector Gaussiano.
+              </li>
+          </ol>
+        </p>
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Observación</h2>
+        <p>Recordemos que la media y la varianza caracterizan a la distribución de una variable aleatoria 
+          (unidimensional). En el caso multidimensional, la media (la cual ahora es un vector) y 
+          la <em>matriz de covarianzas</em>  van a determinar completamente la distribución de un vector Gaussiano.
+        </p>
+        
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Definición</h2>
+        <p>Si $X$ una variable aleatoria. Se define la <b>varianza  o dispersión$ de  $X$</b> como:
+        $$\mathrm{Var}(X):= \mathbf{E}[(X -\mu_{X})^{2}]=\mathbf{E}(X) - \mu_{X}^{2}  $$
+        donde $\mu_{X}=\mathbf{E}(X)$.
+       </p>
+        
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Definición</h2>
+        <p>Si $X,Y$ variables aleatorias. Se define la <b>covarianza entre $X$ y $Y$</b> como 
+          la cantidad:
+        $$\mathrm{Cov}(X,Y):= \mathbf{E}[(X -\mu_{X})(Y -\mu_{Y}) ] $$
+        donde $\mu_{X}=\mathbf{E}(X)$ y $\mu_{Y}:= \mathbf{E}(Y)$
+       </p>
+        
+      </div>
+
+
+      <div class="nota-box"><h1 class="number-title"> Definición</h2>
+        <p>Si $X,Y$ variables aleatorias. Se define el  <b>coeficiente de correlación entre $X$ y $Y$</b> como 
+          la cantidad:
+        \begin{align*}
+        \rho =\mathrm{Corr}(X,Y)
+        := \frac{\mathrm{Cov}(X,Y)}{\sqrt{\mathrm{Var}(X)\cdot \mathrm{Var}(Y) }}
+        =\frac{\mathbf{E}[(X -\mu_{X})(Y -\mu_{Y})]}{\sqrt{\mathbf{E}[(X -\mu_{X})^{2}]\mathbf{E}[(Y -\mu_{Y})^{2}}]}
+        \end{align*}
+        donde $\mu_{X}=\mathbf{E}(X)$ y $\mu_{Y}:= \mathbf{E}(Y)$
+  
+       </p>
+        
+      </div>
+
+
+      <div class="nota-box" id="def:matrix_covarianza"><h2 class="number-title"> Definición</h2>
+        <p>Si $X=(X_1,\ldots,  X_n)$ es un vector aleatorio, entonces
+          <ol>
+            <li>La <b>media del vector aleatoria</b> $X$ se define como:
+              $$\mathbf{E}(X):= (\mathbf{E}(X_1),\ldots, \mathbf{E} (X_n))$$
+            </li><br>
+            <li><b>La matriz de covarianzas</b> del vector aleatorio $X$ se denota por $\left( \Lambda_{X}(i,j) \right)_{i,j = 1,\ldots,n}$ 
+              y para cualesquiera $i,j=1,2,\ldots,n$ se define la entrada $(i,j)$ de la matriz $\Lambda_{X}$ como:
+              $$\Lambda_{X}(i,j):= \mathrm{Cov}(X_{i}, X_{j})$$   
+              
+            </li>
+
+          </ol>
+        </p>
+        
+      </div>
+
+
+      <h1 class="page-subtitle"> Densidad de un vector Gaussiano</h1>
+
+      
+      <div class="nota-box"><h1 class="number-title"> Proposición</h2>
+        <p>Sea  $X=(X_1, X_2\ldots,  X_n)$ un vector aleatorio <b>Gaussiano</b> con componentes independientes. Supomgamos que 
+          para toda $i=1,\ldots,n$, se tiene que:
+          $$X_{i}\sim \mathrm{N}(\mu_{i},\sigma_{i}^{2})$$
+          Entonces la funcion de densidad del vector $X$ esta dada por:
+          
+          $$f(x_{1},\ldots,x_{n}) = \displaystyle{ \frac{1}{(2\pi)^{\frac{n}{2}}\sigma_{1} \cdots \sigma_{n}}  }  \exp\left( \displaystyle{-\left[\displaystyle{ \frac{(x-\mu_{1})^{2}}{2\sigma_{1}^{2}}  + \cdots + \frac{(x-\mu_{n})^{2}}{2\sigma_{n}^{2}}  }\right]}\right) $$
+
+        </p>
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Nota</h2>
+      <p>Cuando las componentes del vector aleatorio  $X=(X_1, X_2\ldots,  X_n)$ no son independientes entonces se tiene el siguiente resultado:</p>
+      </div>
+
+      <div class="nota-box"><h1 class="number-title"> Teorema</h2>
+        <p>Sea  $X=(X_1, X_2\ldots,  X_n)$ un vector aleatorio <b>Gaussiano</b> con $\mu=\mathbb{E}(X)$ 
+          y matriz de covarianza denotada por $\Lambda_{X}$. Si $\Lambda_{X}$ es invertible, entonces 
+          $X$ admite la  siguiente funcion de densidad:
+          
+          $$f(x) = \displaystyle{ \frac{1}{(2\pi)^{\frac{n}{2}}\left( \mathrm{det}(\Lambda_{X})\right)^{\frac{1}{2}}}}  \exp\left(\displaystyle{-\frac{1}{2} (x-\mu)^{T}\Lambda_{X}^{-1}} (x-\mu)\right) $$
+          para todo $x\in \mathbb{R}^{}$
+
+        </p>
+      </div>
+
+      </body>
