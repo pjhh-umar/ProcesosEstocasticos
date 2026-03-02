@@ -114,164 +114,32 @@
 <div class="nota-box">
   <h1 class="number-title-practica">Ejercicio</h1>
   <p>
-    Sea $\{A_n : n \in \mathbb{N}\}$ una sucesión de eventos. Demuestre que
+    
   </p>
-  <ol class="two-column">
-    <li>
-      $\displaystyle{\left(\liminf_{n\to\infty} A_n\right)^c
-      = \limsup_{n\to\infty} A_n^c.}$
-    </li><br>
-
-    <li>
-      $\displaystyle{\left(\limsup_{n\to\infty} A_n\right)^c
-      = \liminf_{n\to\infty} A_n^c.}$
-    </li><br>
-
-    <li>
-      $\displaystyle{\mathbb{P}\!\left(\liminf_{n\to\infty} A_n\right)
-      = 1 - \mathbb{P}\!\left(\limsup_{n\to\infty} A_n^c\right).}$
-    </li><br>
-
-    <li>
-      $\displaystyle{\mathbb{P}\!\left(\limsup_{n\to\infty} A_n\right)
-      = 1 - \mathbb{P}\!\left(\liminf_{n\to\infty} A_n^c\right).}$
-    </li><br>
-  </ol>
+  
 </div>
+<!-- Donde aparecerá la fecha de la última modificación -->
+<footer>
+  <center>
+   <p id="ultima-actualizacion"></p>
+  </center>
+</footer>
+<script>
+// Obtenemos la fecha y hora de la última modificación del documento
+const fechaModificacion = new Date(document.lastModified);
 
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>
-    Sea $\{A_n : n \in \mathbb{N}\}$ una sucesión de eventos. Demuestre que
-  </p>
-  <ol class="two-column">
-    <li>
-      $\displaystyle{\lim_{n\to\infty} A_n = A
-      \;\Longleftrightarrow\;
-      \lim_{n\to\infty} A_n^c = A^c.}$
-    </97li><br>
+// Opciones para formatear la fecha (por ejemplo, DD/MM/AAAA)
+const opcionesFecha = { day: '2-digit', month: '2-digit', year: 'numeric' };
+const fechaFormateada = fechaModificacion.toLocaleDateString('es-ES', opcionesFecha);
 
-    <li>
-      $\displaystyle{\lim_{n\to\infty} A_n = A
-      \;\Longleftrightarrow\;
-      \lim_{n\to\infty} \mathbf{1}_{A_n} = \mathbf{1}_A.}$
-    </li><br>
-  </ol>
-  <p>
-    El símbolo $\mathbf{1}_A$ denota la función indicadora del conjunto $A$.
-    Véase el apéndice al final del texto para la definición y algunas propiedades
-    de esta función.
-  </p>
-</div>
+// Obtenemos la hora (HH:MM:SS)
+const horaFormateada = fechaModificacion.toLocaleTimeString('es-ES', {
+    hour: '2-digit', minute: '2-digit'
+});
 
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>
-    Suponga que $\displaystyle{\lim_{n \to \infty} A_n = A}$ y 
-    $\displaystyle{\lim_{n \to \infty} B_n = B}$. 
-    Diga falso o verdadero. Demuestre en cada caso.
-  </p>
-  <ol>
-    <li>
-      $\displaystyle{\lim_{n \to \infty} \lim_{m \to \infty} (A_n \cap B_m) = A \cap B.}$
-    </li><br>
-    <li>
-      $\displaystyle{\lim_{n \to \infty} \lim_{m \to \infty} (A_n \cup B_m) = A \cup B.}$
-    </li><br>
-    <li>
-      $\displaystyle{\lim_{n \to \infty} \lim_{m \to \infty} (A_n - B_m) = A - B.}$
-    </li><br>
-    <li>
-      $\displaystyle{\lim_{n \to \infty} \lim_{m \to \infty} (A_n \triangle B_m) = A \triangle B.}$
-    </li><br>
-  </ol>
-</div>
-
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>
-    Medida de probabilidad discreta. Sea $\{x_n : n \in \mathbb{N}\}$ una sucesión de números reales y sea
-    $\{a_n : n \in \mathbb{N}\}$ otra sucesión de números reales no negativos tal que
-    $\displaystyle{\sum_{n=1}^{\infty} a_n = 1}$.
-    Demuestre que la función $\mathbb{P} : \mathcal{B}(\mathbb{R}) \to [0,1]$ definida de la siguiente forma es una medida de probabilidad:
-  </p>
-  <p>
-    $\displaystyle{\mathbb{P}(A) = \sum_{n=1}^{\infty} a_n \, \mathbf{1}_{\{n : x_n \in A\}}(n).}$
-  </p>
-</div>
-
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>
-    Sean $\mathbb{P}$ y $\mathbb{Q}$ dos medidas de probabilidad definidas sobre una misma 
-    $\sigma$-álgebra. Demuestre que $\alpha \mathbb{P} + (1-\alpha)\mathbb{Q}$ es una
-    medida de probabilidad para cada $\alpha \in [0,1]$.
-  </p>
-</div>
-
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>
-    Sea $\mathbb{\mathbb{P}}$ una medida de probabilidad. Determine si las siguientes funciones también son medidas de probabilidad:
-  </p>
-  <ol class="two-column">
-    <li>$1 - \mathbb{P}.$</li><br>
-    <li>$\displaystyle{\frac{1 + \mathbb{P}}{2}.}$</li><br>
-    <li>$\mathbb{\mathbb{P}}^2.$</li><br>
-    <li>$|\mathbb{P}|.$</li><br>
-    <li>$4\mathbb{P}(1 - \mathbb{P}).$</li><br>
-    <li>$\sqrt{\mathbb{P}}.$</li><br>
-  </ol>
-</div>
-
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>
-    Determine si las siguientes funciones son medidas de probabilidad.
-  </p>
-  <ol class="two-column">
-    <li>
-      $\mathbb{P}(\Omega) = 1$ y $\mathbb{P}(A) = 0$ para cualquier otro evento $A$.
-    </li><br>
-    <li>
-      $\mathbb{P}(\emptyset) = 0$ y $\mathbb{P}(A) = 1$ para cualquier otro evento $A$.
-    </li><br>
-  </ol>
-</div>
-
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>
-    Considere el espacio medible $(\mathbb{N}, 2^{\mathbb{N}})$.
-    Demuestre en cada caso que $\mathbb{P}$ es una medida de probabilidad.
-    Para cada $A \in 2^{\mathbb{N}}$ defina:
-  </p>
-  <ol class="two-column">
-    <li>
-      $\displaystyle{\mathbb{P}(A) = \sum_{n \in A} \frac{2}{3^n}.}$
-    </li><br>
-    <li>
-      $\displaystyle{\mathbb{P}(A) = \sum_{n \in A} \frac{1}{2^n}.}$
-    </li><br>
-  </ol>
-</div>
-
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>
-    Sea $\Omega = \{1, \ldots, n\}$ y considere el espacio medible $(\Omega, 2^{\Omega})$.
-    Investigue en cada caso si $\mathbb{P}$ es una medida de probabilidad.
-    Para cada $A \in 2^{\Omega}$ defina:
-  </p>
-  <ol class="two-column">
-    <li>
-      $\displaystyle{\mathbb{P}(A) = \sum_{k \in A} \frac{2k}{n(n+1)}.}$
-    </li><br>
-    <li>
-      $\displaystyle{\mathbb{P}(A) = \prod_{k \in A} \left(1 - \frac{1}{k}\right).}$
-    </li><br>
-  </ol>
-</div>
+// Insertamos la fecha y la hora en el elemento con el ID "ultima-modificacion"
+document.getElementById("ultima-actualizacion").textContent = `Última actualización: ${fechaFormateada}`;
+</script>
 
 
 
