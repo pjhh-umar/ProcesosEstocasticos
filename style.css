@@ -947,58 +947,78 @@ h1.title-definicion{
 
 
 .definicion-box{
- /* background:  rgb(218, 237, 245); */
- background: rgba(255, 87, 40, 0.038);
-  color: black;
+  
+  background: rgba(232, 245, 233, 0.8);
+  color: #134316; 
+  border: 1px solid #c8e6c9; 
+  border-left: 5px solid #4caf50; 
+
+  
   border-radius: 20px;
-  /*padding: 5%;
-  */padding: 25px;
-  /*border: 0px solid  rgb(218,165,32);
-  */
-  border: 0px solid rgb(0, 78, 148); 
+  padding: 25px;
+  
   margin: auto;
   margin-bottom: 50px;
   margin-top: 50px;
-  font-size: 85%;
-  /*text-align: justify;*/
-  /*font-size: 110%;*/
-  /*font-weight: 600;*/
-  /*justify-content: space-evenly;*/
+  text-align: justify;
+  font-size: 85%; 
+  /* font-weight: 600; */
+  /* justify-content: space-evenly; */
   width: 90%;
-  /*box-shadow: 0px 0px 10px 0px  rgb(218,165,32);*/
-    box-shadow: 0px 0px 10px 0px rgb(0, 166, 255); 
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px   rgba(167, 106, 40, 0); 
 }
 
-.ejercicio-box{
-  background:  rgba(218, 165, 32, 0.052);
-  /*background: rgba(0, 166, 255, 0.03);
-  */
-  color: black;
+
+.teorema-box{
+  background: rgba(232, 241, 250, 0.95); /* Azul muy pálido */
+  color: #0644a2; /* Azul marino profundo para el texto */
+  border: 1px solid #90caf9; 
+  border-left: 6px solid #1565c0; /* Borde grueso para resaltar importancia */
   border-radius: 20px;
-  /*padding: 5%;
-  */padding: 25px;
-  /*border: 0px solid  rgb(218,165,32);
-  */
-  border: 0px solid rgb(0, 78, 148); 
+  padding: 25px;
+  
+  border-radius: 20px;
+  padding: 25px;
+ 
   margin: auto;
   margin-bottom: 50px;
   margin-top: 50px;
-  font-size: 85%;
-  /*text-align: justify;*/
-  /*font-size: 110%;*/
-  /*font-weight: 600;*/
-  /*justify-content: space-evenly;*/
+  text-align: justify;
+  font-size: 85%; 
+  /* font-weight: 600; */
+  /* justify-content: space-evenly; */
   width: 90%;
-  /*box-shadow: 0px 0px 10px 0px  rgb(218,165,32);*/
-    box-shadow: 0px 0px 10px 0px rgb(0, 166, 255); 
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+ 
+}
+
+/* .teorema-box{
+  background:  rgb(218, 237, 245);
+  color: black;
+  border-radius: 20px;
+  padding: 50px;
+  border: 5px solid  rgb(0, 120, 175);
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-size: 20px;
+  width: 80%;
+  box-shadow: 2px 2px 15px 2px  rgb(31, 147, 201);  
+  } */
+
+
+.ejercicio-box{
+  background: rgba(255, 152, 0, 0.06); 
+  color: #a13900; 
+  border: 1px solid rgba(255, 152, 0, 0.2);
+  border-left: 5px solid #ff9800;
+  box-shadow: 0px 4px 10px 0px rgba(255, 152, 0, 0.15);
+
+  border-radius: 20px;
+  padding: 25px;
+  margin: 40px auto;
+  text-align: justify;
+  font-size: 85%;
+  width: 90%;
 }
 
 .ejercicio-resuelto-box{
@@ -1020,91 +1040,23 @@ h1.title-definicion{
  }
 
 
-/* .ejercicio-box{ 
-  background:  rgb(218, 237, 245);
-  color: black;
-  border-radius: 20px;
-  padding: 50px;
-  border: 5px solid  rgb(0, 120, 175);
-  margin: auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  font-size: 20px;
-  width: 90%;
-  box-shadow: 2px 2px 15px 2px  rgb(31, 147, 201);
-} */
-
-
 .nota-box{
-  background:  rgba(218, 165, 32, 0.052);
-  /*background: rgba(0, 166, 255, 0.03);
-  */color: black;
+  background: rgba(255, 152, 0, 0.06); 
+  color: #a13900; 
+  border: 1px solid rgba(255, 152, 0, 0.2);
+  border-left: 5px solid #ff9800;
+  box-shadow: 0px 4px 10px 0px rgba(255, 152, 0, 0.15);
+
   border-radius: 20px;
-  /*padding: 5%;
-  */padding: 25px;
-  /*border: 0px solid  rgb(218,165,32);
-  */
-  border: 0px solid rgb(0, 78, 148); 
-  margin: auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  padding: 25px;
+  margin: 40px auto;
+  text-align: justify;
   font-size: 85%;
-  /*text-align: justify;*/
-  /*font-size: 110%;*/
-  /*font-weight: 600;*/
-  /*justify-content: space-evenly;*/
   width: 90%;
-  /*box-shadow: 0px 0px 10px 0px  rgb(218,165,32);*/
-    box-shadow: 0px 0px 10px 0px rgb(0, 166, 255); 
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  
 }
 
-/* .nota-box {
-  color: black;
-  border: 0px solid rgb(0, 78, 148); 
-  margin: 50px auto;
-  font-size: 105%;
-  text-align: justify;
-  width: 90%;
-  box-shadow: 0px 0px 10px 0px rgb(0, 166, 255); 
-} */
 
-.nota-boxRespaldo{
-  /* background:  rgb(218, 237, 245); */
-  background: rgb(252, 252, 244);
-  color: black;
-  border-radius: 20px;
-  padding: 5%;
-  border: 0px solid  rgb(218,165,32);
-  margin: auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  font-size: 20px;
-  text-align: justify;
-  /* font-size: 110%; */
-  /* font-weight: 600; */
-  /* justify-content: space-evenly; */
-  width: 93%;
-  box-shadow: 0px 0px 10px 0px  rgb(218,165,32);
-
-}
-
-.teorema-box{
-  background:  rgb(218, 237, 245);
-  color: black;
-  border-radius: 20px;
-  padding: 50px;
-  border: 5px solid  rgb(0, 120, 175);
-  margin: auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  font-size: 20px;
-  width: 80%;
-  box-shadow: 2px 2px 15px 2px  rgb(31, 147, 201);  
-  }
 
 .respuesta-box{
     border: 3px solid rgba(52, 173, 249, 0.718);
