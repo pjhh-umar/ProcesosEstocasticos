@@ -109,56 +109,86 @@
 <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos primer examen parcial</h1>   
 
 <div class="definicion-box">
-<h1 class="number-title-practica">Definición (Esperanza de una Variable Aleatoria)</h1>
+  <h1 class="title-practica">Definición (Integral de Lebesgue de una variable aleatoria)</h1>
+  
+  <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sea $X: \Omega \to \mathbb{R}$
+    una variable aleatoria. Para definir la <em>integral de Lebesgue de $X$ con respecto a la medida de probabilidad $\mathbb{P}$</em>,
+    primero descomponemos a $X$ en sus partes <em>positiva</em> y <em>negativa</em>, definidas respectivamente como:
+  </p>
+  <ul class="two-column">
+    <li>$X^+ = \max\{X, 0\}$</li>
+    <li>$X^- = \max\{-X, 0\}$</li>
+  </ul>
+  
+  <p>De modo que $X = X^+ - X^-$ y el valor absoluto es $|X| = X^+ + X^-$. Notemos que ambas variables, $X^+$ y $X^-$, son estrictamente no negativas.</p>
+  
+  <p>La <strong>integral de Lebesgue de la variable aleatoria $X$ con respecto a la medida $\mathbb{P}$</strong> se define como:</p>
+  
+  $$ \displaystyle \int_{\Omega} X d\mathbb{P} = \displaystyle \int_{\Omega} X^+ d\mathbb{P} - \displaystyle \int_{\Omega} X^- d\mathbb{P} $$
+  
+  <p>Si ambas integrales del lado derecho son finitas simultáneamente, se dice que $X$ es una 
+  <strong>variable aleatoria Lebesgue integrable sobre $(\Omega, \mathcal{F}, \mathbb{P})$ </strong> 
+  </p>
 
-<p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sea $X: \Omega \to \mathbb{R}$
-  una variable aleatoria. Para definir la <em>integral de Lebesgue de $X$ con respecto a la medida de probabilidad $\mathbb{P}$</em>,
-  primero descomponemos a $X$ en sus partes <em>positiva</em> y <em>negativa</em>, definidas respectivamente como:
-</p>
-<ul class="two-column">
-  <li>$X^+ = \max\{X, 0\}$</li>
-  <li>$X^- = \max\{-X, 0\}$</li>
-</ul>
+  <p>Se denota por 
+    $$\mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})= \left\{X:\Omega\to\mathbb{R}\text{ es una variable aleatoria } \big| \displaystyle \int_{\Omega} |X| d\mathbb{P}<\infty\right\}$$
+     al conjunto de variables aleatorias Lebesgue integrables sobre $(\Omega, \mathcal{F}, \mathbb{P})$.
+  </p>
+    <b>Observación:</b>Dada las relaciones $X = X^+ - X^-$ y $|X| = X^+ + X^-$, 
+    se tiene que $X$ es Lebesgue integrable sobre $(\Omega, \mathcal{F}, \mathbb{P})$ si y solo si $|X|$ es Lebesgue integrable sobre $(\Omega, \mathcal{F}, \mathbb{P})$.
+  </p>
+</div>
 
-<p>De modo que $X = X^+ - X^-$ y el valor absoluto es $|X| = X^+ + X^-$. Notemos que ambas variables, $X^+$ y $X^-$, son estrictamente no negativas.</p>
 
-<p>La <strong>esperanza matemática</strong> de la variable aleatoria $X$, denotada comunmente como $\mathbb{E}[X]$,
-  se define formalmente a través de la integral de Lebesgue con respecto a la medida de probabilidad $\mathbb{P}$ 
-  como:
-</p>
+  
 
-$$ \mathbb{E}[X] = \displaystyle \int_{\Omega} X d\mathbb{P} = \displaystyle \int_{\Omega} X^+ d\mathbb{P} - \displaystyle \int_{\Omega} X^- d\mathbb{P} $$
-
-<p>Si ambas integrales integrales del lado derecho son finitas simultáneamente, 
-  lo cual equivale a decir que $ \displaystyle \int_{\Omega} |X| d\mathbb{P} < \infty $, decimos que 
-  $X$ es una <b>variable aleatoria integrable sobre $(\Omega, \mathcal{F}, \mathbb{P})$</b> .
-</p>
-<!-- <p><b>Observación:</b>$$ X \in \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P}) \iff \displaystyle \int_{\Omega} |X| d\mathbb{P} < \infty $$ </p> -->
+<div class="ejercicio-box">
+  <h1 class="title-practica">Ejercicio 1 (Igualdad casi segura como relación de equivalencia)</h1>
+  
+  <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sea $\mathcal{M}$ la colección de todas las variables
+    aleatorias reales definidas sobre $\Omega$. Se define la relación $\sim_{\text{a.s.}}$ sobre $\mathcal{M}$ 
+    tal que $X \sim_{\text{a.s.}} Y$ si y solo si $X \overset{\text{a.s.}}{=} Y$.  Demuestra que $\sim_{\text{a.s.}}$ es una relación de equivalencia sobre $\mathcal{M}$. 
+    <!-- En otras palabras, prueba que para cualesquiera variables aleatorias $X, Y, Z \in \mathcal{M}$,
+    se cumplen las siguientes tres propiedades: -->
+  </p>
+  
+  <!-- <ul>
+    <li><strong>Reflexividad:</strong> $X \overset{\text{a.s.}}{=} X$.</li>
+    <li><strong>Simetría:</strong> Si $X \overset{\text{a.s.}}{=} Y$, entonces $Y \overset{\text{a.s.}}{=} X$.</li>
+    <li><strong>Transitividad:</strong> Si $X \overset{\text{a.s.}}{=} Y$ y $Y \overset{\text{a.s.}}{=} Z$, entonces $X \overset{\text{a.s.}}{=} Z$.</li>
+  </ul> -->
 </div>
 
 <div class="teorema-box">
-  <h1 class="number-title-practica">Teorema (Propiedades de la Integral de Lebesgue)</h1>
+  <h1 class="title-practica">Teorema (Propiedades de la Integral de Lebesgue)</h1>
   
   <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sean $X, Y$ variables aleatorias sobre este espacio. 
-    Si  $X, Y \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y $a, b \in \mathbb{R}$, la integral de Lebesgue con respecto
+    La integral de Lebesgue con respecto
     a la medida de probabilidad $\mathbb{P}$ satisface las siguientes propiedades:
   </p>
 
   <ul>
-    <li><strong>Linealidad:</strong> La integral de una combinación lineal es la combinación lineal de las integrales.
+    <li><strong>Linealidad:</strong> Si  $X, Y \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y $a, b \in \mathbb{R}$, entonces
     $$ \displaystyle \int_{\Omega} (aX + bY) d\mathbb{P} = a \displaystyle \int_{\Omega} X d\mathbb{P} + b \displaystyle \int_{\Omega} Y d\mathbb{P} $$
     </li>
     
-    <li><strong>Aditividad sobre dominios disjuntos:</strong> Si $A, B \in \mathcal{F}$ son eventos mutuamente excluyentes ($A \cap B = \emptyset$), la integral sobre la unión es la suma de las integrales sobre cada evento.
+    <li><strong>Aditividad sobre dominios disjuntos:</strong> Si $X \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y $A, B \in \mathcal{F}$ 
+      son eventos mutuamente excluyentes ($A \cap B = \emptyset$),
+      la integral sobre la unión es la suma de las integrales sobre cada evento.
     $$ \displaystyle \int_{A \cup B} X d\mathbb{P} = \displaystyle \int_{A} X d\mathbb{P} + \displaystyle \int_{B} X d\mathbb{P} $$
     </li>
 
     <li><strong>Integral de la Función Indicadora:</strong> Para cualquier evento medible $A \in \mathcal{F}$, la integral de su función indicadora $\mathbf{1}_A(\cdot)$ es igual a la probabilidad del evento.
     $$ \displaystyle \int_{\Omega} \mathbf{1}_A d\mathbb{P} = \mathbb{P}(A) $$
     </li>
+
+    <li><strong>Relación con la Función Indicadora:</strong> Sea  $X \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ Para cualquier conjunto medible $A \in \mathcal{F}$, la integral del producto de $X$ por la función indicadora $\mathbf{1}_A$ sobre todo el espacio es igual a la integral de $X$ restringida al conjunto $A$.
+    $$ \displaystyle \int_{\Omega} X \cdot \mathbf{1}_A d\mathbb{P} = \displaystyle \int_{A \cap \Omega} X d\mathbb{P} = \displaystyle \int_{A} X d\mathbb{P} $$
+    </li>
     
     <li><strong>Igualdad casi segura (a.s.):</strong> Sean $X,Y \colon \Omega \to \mathbb{R}$ variables aleatorias 
-      tales que $X \in L^1(\Omega, \mathcal{F}, \mathbb{P})$. Si $X \overset{\text{a.s.}}{=} Y$, 
+      tales que $X \in L^1(\Omega, \mathcal{F}, \mathbb{P})$. Si $X \overset{\text{a.s.}}{=} Y$, entonces 
+      $Y \in L^1(\Omega, \mathcal{F}, \mathbb{P})$ y se cumple que
      $$ \displaystyle \int_{\Omega} X d\mathbb{P} = \displaystyle \int_{\Omega} Y d\mathbb{P} $$
     </li>
     
@@ -166,7 +196,8 @@ $$ \mathbb{E}[X] = \displaystyle \int_{\Omega} X d\mathbb{P} = \displaystyle \in
     $$ \displaystyle \int_{\Omega} X d\mathbb{P} \le \displaystyle \int_{\Omega} Y d\mathbb{P} $$
     </li>
     
-    <li><strong>Positividad estricta:</strong> Si $X \ge 0$ casi seguramente, entonces $ \displaystyle \int_{\Omega} X d\mathbb{P} \ge 0$. Además, si se cumple que $X \ge 0$ casi seguramente y $ \displaystyle \int_{\Omega} X d\mathbb{P} = 0$, necesariamente $X \overset{\text{a.s.}}{=} 0$.
+    <li><strong>Positividad estricta:</strong> Si $X \ge 0$ casi seguramente, entonces $ \displaystyle \int_{\Omega} X d\mathbb{P} \ge 0$. 
+      Además, si se cumple que $X \ge 0$ casi seguramente y $ \displaystyle \int_{\Omega} X d\mathbb{P} = 0$, necesariamente $X \overset{\text{a.s.}}{=} 0$.
     </li>
     
     <li><strong>Acotación por el valor absoluto:</strong> El valor absoluto de la integral está acotado por la integral del valor absoluto de la variable.
@@ -175,11 +206,30 @@ $$ \mathbb{E}[X] = \displaystyle \int_{\Omega} X d\mathbb{P} = \displaystyle \in
   </ul>
 </div>
 
+<div class="definicion-box">
+  <h1 class="title-practica">Definición (Esperanza de una Variable Aleatoria)</h1>
+  
+  <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sea $X$ una variable aleatoria Lebesgue integrable
+    con respecto a la medida de probabilidad $\mathbb{P}$.
+  </p>
+  
+  <p>Se define la <strong>esperanza</strong> o <strong>valor esperado</strong> de la variable aleatoria $X$, 
+    denotada comúnmente como $\mathbb{E}[X]$ como la integral de Lebesgue de $X$ con respecto a la medida de probabilidad $\mathbb{P}$, es decir:
+  </p>
+  
+  $$ \mathbb{E}[X] = \displaystyle \int_{\Omega} X d\mathbb{P} $$
+
+  <p>En términos de la descomposición de la variable, la esperanza se calcula como:</p>
+
+  $$ \mathbb{E}[X] = \displaystyle \int_{\Omega} X^+ d\mathbb{P} - \displaystyle \int_{\Omega} X^- d\mathbb{P} $$
+</div>
+
 <div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
   <p>Enuncia cada una de las propiedades del Teorema anterior en términos de la esperanza matemática $\mathbb{E}[\cdot]$.
   </p>
 </div>
+
 <div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
   <p>Demuestra que el recíproco de la propiedad de igualdad casi segura no se cumple en general. 
@@ -190,23 +240,16 @@ $$ \mathbb{E}[X] = \displaystyle \int_{\Omega} X d\mathbb{P} = \displaystyle \in
 
 <div class="nota-box">
   <h1 class="number-title-practica">Ejercicio</h1>
-  <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad. Considera el conjunto 
-    $$\mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})= \left\{X:\Omega\to\mathbb{R}\text{ es una variable aleatoria y } \mathbb{E}[|X|]<\infty\right\}.$$
-En $\mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})$ defina la relación
-\[
-X\sim Y
-\quad \Longleftrightarrow \quad
-X\overset{\text{a.s.}}{=}  Y.
-\]
-Utiliza las propiedades de la integral de Lebesgue para probar que $\sim$ es una relación de equivalencia. 
-Concluya que
-$$L^{1}(\Omega,\mathcal{F},\mathbb{P}) = \left \{[X] : X \in \mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})\right\}$$
-es en efecto el conjunto de clases de equivalencia de variables aleatorias valor absoluto
-integrables respecto de esta relación de variables aleatorias que son iguales casi seguramente.</p>
+  <p>Utiliza las propiedades de la integral de Lebesgue de una variable aleatoria para probar que $\sim$ es una relación 
+    de equivalencia. Concluye que
+    $$L^{1}(\Omega,\mathcal{F},\mathbb{P}) = \left \{[X] : X \in \mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})\right\}$$
+    es en efecto el conjunto de clases de equivalencia de variables aleatorias valor absoluto
+    integrables respecto de esta relación de variables aleatorias que son iguales casi seguramente.
+  </p>
 </div>
 
 <div class="teorema-box">
-  <h1 class="number-title-practica">Teoremas de convergencia</h1>
+  <h1 class="title-practica">Teoremas de Convergencia</h1>
   <ul>
     <!-- <li><strong>Teorema de la Convergencia Dominada de Lebesgue:</strong> Si $\{X_n\}_{n=1}^{\infty}$ es una sucesión de variables
       aleatorias tales que $X_n \to X$ casi seguramente, y existe una constante real $M > 0$ tal que $|X_n| \le M$ casi seguramente
@@ -227,9 +270,6 @@ integrables respecto de esta relación de variables aleatorias que son iguales c
     <li><strong>Lema de Fatou:</strong> Si $\{X_n\}_{n=1}^{\infty}$ es una sucesión de variables aleatorias tales que $X_n \ge 0$ casi seguramente, entonces:
     $$ \displaystyle \int_{\Omega} \left( \liminf_{n \to \infty} X_n \right) d\mathbb{P} \le \liminf_{n \to \infty} \displaystyle \int_{\Omega} X_n d\mathbb{P} $$
     </li>
-    
-  
-    
     <!-- <li><strong>Lema de Fatou Inverso:</strong> Si $\{X_n\}_{n=1}^{\infty}$ es una sucesión de variables aleatorias,
        y existe una variable integrable $Y \in L^1$ tal que $X_n \le Y$ casi seguramente para todo $n$, 
        entonces
@@ -239,16 +279,22 @@ integrables respecto de esta relación de variables aleatorias que son iguales c
   </ul>
 </div>
 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Enuncia cada una de las propiedades del Teorema anterior en términos de la esperanza matemática $\mathbb{E}[\cdot]$.
+  </p>
+</div>
+
 <div class="teorema-box">
-  <h1 class="number-title-practica">Teorema del Cambio de Variable (Ley del Estadístico Inconsciente)</h1>
-  Si $g: \mathbb{R} \to \mathbb{R}$ es una función Borel medible tal que $g(X) \in L^1(\Omega, \mathcal{F}, \mathbb{P})$, y $P_X$ es la medida de probabilidad inducida por $X$ en $\mathbb{R}$ (su distribución), 
+  <h1 class="title-practica">Teorema del Cambio de Variable (Ley del Estadístico Inconsciente)</h1>
+  Si $g: \mathbb{R} \to \mathbb{R}$ es una función Borel medible tal que $g(X) \in L^1(\Omega, \mathcal{F}, \mathbb{P})$, y $\mathbb{P}_X$ es la medida de probabilidad inducida por $X$ en $\mathbb{R}$, 
   entonces
   $$ \displaystyle \int_{\Omega} g(X) d\mathbb{P} = \displaystyle \int_{\mathbb{R}} g(x) d\mathbb{P}_X(x) $$
   Esto es,  podemos integrar en el espacio real en lugar del espacio muestral  $\Omega$.
 </div>
 
 <div class="teorema-box">
-  <h1 class="number-title-practica">Teorema (Desigualdades Integrales)</h1>
+  <h1 class="title-practica">Teorema (Desigualdades Integrales)</h1>
   
   <ul>
     <li><strong>Desigualdad de Jensen:</strong> Si $\varphi: \mathbb{R} \to \mathbb{R}$ es una función
@@ -275,7 +321,7 @@ integrables respecto de esta relación de variables aleatorias que son iguales c
 
 
 <div class="teorema-box">
-  <h1 class="number-title-practica">Teoremas de convergencia (Propiedades de la Integral de Lebesgue)</h1>
+  <h1 class="title-practica">Teoremas de convergencia (Propiedades de la Integral de Lebesgue)</h1>
   <ul>
     <li><strong>Teorema de Convergencia Monótona (Beppo Levi):</strong> Si $\{X_n\}_{n=1}^{\infty}$ es una sucesión de variables aleatorias tal que $0 \le X_1 \le X_2 \le \dots$ casi seguramente y $X_n \to X$ casi seguramente, entonces:
     $$ \lim_{n \to \infty} \displaystyle \int_{\Omega} X_n d\mathbb{P} = \displaystyle \int_{\Omega} X d\mathbb{P} $$
@@ -291,18 +337,7 @@ integrables respecto de esta relación de variables aleatorias que son iguales c
   </ul>
 </div>
 
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad. Considera el conjunto 
-    $$\mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})= \left\{X:\Omega\to\mathbb{R}\text{ es una variable aleatoria y } \;\middle|\; \mathbb{E}[|X|]<\infty\right\}.$$
-En $\mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})$ defina la relación
-\[
-X\sim Y
-\quad \Longleftrightarrow \quad
-X\overset{\text{a.s.}}{=}  Y.
-\]
-Demuestre que $\sim$ es una relación de equivalencia. Concluya que $L^{1}(\Omega,\mathcal{F},\mathbb{P})$ puede definirse como el conjunto de clases de equivalencia de variables aleatorias integrables respecto de esta relación.</p>
-</div>
+
 
 <!-- Donde aparecerá la fecha de la última modificación -->
 <footer>

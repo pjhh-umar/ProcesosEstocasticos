@@ -930,26 +930,11 @@ h1.title-definicion{
     align-content: center;
     /* padding: 1%; */    
 }
-/* 
-.info-box-dark{
-    background:  rgb(  33, 47, 60  );
-    color:  rgb( 165, 105, 189 );
-    border-radius: 25px;
-    padding: 20px;
-    border: 10px solid  rgba( 190, 236, 172,0.5);
-    margin: auto;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    font-size: 20px;
-    width: 70%;
-    box-shadow: 10px 10px 15px  rgb( 112, 123, 124 );
-} */
 
 
 .definicion-box{
-  
   background: rgba(232, 245, 233, 0.8);
-  color: #134316; 
+  color: #003b04; 
   border: 1px solid #c8e6c9; 
   border-left: 5px solid #4caf50; 
 
@@ -971,7 +956,7 @@ h1.title-definicion{
 
 .teorema-box{
   background: rgba(232, 241, 250, 0.95); /* Azul muy pálido */
-  color: #0644a2; /* Azul marino profundo para el texto */
+  color: #0046af; /* Azul marino profundo para el texto */
   border: 1px solid #90caf9; 
   border-left: 6px solid #1565c0; /* Borde grueso para resaltar importancia */
   border-radius: 20px;
@@ -991,24 +976,9 @@ h1.title-definicion{
  
 }
 
-/* .teorema-box{
-  background:  rgb(218, 237, 245);
-  color: black;
-  border-radius: 20px;
-  padding: 50px;
-  border: 5px solid  rgb(0, 120, 175);
-  margin: auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  font-size: 20px;
-  width: 80%;
-  box-shadow: 2px 2px 15px 2px  rgb(31, 147, 201);  
-  } */
-
-
 .ejercicio-box{
   background: rgba(255, 152, 0, 0.06); 
-  color: #a13900; 
+  color: #752901; 
   border: 1px solid rgba(255, 152, 0, 0.2);
   border-left: 5px solid #ff9800;
   box-shadow: 0px 4px 10px 0px rgba(255, 152, 0, 0.15);
