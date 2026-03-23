@@ -455,7 +455,7 @@
 </div>
 
 <div class="definicion-box">
-  <h1 class="number-title-practica">Definición (Medida de Lebesgue en $\mathbb{R}$)</h1>
+  <h1 class="number-title-practica">Definición (Medida de Lebesgue en $\mathbb{R}$ y conjuntos Lebesgue medibles)</h1>
   
   <p>La <strong>medida de Lebesgue</strong> (denotada comúnmente como $\lambda$ o $m$) es la forma estándar y rigurosa de asignar una "longitud", "área" o "volumen" a los subconjuntos del espacio euclidiano. En la recta real $\mathbb{R}$, su construcción formal se realiza en dos pasos fundamentales:</p>
 
@@ -464,12 +464,12 @@
 
   $$ \lambda^*(A) = \inf \left\{ \sum_{i=1}^{\infty} (b_i - a_i) : A \subseteq \bigcup_{i=1}^{\infty} (a_i, b_i) \right\} $$
 
-  <p><strong>2. Conjuntos Medibles (Condición de Carathéodory):</strong><br>
-  Un conjunto $E \subseteq \mathbb{R}$ se dice que es <strong>Lebesgue medible</strong> si "divide" de manera perfectamente aditiva a cualquier otro subconjunto de prueba $A \subseteq \mathbb{R}$ (sea medible o no). Es decir, $E$ es medible si satisface la siguiente condición:</p>
+  <p><strong>2. Conjuntos Lebesgue Medibles (Condición de Carathéodory):</strong><br>
+  Un conjunto $E \subseteq \mathbb{R}$ se dice que es <strong>Lebesgue medible</strong> si para todo $A \subseteq \mathbb{R}$ se satisface la siguiente condición:</p>
 
-  $$ \lambda^*(A) = \lambda^*(A \cap E) + \lambda^*(A \cap E^c) \quad \text{para todo } A \subseteq \mathbb{R} $$
+  $$ \lambda^*(A) = \lambda^*(A \cap E) + \lambda^*(A \cap E^c)  $$
 
-  <p>A la colección de todos los conjuntos que cumplen esta condición se le conoce como la $\sigma$-álgebra de Lebesgue, denotada por $\mathcal{L}$. Si un conjunto $E \in \mathcal{L}$, su <strong>medida de Lebesgue</strong> se define formalmente como su medida exterior:</p>
+  <p>A la colección de todos los conjuntos que cumplen esta condición se le conoce como la <strong>$\sigma$-álgebra de Lebesgue</strong>, denotada por $\mathcal{L}$. Si un conjunto $E \in \mathcal{L}$, su <strong>medida de Lebesgue</strong> se define formalmente como su medida exterior:</p>
 
   $$ \lambda(E) = \lambda^*(E) $$
 
