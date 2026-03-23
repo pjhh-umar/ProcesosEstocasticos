@@ -114,11 +114,12 @@
   <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sea $X: \Omega \to \mathbb{R}$
     una variable aleatoria. Para definir la <em>integral de Lebesgue de $X$ con respecto a la medida de probabilidad $\mathbb{P}$</em>,
     primero descomponemos a $X$ en sus partes <em>positiva</em> y <em>negativa</em>, definidas respectivamente como:
-  </p>
+  
   <ul class="two-column">
     <li>$X^+ = \max\{X, 0\}$</li>
     <li>$X^- = \max\{-X, 0\}$</li>
   </ul>
+  </p>
   
   <p>De modo que $X = X^+ - X^-$ y el valor absoluto es $|X| = X^+ + X^-$. Notemos que ambas variables, $X^+$ y $X^-$, son estrictamente no negativas.</p>
   
@@ -134,31 +135,45 @@
     $$\mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})= \left\{X:\Omega\to\mathbb{R}\text{ es una variable aleatoria } \big| \displaystyle \int_{\Omega} |X| d\mathbb{P}<\infty\right\}$$
      al conjunto de variables aleatorias Lebesgue integrables sobre $(\Omega, \mathcal{F}, \mathbb{P})$.
   </p>
-    <b>Observación:</b> Dada las relaciones $X = X^+ - X^-$ y $|X| = X^+ + X^-$, 
-    se tiene que $X$ es Lebesgue integrable sobre $(\Omega, \mathcal{F}, \mathbb{P})$ si y solo si $|X|$ es Lebesgue integrable sobre $(\Omega, \mathcal{F}, \mathbb{P})$.
+  <p>  
+  <b>Observación:</b> Dada las relaciones $X = X^+ - X^-$ y $|X| = X^+ + X^-$, 
+    se tiene que $X$ es Lebesgue integrable sobre $(\Omega, \mathcal{F}, \mathbb{P})$ si y solo si $|X|$ es Lebesgue integrable 
+    sobre $(\Omega, \mathcal{F}, \mathbb{P})$.
   </p>
 </div>
+
 
 
 <div class="ejercicio-box">
-  <h1 class="title-practica">Ejercicio 1 (Igualdad casi segura como relación de equivalencia)</h1>
-  
-  <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sea $\mathcal{M}$ la colección de todas las variables
-    aleatorias reales definidas sobre $\Omega$. Se define la relación $\sim_{\text{a.s.}}$ sobre $\mathcal{M}$ como:
-
-    $$X \sim_{\text{a.s.}} Y \text{ si y sólo si } X \overset{\text{a.s.}}{=} Y$$
-    
-    Demuestra que $\sim_{\text{a.s.}}$ es una relación de equivalencia sobre $\mathcal{M}$. 
-    <!-- En otras palabras, prueba que para cualesquiera variables aleatorias $X, Y, Z \in \mathcal{M}$,
-    se cumplen las siguientes tres propiedades: -->
+  <h1 class="number-title-practica">Ejercicio </h1>
+  <p>Sea $\mathcal{M}$ la colección de todas las variables aleatorias reales sobre $\Omega$. Se define 
+    la relación $\sim_{\text{a.s.}}$ en  $\mathcal{M}$ como:  $X \sim Y \iff X \overset{\text{a.s.}}{=} Y$.</p>
+  <p>1. Demuestra que $\sim_{\text{a.s.}}$ es una relación de equivalencia.</p>
+  <p>2. Concluye que $L^1(\Omega, \mathcal{F}, \mathbb{P}) = \mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P}) / \sim_{\text{a.s.}}$ es el conjunto de clases de equivalencia 
+    de variables aleatorias valor absoluto integrable sobre el espacio de probabilidad $(\Omega, \mathcal{F}, \mathbb{P})$ que son iguales casi seguras.
   </p>
-  
-  <!-- <ul>
-    <li><strong>Reflexividad:</strong> $X \overset{\text{a.s.}}{=} X$.</li>
-    <li><strong>Simetría:</strong> Si $X \overset{\text{a.s.}}{=} Y$, entonces $Y \overset{\text{a.s.}}{=} X$.</li>
-    <li><strong>Transitividad:</strong> Si $X \overset{\text{a.s.}}{=} Y$ y $Y \overset{\text{a.s.}}{=} Z$, entonces $X \overset{\text{a.s.}}{=} Z$.</li>
-  </ul> -->
+
+  </p>
 </div>
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición</h1>
+  
+  <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sea $p \in [1, \infty)$. 
+    Se define el espacio $\mathcal{L}^p(\Omega, \mathcal{F}, \mathbb{P})$ como la colección de todas las 
+    variables aleatorias reales $X$ tales que el valor absoluto de su $p$-ésimo momento es integrable:
+  
+  $$ \mathcal{L}^p(\Omega, \mathcal{F}, \mathbb{P}) = \left\{ X : \Omega \to \mathbb{R} \mid X \text{ es v.a. y } \displaystyle \int_{\Omega} |X|^p d\mathbb{P} < \infty \right\} $$
+  </p>
+
+  
+
+  <p>Similarmente a lo que se hizo con $L^1(\Omega, \mathcal{F}, \mathbb{P})$, se define el espacio cociente
+    $L^p(\Omega, \mathcal{F}, \mathbb{P})$como:
+    $$ L^p(\Omega, \mathcal{F}, \mathbb{P}) = \mathcal{L}^p(\Omega, \mathcal{F}, \mathbb{P}) / \sim_{\text{a.s.}} $$
+  </p>
+</div>
+
 
 <div class="teorema-box">
   <h1 class="title-practica">Teorema (Propiedades de la Integral de Lebesgue)</h1>
@@ -168,23 +183,24 @@
     a la medida de probabilidad $\mathbb{P}$ satisface las siguientes propiedades:
   </p>
 
-  <ul>
-    <li><strong>Linealidad:</strong> Si  $X, Y \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y $a, b \in \mathbb{R}$, entonces
+  <ol>
+    <li><strong>Linealidad:</strong> Si  $X, Y \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y $a, b \in \mathbb{R}$, entonces $aX + bY \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y se cumple que
     $$ \displaystyle \int_{\Omega} (aX + bY) d\mathbb{P} = a \displaystyle \int_{\Omega} X d\mathbb{P} + b \displaystyle \int_{\Omega} Y d\mathbb{P} $$
     
     </li>
     
     <li><strong>Aditividad sobre dominios disjuntos:</strong> Si $X \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y $A, B \in \mathcal{F}$ 
-      son eventos mutuamente excluyentes ($A \cap B = \emptyset$),
-      la integral sobre la unión es la suma de las integrales sobre cada evento.
+      son eventos mutuamente excluyentes ($A \cap B = \emptyset$), entonces
     $$ \displaystyle \int_{A \cup B} X d\mathbb{P} = \displaystyle \int_{A} X d\mathbb{P} + \displaystyle \int_{B} X d\mathbb{P} $$
     </li>
 
-    <li><strong>Integral de la Función Indicadora:</strong> Para cualquier evento medible $A \in \mathcal{F}$, la integral de su función indicadora $\mathbf{1}_A(\cdot)$ es igual a la probabilidad del evento.
-    $$ \displaystyle \int_{\Omega} \mathbf{1}_A d\mathbb{P} = \mathbb{P}(A) $$
+    <li><strong>Integral de la Función Indicadora:</strong> Si $A \in \mathcal{F}$, entonces 
+      $\mathbf{1}_A \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y se cumple que
+      $$ \displaystyle \int_{\Omega} \mathbf{1}_A \,d\mathbb{P} = \mathbb{P}(A) $$
     </li>
 
-    <li><strong>Relación con la Función Indicadora:</strong> Sea  $X \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ Para cualquier conjunto medible $A \in \mathcal{F}$, la integral del producto de $X$ por la función indicadora $\mathbf{1}_A$ sobre todo el espacio es igual a la integral de $X$ restringida al conjunto $A$.
+    <li><strong>Relación con la Función Indicadora:</strong> Si  $X \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y $A \in \mathcal{F}$, entonces 
+    $X \cdot \mathbf{1}_A \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$ y se cumple que
     $$ \displaystyle \int_{\Omega} X \cdot \mathbf{1}_A d\mathbb{P} = \displaystyle \int_{A \cap \Omega} X d\mathbb{P} = \displaystyle \int_{A} X d\mathbb{P} $$
     </li>
     
@@ -194,22 +210,22 @@
      $$ \displaystyle \int_{\Omega} X d\mathbb{P} = \displaystyle \int_{\Omega} Y d\mathbb{P} $$
     </li>
     
-    <li><strong>Monotonía:</strong> Si $X \le Y$ casi seguramente, el orden se preserva en la integración.
+    <li><strong>Monotonía:</strong> Sean $X,Y \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$. Si $X \le Y$ casi seguramente, entonces
     $$ \displaystyle \int_{\Omega} X d\mathbb{P} \le \displaystyle \int_{\Omega} Y d\mathbb{P} $$
     </li>
     
-    <li><strong>Positividad estricta:</strong> Si $X \ge 0$ casi seguramente, entonces $ \displaystyle \int_{\Omega} X d\mathbb{P} \ge 0$. 
+    <li><strong>Positividad estricta:</strong> Sea $X \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$. Si $X \ge 0$ casi seguramente, entonces $ \displaystyle \int_{\Omega} X d\mathbb{P} \ge 0$. 
       Además, si se cumple que $X \ge 0$ casi seguramente y $ \displaystyle \int_{\Omega} X d\mathbb{P} = 0$, necesariamente $X \overset{\text{a.s.}}{=} 0$.
     </li>
     
-    <li><strong>Acotación por el valor absoluto:</strong> El valor absoluto de la integral está acotado por la integral del valor absoluto de la variable.
+    <li><strong>Acotación por el valor absoluto:</strong> Sea $X \in L^{1}(\Omega,\mathcal{F},\mathbb{P})$. Se satisface la siguiente desigualdad:
     $$ \left| \displaystyle \int_{\Omega} X d\mathbb{P} \right| \le \displaystyle \int_{\Omega} |X| d\mathbb{P} $$
     </li>
-  </ul>
+  </ol>
 </div>
 
 <div class="definicion-box">
-  <h1 class="title-practica">Definición (Esperanza de una Variable Aleatoria)</h1>
+  <h1 class="title-practica">Definición (Esperanza de una variable aleatoria)</h1>
   
   <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sea $X$ una variable aleatoria Lebesgue integrable
     con respecto a la medida de probabilidad $\mathbb{P}$.
@@ -226,11 +242,7 @@
   $$ \mathbb{E}[X] = \displaystyle \int_{\Omega} X^+ d\mathbb{P} - \displaystyle \int_{\Omega} X^- d\mathbb{P} $$
 </div>
 
-<div class="ejercicio-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>Enuncia cada una de las propiedades del Teorema anterior en términos de la esperanza matemática $\mathbb{E}[\cdot]$.
-  </p>
-</div>
+
 
 <div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
@@ -240,14 +252,13 @@
   </p>
 </div>
 
-<div class="nota-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>Utiliza las propiedades de la integral de Lebesgue de una variable aleatoria para probar que $\sim$ es una relación 
-    de equivalencia. Concluye que
-    $$L^{1}(\Omega,\mathcal{F},\mathbb{P}) = \left \{[X] : X \in \mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})\right\}$$
-    es en efecto el conjunto de clases de equivalencia de variables aleatorias valor absoluto
-    integrables respecto de esta relación de variables aleatorias que son iguales casi seguramente.
-  </p>
+<div class="ejercicio-box">
+        <h1 class="number-title-practica">Ejercicio</h1>
+        <div class="ejercicio-text">
+            Si \( X, Y \) son variables aleatorias \( \mathcal{G} \)-medibles y
+            \( \displaystyle \int_{D} X d\mathbb{P} = \int_{D} Y d\mathbb{P} \) para todo
+            \( D \in \mathcal{G} \), entonces \( X = Y \) a.s.
+        </div>
 </div>
 
 <div class="teorema-box">
@@ -281,12 +292,6 @@
   </ul>
 </div>
 
-<div class="ejercicio-box">
-  <h1 class="number-title-practica">Ejercicio</h1>
-  <p>Enuncia cada una de las propiedades del Teorema anterior en términos de la esperanza matemática $\mathbb{E}[\cdot]$.
-  </p>
-</div>
-
 <div class="teorema-box">
   <h1 class="title-practica">Teorema del Cambio de Variable (Ley del Estadístico Inconsciente)</h1>
   Si $g: \mathbb{R} \to \mathbb{R}$ es una función Borel medible tal que $g(X) \in L^1(\Omega, \mathcal{F}, \mathbb{P})$, y $\mathbb{P}_X$ es la medida de probabilidad inducida por $X$ en $\mathbb{R}$, 
@@ -294,6 +299,7 @@
   $$ \displaystyle \int_{\Omega} g(X) d\mathbb{P} = \displaystyle \int_{\mathbb{R}} g(x) d\mathbb{P}_X(x) $$
   Esto es,  podemos integrar en el espacio real en lugar del espacio muestral  $\Omega$.
 </div>
+
 
 <div class="teorema-box">
   <h1 class="title-practica">Teorema (Desigualdades Integrales)</h1>
@@ -309,37 +315,171 @@
       $$ \mathbb{P}(X \ge a) \le \frac{1}{a} \displaystyle \int_{\Omega} X d\mathbb{P} $$
     </li>
     
-    <li><strong>Desigualdad de Hölder:</strong> Sean $p, q > 1$ conjugados, es decir,
-       son tales que $\displaystyle{\frac{1}{p} + \frac{1}{q} = 1}$. Si $|X|^p$ y $|Y|^q$ son integrables, 
-       entonces el producto $XY$ es integrable y cumple:
-       $$ \displaystyle \int_{\Omega} |XY| d\mathbb{P} \le \left( \displaystyle \int_{\Omega} |X|^p d\mathbb{P} \right)^{1/p} \left( \displaystyle \int_{\Omega} |Y|^q d\mathbb{P} \right)^{1/q} $$
-
-    <p><b>Nota:</b> Cuando $p=q=2$, la desigualdad anterior es mejor conocida como <em>Desigualdad de Cauchy-Schwarz</em>.</p>
-    </li>
+    <li><strong>Desigualdad de Cauchy-Schwarz:</strong> Si $X^2, Y^2 \in L^1(\Omega, \mathcal{F}, \mathbb{P})$, entonces $XY \in L^1(\Omega, \mathcal{F}, \mathbb{P})$ y se cumple que
+       $$ \displaystyle \int_{\Omega} |XY| d\mathbb{P} \le \left( \displaystyle \int_{\Omega} |X|^2 d\mathbb{P} \right)^{1/2} \left( \displaystyle \int_{\Omega} |Y|^2 d\mathbb{P} \right)^{1/2} $$    </li>
   </ul>
 </div>
 
 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  
+  <p>Considera el espacio  $L^1(\Omega, \mathcal{F}, \mathbb{P})$ de las clases de equivalencia de variables aleatorias integrables sobre el espacio de probabilidad $(\Omega, \mathcal{F}, \mathbb{P})$. </p>
+    <ol>
+      <li>Demuestra que $(L^1(\Omega, \mathcal{F}, \mathbb{P})), +, \cdot)$ es un <strong>espacio vectorial</strong> sobre el campo de los números reales $\mathbb{R}$.</li>
+      <li>Considera la función $\|\cdot\|_1: L^1(\Omega, \mathcal{F}, \mathbb{P}) \to [0, \infty)$ definida por:
+          $$ \|X\|_1 = \displaystyle \int_{\Omega} |X| d\mathbb{P} $$Demuestra detalladamente que esta función define una <strong>norma</strong> sobre $L^1(\Omega, \mathcal{F}, \mathbb{P})$.
+        <p>Para ello, prueba que se satisfacen las siguientes condiciones para cualesquiera $X, Y \in L^1$ y $\alpha \in \mathbb{R}$:</p>
+        <ul style="line-height: 1.8;">
+          <li> $\|X\|_1 = 0 \iff X \overset{\text{a.s.}}{=} 0$. </li>
+          <li><strong>No negatividad</strong> $\|X\|_1 \ge 0$.
+            <!-- <br><small><em>(Pista: Utiliza la propiedad de positividad estricta de la integral de Lebesgue).</em></small> -->
+          </li>
+          <li><strong>Homogeneidad:</strong> $\|\alpha X\|_1 = |\alpha| \cdot \|X\|_1$.
+            <!-- <br><small><em>(Pista: Utiliza la linealidad de la integral y las propiedades del valor absoluto).</em></small> -->
+          </li>
+          <li><strong>Desigualdad del Triángulo:</strong> $\|X + Y\|_1 \le \|X\|_1 + \|Y\|_1$.
+            <!-- <br><small><em>(Pista: Recuerda que $|X + Y| \le |X| + |Y|$ y aplica la monotonía de la integral).</em></small> -->
+          </li>
+        </ul>
+      </li>  
+  </ol>
+
+  <!-- <hr style="border: 0; border-top: 1px solid rgba(0, 166, 255, 0.2); margin: 20px 0;">
+   -->
+  <p><strong>Pregunta</strong> ¿La función $\|\cdot\|_1$ define una norma sobre el espacio $\mathcal{L}^1(\Omega, \mathcal{F}, \mathbb{P})$?</p>
+</div>
 
 
 <div class="teorema-box">
-  <h1 class="title-practica">Teoremas de convergencia (Propiedades de la Integral de Lebesgue)</h1>
+  <h1 class="title-practica">Teorema</h1>
+   <p>En el espacio  $L^p(\Omega, \mathcal{F}, \mathbb{P})$ la función $\|\cdot\|_p: L^p(\Omega, \mathcal{F}, \mathbb{P}) \to [0, \infty)$ dada por:</p>
+    $$ \|X\|_p = \displaystyle \int_{\Omega} |X|^p d\mathbb{P} $$
+
+  <p>Define una <strong>norma</strong> sobre $L^p(\Omega, \mathcal{F}, \mathbb{P})$.
+  
+</div>
+
+<div class="teorema-box">
+  <h1 class="title-practica">Teorema (Desigualdades en Espacios $L^p(\Omega, \mathcal{F}, \mathbb{P})$)</h1>
+  
   <ul>
-    <li><strong>Teorema de Convergencia Monótona (Beppo Levi):</strong> Si $\{X_n\}_{n=1}^{\infty}$ es una sucesión de variables aleatorias tal que $0 \le X_1 \le X_2 \le \dots$ casi seguramente y $X_n \to X$ casi seguramente, entonces:
-    $$ \lim_{n \to \infty} \displaystyle \int_{\Omega} X_n d\mathbb{P} = \displaystyle \int_{\Omega} X d\mathbb{P} $$
+    <li><strong>Desigualdad de Hölder:</strong> Sean $p, q > 1$ tales que $\displaystyle{\frac{1}{p} + \frac{1}{q} = 1}$. 
+      Si $X \in L^p(\Omega, \mathcal{F}, \mathbb{P})$ y $Y \in L^q(\Omega, \mathcal{F}, \mathbb{P})$, entonces el producto $XY$ es integrable ($XY \in L^1$) y cumple:
+      $$ \displaystyle \int_{\Omega} |XY| d\mathbb{P} \le \left( \displaystyle \int_{\Omega} |X|^p d\mathbb{P} \right)^{1/p} \left( \displaystyle \int_{\Omega} |Y|^q d\mathbb{P} \right)^{1/q} $$
+      <p><b>Nota:</b> El caso $p=q=2$ corresponde a la <em>Desigualdad de Cauchy-Schwarz</em>.</p>
     </li>
-    
-    <li><strong>Lema de Fatou:</strong> Si $\{X_n\}_{n=1}^{\infty}$ es una sucesión de variables aleatorias no negativas ($X_n \ge 0$ casi seguramente), entonces:
-    $$ \displaystyle \int_{\Omega} \left( \liminf_{n \to \infty} X_n \right) d\mathbb{P} \le \liminf_{n \to \infty} \displaystyle \int_{\Omega} X_n d\mathbb{P} $$
-    </li>
-    
-    <li><strong>Teorema de Convergencia Dominada (Lebesgue):</strong> Si $X_n \to X$ casi seguramente, y existe una variable aleatoria integrable $Y \in \mathcal{L}^1$ tal que $|X_n| \le Y$ casi seguramente para todo $n$, entonces:
-    $$ \lim_{n \to \infty} \displaystyle \int_{\Omega} X_n d\mathbb{P} = \displaystyle \int_{\Omega} X d\mathbb{P} $$
+
+    <li><strong>Desigualdad de Minkowski:</strong> Sea $p \ge 1$. Si $X, Y \in L^p(\Omega, \mathcal{F}, \mathbb{P})$, 
+      entonces la suma $X+Y \in L^p(\Omega, \mathcal{F}, \mathbb{P})$ y se satisface la desigualdad triangular para la norma $\|\cdot\|_p$:
+      $$ \left( \displaystyle \int_{\Omega} |X + Y|^p d\mathbb{P} \right)^{1/p} \le \left( \displaystyle \int_{\Omega} |X|^p d\mathbb{P} \right)^{1/p} + \left( \displaystyle \int_{\Omega} |Y|^p d\mathbb{P} \right)^{1/p} $$
+      <p><b>Observación:</b> Esta desigualdad garantiza que el espacio $L^p$ es un espacio vectorial normado.</p>
     </li>
   </ul>
 </div>
 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>Enuncia las Definiciones y Teoremas presentados previamente en términos de la esperanza matemática 
+    $\mathbb{E}[\cdot]$ de las variables aleatorias.
+  </p>
+</div>
 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad. Si $\mathcal{A}$ es la $\sigma$-álgebra generada por un evento $B \in \mathcal{F}$ tal que $\mathbb{P}(B) > 0$ y $\mathbb{P}(B^c) > 0$. Encuentra explícitamente la forma de:
+  </p>
+  
+  <ol style="margin-left: 20px; line-height: 2;">
+    <li>
+      La esperanza condicional $\mathbb{E}(X|\mathcal{A})$ para cualquier variable aleatoria integrable $X \in L^1(\Omega, \mathcal{F}, \mathbb{P})$.
+    </li>
+    <li>
+      La probabilidad condicional $\mathbb{P}(C|\mathcal{A})$ para cualquier evento medible $C \in \mathcal{F}$.
+    </li>
+  </ol>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad. Si $\mathcal{A}$ es la $\sigma$-álgebra generada por una partición medible de $\Omega$, dada por $\{B_1, B_2, \dots, B_n\}$, tal que $\mathbb{P}(B_i) > 0$ para todo $i = 1, 2, \dots, n$, y si $X \in L^1(\Omega, \mathcal{F}, \mathbb{P})$, determina la expresión para la esperanza condicional:
+    $$ Y = \mathbb{E}(X|\mathcal{A}) $$
+  </p>
+  
+  <!-- <p><strong>Pista:</strong> La esperanza condicional debe ser una función $\mathcal{A}$-medible, lo que implica que debe ser constante sobre cada conjunto $B_i$ de la partición.</p> -->
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad, $(\Omega', \mathcal{F}')$ un espacio medible, 
+    $X \in L^1(\Omega, \mathcal{F}, \mathbb{P})$ una variable aleatoria integrable, y  
+    $Y: (\Omega, \mathcal{F}) \to (\Omega', \mathcal{F}')$ una función medible. 
+    Si la imagen de $Y$ es un conjunto finito $\text{Im}(Y) = \{y_1, y_2, \dots, y_n\} \subset \Omega'$ con $\mathbb{P}(Y = y_i) > 0$ 
+    para cada $i$, considera la partición medible de $\Omega$ dada por $\{B_i = \{Y = y_i\} : i = 1, \dots, n\}$. 
+  </p>
+  
+  <p>Si $\mathcal{A} = \sigma(Y)$, encuentra las expresiones explícitas para:</p>
+  
+  <ul style="margin-left: 20px; line-height: 2;">
+    <li>$\mathbb{E}(X|\sigma(Y))$</li>
+    <li>$\mathbb{E}(X|Y = y_i)$ para cada $i = 1, 2, \dots, n$</li>
+  </ul>
+  
+  <!-- <p><em>Este resultado permite calcular la esperanza condicional cuando disponemos de la información de una variable aleatoria con un número finito de estados.</em></p> -->
+</div>
+
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio 1.9. (Cálculo explícito de Esperanza Condicional)</h1>
+  
+  <p>Supón que el espacio muestral es el intervalo $\Omega = [-1, 1]$, la $\sigma$-álgebra es la de Borel $\mathcal{F} = \mathcal{B}([-1, 1])$ y la medida de probabilidad es $\mathbb{P} = \frac{\lambda}{2}$, donde $\lambda$ es la medida de Lebesgue sobre dicho intervalo.</p>
+
+  <p>Considera las variables aleatorias $X, X_i \colon \Omega \to \mathbb{R}$ para $i = 1, 2, 3$ definidas como:</p>
+  
+  <ul style="list-style: none; line-height: 2;">
+    <li>$\diamond \quad X(\omega) = \omega$</li>
+    <li>$\diamond \quad X_1(\omega) = |\omega|$</li>
+    <li>$\diamond \quad X_2(\omega) = 2\omega$</li>
+    <li>$\diamond \quad X_3(\omega) = \omega^2$</li>
+  </ul>
+
+  <p>Determina la forma explícita de:</p>
+
+  <ol style="margin-left: 20px; line-height: 2.5;">
+    <li>$\mathbb{E}(X|X_i)$ para cada $i = 1, 2, 3$.</li>
+    <li>$\mathbb{E}(X_i|X)$ para cada $i = 1, 2, 3$.</li>
+    <li>$\mathbb{P}(X > 0 | X_1)$.</li>
+  </ol>
+
+  <hr style="border: 0; border-top: 1px solid rgba(0, 166, 255, 0.2); margin: 20px 0;">
+
+  <p><strong>Sugerencia didáctica:</strong> Para el inciso (a) con $X_1$ y $X_3$, observa que estas funciones no son inyectivas, lo que implica una "pérdida de información" al condicionar. Para el inciso (b), nota que $X$ genera toda la información del espacio.</p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sea $X$ una variable aleatoria de Bernoulli con parámetro $p \in (0, 1)$, es decir, $\mathbb{P}(X=1)=p$ y $\mathbb{P}(X=0)=1-p$. Sea $\mathcal{A}$ la $\sigma$-álgebra generada por el evento $A = \{X = 1\}$.
+  </p>
+  
+  <ol style="margin-left: 20px; line-height: 2;">
+    <li>
+      Determina la expresión explícita de la variable aleatoria $Y = \mathbb{E}(X|\mathcal{A})$.
+    </li>
+    <li>
+      Verifica que se cumple la propiedad de la torre: $\mathbb{E}[\mathbb{E}(X|\mathcal{A})] = \mathbb{E}[X]$.
+    </li>
+    <li>
+      Si definimos una nueva variable $Z = 1 - X$, encuentra $\mathbb{E}(Z|X)$.
+    </li>
+  </ol>
+
+  <p><em>Este ejercicio ilustra que cuando la $\sigma$-álgebra contiene toda la información de la variable, la esperanza condicional no realiza ningún 'promedio', sino que devuelve la variable original.</em></p>
+</div>
 
 <!-- Donde aparecerá la fecha de la última modificación -->
 <footer>
