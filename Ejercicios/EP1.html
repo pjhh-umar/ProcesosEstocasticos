@@ -107,6 +107,29 @@
 </head>  
 
 <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos primer examen parcial</h1>   
+<div class="definicion-box">
+  <h1 class="number-title-practica">Definición (Integral de Lebesgue de una Variable Aleatoria No Negativa)</h1>
+  
+  <p>Sea $(\Omega, \mathcal{F}, \mathbb{P})$ un espacio de probabilidad y sea $X: \Omega \to [0, \infty]$ una variable aleatoria no negativa.</p>
+  
+  <p>Para construir la integral de Lebesgue  de $X$, primero consideramos las <strong>variables aleatorias simples no negativas</strong>. Una variable aleatoria simple 
+    $S\colon \Omega \to \mathbb{R}$ es aquella que toma un número finito de valores $c_1, c_2, \dots, c_n$, y se puede expresar como una combinación lineal de funciones 
+    indicadoras:</p>
+  
+  $$ S = \sum_{i=1}^{n} c_i \mathbf{1}_{A_i} $$
+  
+  <p>donde los conjuntos $A_i \in \mathcal{F}$ forman una partición del espacio muestral $\Omega$. Se define la <strong> integral de Lebesgue de $S$ con respecto a $\mathbb{P}$</strong> 
+    de manera natural como:</p>
+
+  $$ \displaystyle \int_{\Omega} S d\mathbb{P} = \sum_{i=1}^{n} c_i \mathbb{P}(A_i) $$
+
+  <p>La <strong>integral de Lebesgue de la variable aleatoria no negativa $X$ con respecto a $\mathbb{P}$</strong>
+    se define formalmente como:</p>
+  
+  $$ \displaystyle \int_{\Omega} X d\mathbb{P} = \sup \left\{ \displaystyle \int_{\Omega} S d\mathbb{P} : S \text{ es una variable aleatoria simple y } 0 \le S \le X,  \right\} $$
+  
+  <p><b>Observación:</b> De esta definición se tiene que el valor de esta integral puede ser infinito.</p>
+</div>
 
 <div class="definicion-box">
   <h1 class="title-practica">Definición (Integral de Lebesgue de una variable aleatoria)</h1>
@@ -132,7 +155,7 @@
   </p>
 
   <p>Se denota por 
-    $$\mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})= \left\{X:\Omega\to\mathbb{R}\text{ es una variable aleatoria } \big| \displaystyle \int_{\Omega} |X| d\mathbb{P}<\infty\right\}$$
+    $$\mathcal{L}^{1}(\Omega,\mathcal{F},\mathbb{P})= \left\{X:\Omega\to\mathbb{R}\text{ es una variable aleatoria }  \Big| \displaystyle \int_{\Omega} |X| d\mathbb{P}<\infty\right\}$$
      al conjunto de variables aleatorias Lebesgue integrables sobre $(\Omega, \mathcal{F}, \mathbb{P})$.
   </p>
   <p>  
@@ -421,42 +444,70 @@
     para cada $i$, considera la partición medible de $\Omega$ dada por $\{B_i = \{Y = y_i\} : i = 1, \dots, n\}$. 
   </p>
   
-  <p>Si $\mathcal{A} = \sigma(Y)$, encuentra las expresiones explícitas para:</p>
+  <p>Encuentra expresiones explícitas para:</p>
   
-  <ul style="margin-left: 20px; line-height: 2;">
+  <ol class="two-column">
     <li>$\mathbb{E}(X|\sigma(Y))$</li>
     <li>$\mathbb{E}(X|Y = y_i)$ para cada $i = 1, 2, \dots, n$</li>
-  </ul>
+  </ol>
   
   <!-- <p><em>Este resultado permite calcular la esperanza condicional cuando disponemos de la información de una variable aleatoria con un número finito de estados.</em></p> -->
 </div>
 
+<div class="definicion-box">
+  <h1 class="number-title-practica">Definición (Medida de Lebesgue en $\mathbb{R}$)</h1>
+  
+  <p>La <strong>medida de Lebesgue</strong> (denotada comúnmente como $\lambda$ o $m$) es la forma estándar y rigurosa de asignar una "longitud", "área" o "volumen" a los subconjuntos del espacio euclidiano. En la recta real $\mathbb{R}$, su construcción formal se realiza en dos pasos fundamentales:</p>
+
+  <p><strong>1. Medida Exterior de Lebesgue:</strong><br>
+  Para cualquier subconjunto arbitrario $A \subseteq \mathbb{R}$, la medida exterior $\lambda^*(A)$ se define como el ínfimo de las sumas de las longitudes de todas las sucesiones numerables de intervalos abiertos $\{(a_i, b_i)\}_{i=1}^{\infty}$ que cubren a $A$:</p>
+
+  $$ \lambda^*(A) = \inf \left\{ \sum_{i=1}^{\infty} (b_i - a_i) : A \subseteq \bigcup_{i=1}^{\infty} (a_i, b_i) \right\} $$
+
+  <p><strong>2. Conjuntos Medibles (Condición de Carathéodory):</strong><br>
+  Un conjunto $E \subseteq \mathbb{R}$ se dice que es <strong>Lebesgue medible</strong> si "divide" de manera perfectamente aditiva a cualquier otro subconjunto de prueba $A \subseteq \mathbb{R}$ (sea medible o no). Es decir, $E$ es medible si satisface la siguiente condición:</p>
+
+  $$ \lambda^*(A) = \lambda^*(A \cap E) + \lambda^*(A \cap E^c) \quad \text{para todo } A \subseteq \mathbb{R} $$
+
+  <p>A la colección de todos los conjuntos que cumplen esta condición se le conoce como la $\sigma$-álgebra de Lebesgue, denotada por $\mathcal{L}$. Si un conjunto $E \in \mathcal{L}$, su <strong>medida de Lebesgue</strong> se define formalmente como su medida exterior:</p>
+
+  $$ \lambda(E) = \lambda^*(E) $$
+
+  <p><b>Propiedades Fundamentales:</b></p>
+  <ul>
+    <li><strong>Generalización de la longitud:</strong> Para cualquier intervalo con extremos $a \le b$, la medida de Lebesgue coincide con la longitud de intervalo correspondiente:
+      $\lambda([a, b]) = \lambda((a, b)) = b - a$.</li>
+    <li><strong>Invarianza bajo traslación:</strong> Si desplazamos un conjunto Lebesgue medible $E$ por una constante $x \in \mathbb{R}$, 
+      su medida de Lebesgue no cambia: $\lambda(E + x) = \lambda(E)$.</li>
+    <li><strong>Completitud:</strong> Todo subconjunto de un conjunto de medida Lebesgue cero también tiene medida cero y, por lo tanto, es medible.</li>
+  </ul>
+</div>
 
 <div class="ejercicio-box">
-  <h1 class="number-title-practica">Ejercicio 1.9. (Cálculo explícito de Esperanza Condicional)</h1>
+  <h1 class="number-title-practica">Ejercicio</h1>
   
   <p>Supón que el espacio muestral es el intervalo $\Omega = [-1, 1]$, la $\sigma$-álgebra es la de Borel $\mathcal{F} = \mathcal{B}([-1, 1])$ y la medida de probabilidad es $\mathbb{P} = \frac{\lambda}{2}$, donde $\lambda$ es la medida de Lebesgue sobre dicho intervalo.</p>
 
   <p>Considera las variables aleatorias $X, X_i \colon \Omega \to \mathbb{R}$ para $i = 1, 2, 3$ definidas como:</p>
   
-  <ul style="list-style: none; line-height: 2;">
-    <li>$\diamond \quad X(\omega) = \omega$</li>
-    <li>$\diamond \quad X_1(\omega) = |\omega|$</li>
-    <li>$\diamond \quad X_2(\omega) = 2\omega$</li>
-    <li>$\diamond \quad X_3(\omega) = \omega^2$</li>
-  </ul>
+  <ol class="four-column">
+    <li>$X(\omega) = \omega$</li>
+    <li>$X_1(\omega) = |\omega|$</li>
+    <li>$X_2(\omega) = 2\omega$</li>
+    <li>$X_3(\omega) = \omega^2$</li>
+  </ol>
 
   <p>Determina la forma explícita de:</p>
 
-  <ol style="margin-left: 20px; line-height: 2.5;">
+  <ol class="three-column">
     <li>$\mathbb{E}(X|X_i)$ para cada $i = 1, 2, 3$.</li>
     <li>$\mathbb{E}(X_i|X)$ para cada $i = 1, 2, 3$.</li>
     <li>$\mathbb{P}(X > 0 | X_1)$.</li>
   </ol>
 
-  <hr style="border: 0; border-top: 1px solid rgba(0, 166, 255, 0.2); margin: 20px 0;">
+  
 
-  <p><strong>Sugerencia didáctica:</strong> Para el inciso (a) con $X_1$ y $X_3$, observa que estas funciones no son inyectivas, lo que implica una "pérdida de información" al condicionar. Para el inciso (b), nota que $X$ genera toda la información del espacio.</p>
+  <!-- <p><strong>Sugerencia didáctica:</strong> Para el inciso (a) con $X_1$ y $X_3$, observa que estas funciones no son inyectivas, lo que implica una "pérdida de información" al condicionar. Para el inciso (b), nota que $X$ genera toda la información del espacio.</p> -->
 </div>
 
 
@@ -478,7 +529,7 @@
     </li>
   </ol>
 
-  <p><em>Este ejercicio ilustra que cuando la $\sigma$-álgebra contiene toda la información de la variable, la esperanza condicional no realiza ningún 'promedio', sino que devuelve la variable original.</em></p>
+  <!-- <p><em>Este ejercicio ilustra que cuando la $\sigma$-álgebra contiene toda la información de la variable, la esperanza condicional no realiza ningún 'promedio', sino que devuelve la variable original.</em></p> -->
 </div>
 
 <!-- Donde aparecerá la fecha de la última modificación -->
