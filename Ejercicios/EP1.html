@@ -31,6 +31,19 @@
       };
     </script>
 
+    <script>
+  function toggleRespuestas(btn) {
+    var respuestas = btn.nextElementSibling;
+    if (respuestas.style.display === "none" || respuestas.style.display === "") {
+      respuestas.style.display = "block";
+      btn.textContent = "Ocultar Respuestas";
+    } else {
+      respuestas.style.display = "none";
+      btn.textContent = "Mostrar Respuestas";
+    }
+  }
+</script>
+
     
     <!-- This part restart counter of cards to start at n+1 -->
     <style>

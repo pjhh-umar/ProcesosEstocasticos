@@ -976,19 +976,71 @@ h1.title-definicion{
  
 }
 
-.ejercicio-box{
-  background: rgba(255, 152, 0, 0.06); 
-  color: #752901; 
-  border: 1px solid rgba(255, 152, 0, 0.2);
-  border-left: 5px solid #ff9800;
-  box-shadow: 0px 4px 10px 0px rgba(255, 152, 0, 0.15);
 
+/* --- NUEVOS ESTILOS PARA EJERCICIOS Y RESPUESTAS --- */
+/* Contenedor del ejercicio - Colores UMAR */
+.ejercicio-box {
+  background: rgba(0, 91, 127, 0.04); 
+  color: #002A3A; 
+  border: 1px solid rgba(0, 91, 127, 0.2);
+  border-left: 5px solid #DAA520; /* Dorado UMAR */
+  box-shadow: 0px 4px 10px 0px rgba(0, 91, 127, 0.15);
   border-radius: 20px;
   padding: 25px;
   margin: 40px auto;
   text-align: justify;
-  font-size: 85%;
+  font-size: 95%; /* Ajustado ligeramente para legibilidad */
   width: 90%;
+}
+
+/* Título del ejercicio con numeración automática */
+h1.number-title-practica {
+  font-size: 160%;
+  margin-top: -5px;
+  padding: 0.25%;
+  text-align: center;
+  font-weight: 800;
+  font-family: 'Hina Mincho', serif;
+  color: #005B7F; 
+}
+
+h1.number-title-practica::after {
+  counter-increment: sectionCounter;
+  content: " " counter(temaCounter) "." counter(sectionCounter) ".";
+}
+
+/* Botón interactivo */
+.btn-toggle-respuestas {
+  background-color: #005B7F; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: "Bitter", serif;
+  font-size: 95%;
+  cursor: pointer;
+  margin: 20px auto;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  display: block;
+}
+
+.btn-toggle-respuestas:hover { background-color: #003F5C; }
+.btn-toggle-respuestas:active { transform: scale(0.98); }
+
+/* Contenedor de respuestas */
+.respuestas-container {
+  display: none; 
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: rgba(218, 165, 32, 0.1); 
+  border-left: 4px solid #DAA520; 
+  border-radius: 8px;
+}
+
+.respuestas-container h3 {
+  margin-top: 0;
+  color: #DAA520;
+  font-size: 110%;
 }
 
 .ejercicio-resuelto-box{
@@ -1024,6 +1076,33 @@ h1.title-definicion{
   font-size: 85%;
   width: 90%;
   
+}
+
+/* =========================================
+   NUEVOS ESTILOS PARA LA CAJA DE EJEMPLO
+   ========================================= */
+
+/* Contenedor Principal del Ejemplo */
+.ejemplo-box {
+  /* Fondo gris azulado muy tenue */
+  background-color: #f4f7f9;
+  /* Texto en azul oscuro grisáceo */
+  color: #2c3e50;
+  /* Borde suave en todo el contorno */
+  border: 1px solid #d1dbe5;
+  /* Borde izquierdo grueso en Azul Acero para dar énfasis */
+  border-left: 5px solid #4682b4;
+  
+  /* Mantenemos la sombra y bordes redondeados para consistencia visual */
+  box-shadow: 0px 4px 10px 0px rgba(70, 130, 180, 0.1);
+  border-radius: 20px;
+  
+  /* Espaciado y formato */
+  padding: 25px;
+  margin: 40px auto;
+  text-align: justify;
+  font-size: 95%;
+  width: 90%;
 }
 
 
@@ -1432,32 +1511,27 @@ tbody tr:nth-child(odd) {
       font-size: 14px;
   }
 
-.four-column{
-  columns: 4;
-  /*grid-template-columns: repeat(2, 1fr);*/
-}
 
+/* Listas en columnas para incisos */
+.two-column { columns: 2; list-style-type: lower-alpha; padding-left: 20px; }
+.three-column { columns: 3; list-style-type: lower-alpha; padding-left: 20px; }
+.four-column { columns: 4; list-style-type: lower-alpha; padding-left: 20px; }
 
-.three-column{
-  columns: 3;
-  /*grid-template-columns: repeat(2, 1fr);*/
-}
-
-.two-column{
-  columns: 2;
-  /*grid-template-columns: repeat(2, 1fr);*/
-}
 
 
 /*//// Listas//////*/
 
 
-ol li::marker{
+/* Estilo de los incisos (letras a, b, c...) */
+ol li::marker {
   font-weight: bold; 
-  /* font-size: 17px; */
-  /* /* color: rgb(211, 40, 40);  */
+  color: #DAA520; /* Dorado UMAR */
 }
 
+ol li {
+  padding-left: 8px;
+  margin-bottom: 15px;
+}
 
 /* Para listas anidadas  */
 

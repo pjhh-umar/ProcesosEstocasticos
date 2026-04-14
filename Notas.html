@@ -32,6 +32,18 @@
       };
     </script>
 
+    <script>
+  function toggleRespuestas(btn) {
+    var respuestas = btn.nextElementSibling;
+    if (respuestas.style.display === "none" || respuestas.style.display === "") {
+      respuestas.style.display = "block";
+      btn.textContent = "Ocultar";
+    } else {
+      respuestas.style.display = "none";
+      btn.textContent = "Mostrar Respuestas";
+    }
+  }
+</script>
     
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
@@ -108,24 +120,143 @@
 
       <body class="fondo-body" ><h1 class="page-title"> Notas</h1>  
 
+        <div class="ejemplo-box">
+  <h1 class="title-practica">Ejemplo (Línea telefónica)</h1>
+  <p>
+    En el periodo $[n,n+1]$, la línea telefónica puede estar en dos estados: ocupada $\{0\}$ y desocupada $\{1\}$. Para todo periodo $[n,n+1]$ la probabilidad de que llegue una llamada es $p\in(0,1)$. Si la línea está ocupada no se registra la llamada, de lo contrario se toma la llamada. La probabilidad de que se desocupe es $q\in(0,1)$. En cada periodo puede llegar una llamada o se puede desocupar la línea (pero no ambas cosas).
+  </p>
+  <p>
+    ¿Cuál es el espacio de estados? ¿Cuáles son las probabilidades de transición?
+  </p>
+</div>
 
-      <!-- <h1 class="page-subtitle"></h1>  -->
-      <div class="links-box"  style = "font-family: 'Oldenburg', cursive;">
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Espacio_muestral.html"> Espacio muestral</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Sigma_Algebra.html">$\sigma$-Álgebra</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Espacio_probabilidad.html">Espacio de probabilidad</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Variables_aleatorias.html">Variables aleatorias</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Funcion_distribucion_probabilidad.html"> Función de distribución de probabilidad</a> 
-        
-        
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Convergencia.html">Convergencia</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Teorema_limite_central.html">Teorema del límite Central</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Ley_grandes_numeros.html">Ley de los grandes números</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Distribucion_vectores_aleatorios.html"> Distribución de vectores aleatorios</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Vectores_gaussianos.html"> Vectores Gaussianos</a> 
+<div class="ejemplo-box">
+  <h1 class="title-practica">Ejemplo (Línea telefónica con cola simple)</h1>
+  <p>
+    Este ejemplo es parecido al anterior a diferencia de que, si la línea está ocupada y llega una llamada, ésta se guarda en espera de que se desocupe la línea. Si ya hay una llamada en espera no se registran las siguientes llamadas. Cuando en un periodo se cuelga, se identifica el fin del periodo con el momento de colgar, de modo tal que después de haber colgado ya no se registran llamadas en ese periodo. La probabilidad de que llegue una llamada es $p\in(0,1)$ y la probabilidad de que la línea se desocupe es $q\in(0,1)$.
+  </p>
+  <p>
+    ¿Cuál es el espacio de estados? ¿Cuáles son las probabilidades de transición?
+  </p>
+</div>
 
-        
-    </div> 
+<div class="teorema-box">
+  <h1 class="title-practica">Lema</h1>
+  <p>
+    Sea $(X_n)_{n \in \mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$ y matriz de transición $(p_{x,y})_{x,y \in E}$ definida por
+    $p_{x,y} = \mathbb{P}(X_{n+1} = y \mid X_n = x)$ para todo $n \in \mathbb{N}_{0}$ y $x,y \in E$. 
+    Sean $x,y,z \in E$ y $m,n \in \mathbb{N}_{0}$ tales que $0 \leq m \leq n-1$. Entonces se cumple que
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1} = y \mid X_n = z, X_m = x) = p_{z,y}.$
+  </p>
+  
+  
+  <button class="btn-toggle-respuestas" onclick="toggleRespuestas(this)">Demostración</button>
+  <div class="respuestas-container">
+    Sea
+    $\mathcal{F}_n := \sigma(X_0,\dots,X_n)$ la filtración natural de la cadena. 
+    Como $(X_n)_{n \in \mathbb{N}_{0}}$ es una cadena de Markov homogénea, para todo $y \in E$ se tiene
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y \mid \mathcal{F}_n)=\mathbb{P}(X_{n+1}=y \mid X_n)=p_{X_n,y} \quad \text{c.s.}$
+  </p>
+  <p>
+    Fijemos ahora $x,y,z \in E$ y $m,n \in \mathbb{N}_{0}$ con $0 \leq m \leq n-1$, y supongamos que
+    $\mathbb{P}(X_n=z,\;X_m=x)>0$, de modo que la probabilidad condicional esté bien definida.
+    Definamos el evento
+  </p>
+  <p style="text-align: center;">
+    $A:=\{X_n=z,\;X_m=x\}.$
+  </p>
+  <p>
+    Como $m \leq n-1$, tanto $X_m$ como $X_n$ son $\mathcal{F}_n$-medibles, y por tanto $A \in \mathcal{F}_n$.
+    Entonces,
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y,\;A)=\mathbb{E}\big[\mathbf{1}_{A}\mathbf{1}_{\{X_{n+1}=y\}}\big].$
+  </p>
+  <p>
+    Aplicando la propiedad de torre para la esperanza condicional respecto de $\mathcal{F}_n$, obtenemos
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y,\;A)
+    =\mathbb{E}\Big[\mathbb{E}\big[\mathbf{1}_{A}\mathbf{1}_{\{X_{n+1}=y\}} \mid \mathcal{F}_n\big]\Big].$
+  </p>
+  <p>
+    Dado que $\mathbf{1}_{A}$ es $\mathcal{F}_n$-medible, puede extraerse de la esperanza condicional:
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y,\;A)
+    =\mathbb{E}\Big[\mathbf{1}_{A}\,\mathbb{E}\big[\mathbf{1}_{\{X_{n+1}=y\}} \mid \mathcal{F}_n\big]\Big].$
+  </p>
+  <p>
+    Además,
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{E}\big[\mathbf{1}_{\{X_{n+1}=y\}} \mid \mathcal{F}_n\big]
+    =\mathbb{P}(X_{n+1}=y \mid \mathcal{F}_n)
+    =p_{X_n,y}.$
+  </p>
+  <p>
+    Sustituyendo en la expresión anterior,
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y,\;A)=\mathbb{E}\big[\mathbf{1}_{A}\,p_{X_n,y}\big].$
+  </p>
+  <p>
+    Pero en el evento $A=\{X_n=z,\;X_m=x\}$ se cumple necesariamente que $X_n=z$, y por lo tanto
+    $p_{X_n,y}=p_{z,y}$ sobre $A$. En consecuencia,
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y,\;A)
+    =\mathbb{E}\big[\mathbf{1}_{A}\,p_{z,y}\big]
+    =p_{z,y}\,\mathbb{E}[\mathbf{1}_{A}]
+    =p_{z,y}\,\mathbb{P}(A).$
+  </p>
+  <p>
+    Es decir,
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y,\;X_n=z,\;X_m=x)
+    =p_{z,y}\,\mathbb{P}(X_n=z,\;X_m=x).$
+  </p>
+  <p>
+    Como $\mathbb{P}(X_n=z,\;X_m=x)>0$, al dividir entre $\mathbb{P}(X_n=z,\;X_m=x)$ se obtiene
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y \mid X_n=z,\;X_m=x)
+    =\dfrac{\mathbb{P}(X_{n+1}=y,\;X_n=z,\;X_m=x)}{\mathbb{P}(X_n=z,\;X_m=x)}
+    =p_{z,y}.$
+  </p>
+  <p>
+    Esto concluye la demostración.
+  </p>
+  </div>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Resuelve las siguientes integrales (ejemplo):
+  </p>
+  
+  <ol class="two-column">
+    <li>$2 + 3$</li>
+    <li>$3-2$</li>
+  </ol>
+
+  <button class="btn-toggle-respuestas" onclick="toggleRespuestas(this)">Solución</button>
+  
+  <div class="respuestas-container">
+    <h3>Soluciones:</h3>
+    <ol class="two-column">
+      <li>$5$</li>
+      <li>$-1$</li>
+    </ol>
+  </div>
+</div>
+
 
   </body>
 
