@@ -138,7 +138,327 @@
   <p>
     ¿Cuál es el espacio de estados? ¿Cuáles son las probabilidades de transición?
   </p>
+
+  
+  <button class="btn-toggle-respuestas" onclick="toggleRespuestas(this)">Demostración</button>
+  <div class="respuestas-container">
+
+  <p>
+    Consideremos un sistema telefónico observado en tiempos discretos. En cada periodo puede ocurrir la llegada de una llamada con probabilidad \(p\in(0,1)\), y si la línea está ocupada, la llamada en curso puede terminar con probabilidad \(q\in(0,1)\).
+  </p>
+
+  <p>
+    A diferencia del ejemplo más simple, ahora se permite <strong>una sola llamada en espera</strong>. Es decir, si la línea está ocupada y llega una llamada, ésta se guarda en cola. Sin embargo, si ya hay una llamada esperando, las llegadas adicionales se pierden y no quedan registradas.
+  </p>
+
+  <p>
+    Además, el enunciado impone una regla importante sobre el orden de los eventos dentro de un periodo: <strong>si en un periodo la llamada en curso termina, ese instante se identifica con el final del periodo</strong>. Por lo tanto, una vez que ocurre el evento de “colgar”, ya no se registran nuevas llamadas en ese mismo periodo.
+  </p>
+
+  <p>
+    Queremos modelar este sistema mediante una cadena de Markov \((X_n)_{n \in \mathbb{N}_{0}}\), determinar su espacio de estados y calcular sus probabilidades de transición.
+  </p>
+
+  <p>
+    Para ello, definimos \(X_n\) como el número de llamadas en el sistema al inicio del periodo \(n\), donde “en el sistema” significa:
+  </p>
+
+  <p>
+    \[
+      \text{llamada en curso} + \text{llamada en espera}.
+    \]
+  </p>
+
+  <p>
+    Con esta convención, el valor de \(X_n\) resume completamente la situación del sistema en el instante \(n\), y basta para describir la distribución del estado siguiente. Por eso, el proceso puede modelarse como una cadena de Markov.
+  </p>
+
+  <p>
+    <strong>Descripción de los estados.</strong>
+  </p>
+
+  <p>
+    El sistema puede encontrarse únicamente en una de las siguientes situaciones:
+  </p>
+
+  <p>
+    \[
+      X_n=0
+      \quad \Longleftrightarrow \quad
+      \text{la línea está libre y no hay llamadas en espera};
+    \]
+    \[
+      X_n=1
+      \quad \Longleftrightarrow \quad
+      \text{la línea está ocupada y no hay llamadas en espera};
+    \]
+    \[
+      X_n=2
+      \quad \Longleftrightarrow \quad
+      \text{la línea está ocupada y hay exactamente una llamada en espera}.
+    \]
+  </p>
+
+  <p>
+    No puede haber más de dos llamadas en el sistema, porque como máximo puede haber una llamada siendo atendida y una llamada esperando. En consecuencia, el espacio de estados es
+  </p>
+
+  <p>
+    \[
+      E=\{0,1,2\}.
+    \]
+  </p>
+
+  <p>
+    Ahora determinemos, con detalle, las probabilidades de transición.
+  </p>
+
+  <p>
+    <strong>Transiciones desde el estado \(0\).</strong>
+  </p>
+
+  <p>
+    Si al inicio del periodo la línea está libre y no hay nadie esperando, entonces el sistema está en el estado \(0\). En este caso, durante ese periodo solo importa si llega o no llega una llamada.
+  </p>
+
+  <p>
+    Si no llega ninguna llamada, lo cual ocurre con probabilidad \(1-p\), el sistema permanece libre. Por tanto,
+  </p>
+
+  <p>
+    \[
+      \mathbb{P}(X_{n+1}=0 \mid X_n=0)=1-p.
+    \]
+  </p>
+
+  <p>
+    Si llega una llamada, lo cual ocurre con probabilidad \(p\), la línea pasa a estar ocupada y no queda nadie en espera. Por tanto,
+  </p>
+
+  <p>
+    \[
+      \mathbb{P}(X_{n+1}=1 \mid X_n=0)=p.
+    \]
+  </p>
+
+  <p>
+    No es posible pasar directamente del estado \(0\) al estado \(2\) en un solo periodo, porque partiendo de una línea libre no se puede terminar el periodo con una llamada en curso y otra en espera bajo las reglas del modelo. Así,
+  </p>
+
+  <p>
+    \[
+      \mathbb{P}(X_{n+1}=2 \mid X_n=0)=0.
+    \]
+  </p>
+
+  <p>
+    En resumen, desde el estado \(0\):
+  </p>
+
+  <p>
+    \[
+      p_{0,0}=1-p,\qquad p_{0,1}=p,\qquad p_{0,2}=0.
+    \]
+  </p>
+
+  <p>
+    <strong>Transiciones desde el estado \(1\).</strong>
+  </p>
+
+  <p>
+    Supongamos ahora que al inicio del periodo la línea está ocupada y no hay llamadas en espera. Es decir, \(X_n=1\).
+  </p>
+
+  <p>
+    En este caso, pueden ocurrir dos tipos de eventos relevantes:
+  </p>
+
+  <p>
+    el usuario que está siendo atendido puede colgar con probabilidad \(q\), o bien puede no colgar con probabilidad \(1-q\).
+  </p>
+
+  <p>
+    Si la llamada en curso termina durante el periodo, entonces, por la regla del enunciado, ese instante marca el final del periodo. En consecuencia, después de colgar ya no se registran nuevas llamadas en ese mismo periodo. Por tanto, el sistema queda libre al siguiente instante y
+  </p>
+
+  <p>
+    \[
+      \mathbb{P}(X_{n+1}=0 \mid X_n=1)=q.
+    \]
+  </p>
+
+  <p>
+    Si la llamada en curso <strong>no</strong> termina, lo cual ocurre con probabilidad \(1-q\), entonces la línea sigue ocupada durante todo el periodo. En esa situación, todavía puede ocurrir una llegada.
+  </p>
+
+  <p>
+    Si no llega una nueva llamada, lo cual ocurre con probabilidad \(1-p\), entonces el sistema continúa con una sola llamada en curso y sin cola. Por tanto,
+  </p>
+
+  <p>
+    \[
+      \mathbb{P}(X_{n+1}=1 \mid X_n=1)=(1-q)(1-p).
+    \]
+  </p>
+
+  <p>
+    Si no termina la llamada en curso y además llega una nueva llamada, evento que ocurre con probabilidad \((1-q)p\), entonces esa nueva llamada se guarda en espera. En consecuencia, el sistema pasa al estado \(2\):
+  </p>
+
+  <p>
+    \[
+      \mathbb{P}(X_{n+1}=2 \mid X_n=1)=(1-q)p.
+    \]
+  </p>
+
+  <p>
+    En resumen, desde el estado \(1\):
+  </p>
+
+  <p>
+    \[
+      p_{1,0}=q,\qquad p_{1,1}=(1-q)(1-p),\qquad p_{1,2}=(1-q)p.
+    \]
+  </p>
+
+  <p>
+    <strong>Transiciones desde el estado \(2\).</strong>
+  </p>
+
+  <p>
+    Finalmente, consideremos el caso en que al inicio del periodo la línea está ocupada y además ya hay una llamada en espera. Es decir, \(X_n=2\).
+  </p>
+
+  <p>
+    Aquí el sistema ya tiene su capacidad máxima: una llamada está siendo atendida y una llamada está en cola. Por hipótesis del modelo, si llega otra llamada adicional, ésta no se registra. Por lo tanto, las llegadas nuevas ya no modifican el estado mientras el sistema permanezca saturado.
+  </p>
+
+  <p>
+    Si la llamada en curso termina durante el periodo, lo cual ocurre con probabilidad \(q\), entonces la llamada que estaba esperando pasa a ocupar inmediatamente la línea. Como el periodo termina en el instante de colgar, ya no se admiten nuevas llegadas en ese mismo periodo. Por ello, al siguiente instante el sistema queda con una llamada en curso y sin cola, es decir, en el estado \(1\). Así,
+  </p>
+
+  <p>
+    \[
+      \mathbb{P}(X_{n+1}=1 \mid X_n=2)=q.
+    \]
+  </p>
+
+  <p>
+    Si la llamada en curso no termina, lo cual ocurre con probabilidad \(1-q\), entonces sigue habiendo una llamada en servicio y otra en espera. Como las nuevas llegadas se pierden, el estado no cambia. Por tanto,
+  </p>
+
+  <p>
+    \[
+      \mathbb{P}(X_{n+1}=2 \mid X_n=2)=1-q.
+    \]
+  </p>
+
+  <p>
+    No es posible pasar directamente del estado \(2\) al estado \(0\) en un solo periodo, porque si se libera la línea, aún queda la llamada que estaba esperando. Por ello,
+  </p>
+
+  <p>
+    \[
+      \mathbb{P}(X_{n+1}=0 \mid X_n=2)=0.
+    \]
+  </p>
+
+  <p>
+    En resumen, desde el estado \(2\):
+  </p>
+
+  <p>
+    \[
+      p_{2,0}=0,\qquad p_{2,1}=q,\qquad p_{2,2}=1-q.
+    \]
+  </p>
+
+  <p>
+    <strong>Matriz de transición.</strong>
+  </p>
+
+  <p>
+    Si ordenamos los estados como \(0,1,2\), la matriz de transición de la cadena es
+  </p>
+
+  <p>
+    \[
+      P=
+      \begin{pmatrix}
+        1-p & p & 0 \\[4pt]
+        q & (1-q)(1-p) & (1-q)p \\[4pt]
+        0 & q & 1-q
+      \end{pmatrix}.
+    \]
+  </p>
+
+  <p>
+    <strong>Verificación rápida.</strong>
+  </p>
+
+  <p>
+    Cada renglón suma \(1\), como debe suceder en una matriz de transición:
+  </p>
+
+  <p>
+    \[
+      (1-p)+p+0=1,
+    \]
+    \[
+      q+(1-q)(1-p)+(1-q)p
+      =
+      q+(1-q)\bigl((1-p)+p\bigr)
+      =
+      q+(1-q)=1,
+    \]
+    \[
+      0+q+(1-q)=1.
+    \]
+  </p>
+
+  <p>
+    <strong>Interpretación final.</strong>
+  </p>
+
+  <p>
+    Este ejemplo da lugar a una cadena de Markov con tres estados:
+  </p>
+
+  <p>
+    \[
+      0=\text{línea libre},\qquad
+      1=\text{línea ocupada sin espera},\qquad
+      2=\text{línea ocupada con una llamada en espera}.
+    \]
+  </p>
+
+  <p>
+    La dinámica del modelo refleja fielmente las reglas del sistema:
+  </p>
+
+  <p>
+    cuando la línea está libre, una llegada la ocupa; cuando la línea está ocupada, una nueva llegada puede entrar a la cola; y cuando la cola ya está llena, cualquier llegada adicional se pierde. La condición de que el periodo termina cuando ocurre el evento de colgar es precisamente lo que hace que desde el estado \(1\) se pase a \(0\) con probabilidad \(q\), y desde el estado \(2\) se pase a \(1\) con probabilidad \(q\), sin registrar llegadas posteriores en ese mismo periodo.
+  </p>
+
+  <p>
+    En consecuencia, el espacio de estados y las probabilidades de transición son
+  </p>
+
+  <p>
+    \[
+      E=\{0,1,2\},
+      \qquad
+      P=
+      \begin{pmatrix}
+        1-p & p & 0 \\[4pt]
+        q & (1-q)(1-p) & (1-q)p \\[4pt]
+        0 & q & 1-q
+      \end{pmatrix}.
+    \]
+  </p>
+  </div>
 </div>
+
 
 <div class="teorema-box">
   <h1 class="title-practica">Lema</h1>
@@ -154,87 +474,321 @@
   
   <button class="btn-toggle-respuestas" onclick="toggleRespuestas(this)">Demostración</button>
   <div class="respuestas-container">
-    Sea
-    $\mathcal{F}_n := \sigma(X_0,\dots,X_n)$ la filtración natural de la cadena. 
-    Como $(X_n)_{n \in \mathbb{N}_{0}}$ es una cadena de Markov homogénea, para todo $y \in E$ se tiene
+  <p>
+    Demostraremos primero el caso \(m=0\). Es decir, probaremos que, siempre que
+    \[
+      \mathbb{P}(X_n=z,\;X_0=x)>0,
+    \]
+    se cumple que
+    \[
+      \mathbb{P}(X_{n+1}=y\mid X_n=z,\;X_0=x)=p_{z,y}.
+    \]
+    La demostración del caso general \(0\leq m\leq n-1\) es análoga.
+  </p>
+
+  <p>
+    Por definición de probabilidad condicional,
+    \[
+      \mathbb{P}(X_{n+1}=y\mid X_n=z,\;X_0=x)
+      =
+      \frac{\mathbb{P}(X_{n+1}=y,\;X_n=z,\;X_0=x)}
+      {\mathbb{P}(X_n=z,\;X_0=x)}.
+    \]
+  </p>
+
+  <p>
+    Ahora descomponemos el evento \(\{X_n=z,\;X_0=x\}\) según los valores intermedios
+    \(X_1,\dots,X_{n-1}\). Para cada \((x_1,\dots,x_{n-1})\in E^{n-1}\), definimos
+    \[
+      A_{x_1,\dots,x_{n-1}}
+      :=
+      \{X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x\}.
+    \]
+    Entonces,
+    \[
+      \{X_n=z,\;X_0=x\}
+      =
+      \bigcup_{x_1,\dots,x_{n-1}\in E} A_{x_1,\dots,x_{n-1}},
+    \]
+    donde la unión es disjunta.
+  </p>
+
+  <p>
+    Por lo tanto,
+    \[
+      \{X_{n+1}=y,\;X_n=z,\;X_0=x\}
+      =
+      \bigcup_{x_1,\dots,x_{n-1}\in E}
+      \bigl(\{X_{n+1}=y\}\cap A_{x_1,\dots,x_{n-1}}\bigr),
+    \]
+    y esta unión también es disjunta. En consecuencia,
+    \[
+      \mathbb{P}(X_{n+1}=y,\;X_n=z,\;X_0=x)
+      =
+      \sum_{x_1,\dots,x_{n-1}\in E}
+      \mathbb{P}(X_{n+1}=y,\;A_{x_1,\dots,x_{n-1}}).
+    \]
+  </p>
+
+  <p>
+    Sustituyendo en la expresión inicial, obtenemos
+    \[
+      \mathbb{P}(X_{n+1}=y\mid X_n=z,\;X_0=x)
+      =
+      \sum_{x_1,\dots,x_{n-1}\in E}
+      \frac{\mathbb{P}(X_{n+1}=y,\;A_{x_1,\dots,x_{n-1}})}
+      {\mathbb{P}(X_n=z,\;X_0=x)}.
+    \]
+  </p>
+
+  <p>
+    Para cada término de la suma, usamos la fórmula
+    \[
+      \mathbb{P}(B\cap C)=\mathbb{P}(B\mid C)\,\mathbb{P}(C).
+    \]
+    Así,
+    \[
+      \mathbb{P}(X_{n+1}=y,\;A_{x_1,\dots,x_{n-1}})
+      =
+      \mathbb{P}(X_{n+1}=y\mid A_{x_1,\dots,x_{n-1}})
+      \,\mathbb{P}(A_{x_1,\dots,x_{n-1}}).
+    \]
+    Luego,
+    \[
+      \mathbb{P}(X_{n+1}=y\mid X_n=z,\;X_0=x)
+      =
+      \sum_{x_1,\dots,x_{n-1}\in E}
+      \mathbb{P}(X_{n+1}=y\mid A_{x_1,\dots,x_{n-1}})
+      \cdot
+      \frac{\mathbb{P}(A_{x_1,\dots,x_{n-1}})}
+      {\mathbb{P}(X_n=z,\;X_0=x)}.
+    \]
+  </p>
+
+  <p>
+    Ahora aplicamos la propiedad de Markov. Dado que
+    \[
+      A_{x_1,\dots,x_{n-1}}
+      =
+      \{X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x\},
+    \]
+    se tiene
+    \[
+      \mathbb{P}(X_{n+1}=y\mid A_{x_1,\dots,x_{n-1}})
+      =
+      \mathbb{P}(X_{n+1}=y\mid X_n=z)
+      =
+      p_{z,y}.
+    \]
+    Por tanto,
+    \[
+      \mathbb{P}(X_{n+1}=y\mid X_n=z,\;X_0=x)
+      =
+      p_{z,y}
+      \sum_{x_1,\dots,x_{n-1}\in E}
+      \frac{\mathbb{P}(A_{x_1,\dots,x_{n-1}})}
+      {\mathbb{P}(X_n=z,\;X_0=x)}.
+    \]
+  </p>
+
+  <p>
+    Sacando el denominador común,
+    \[
+      \mathbb{P}(X_{n+1}=y\mid X_n=z,\;X_0=x)
+      =
+      p_{z,y}\,
+      \frac{
+        \sum_{x_1,\dots,x_{n-1}\in E}\mathbb{P}(A_{x_1,\dots,x_{n-1}})
+      }
+      {\mathbb{P}(X_n=z,\;X_0=x)}.
+    \]
+    Como los eventos \(A_{x_1,\dots,x_{n-1}}\) forman una partición de
+    \(\{X_n=z,\;X_0=x\}\), se sigue que
+    \[
+      \sum_{x_1,\dots,x_{n-1}\in E}\mathbb{P}(A_{x_1,\dots,x_{n-1}})
+      =
+      \mathbb{P}(X_n=z,\;X_0=x).
+    \]
+    Entonces,
+    \[
+      \mathbb{P}(X_{n+1}=y\mid X_n=z,\;X_0=x)
+      =
+      p_{z,y}\,
+      \frac{\mathbb{P}(X_n=z,\;X_0=x)}
+      {\mathbb{P}(X_n=z,\;X_0=x)}
+      =
+      p_{z,y}.
+    \]
+  </p>
+
+  <p>
+    Esto prueba el resultado para \(m=0\).
+  </p>
+
+  <p>
+    Para el caso general \(0\leq m\leq n-1\), se procede exactamente igual,
+    descomponiendo ahora el evento \(\{X_n=z,\;X_m=x\}\) según los valores
+    intermedios entre los tiempos \(m+1,\dots,n-1\). La propiedad de Markov vuelve
+    a implicar que, al conocer \(X_n=z\), la distribución de \(X_{n+1}\) no depende
+    de los estados anteriores. Así se concluye que
+    \[
+      \mathbb{P}(X_{n+1}=y\mid X_n=z,\;X_m=x)=p_{z,y}.
+    \]
+  </p>
+
+  <p>
+    En consecuencia,
+    \[
+      \boxed{
+        \mathbb{P}(X_{n+1}=y\mid X_n=z,\;X_m=x)=p_{z,y}
+      }.
+    \]
+  </p>
+
+  </div>
+</div>
+
+
+
+
+<div class="teorema-box">
+  <h1 class="title-practica">Lema</h1>
+  <p>
+    Sea $(X_n)_{n \in \mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$ y matriz de transición $(p_{x,y})_{x,y \in E}$, donde
+    $p_{x,y}=\mathbb{P}(X_{n+1}=y \mid X_n=x)$ para todo $n \in \mathbb{N}_{0}$ y todo $x,y \in E$.
+    Sean $n \in \mathbb{N}$, $y,z \in E$ y $A_0,A_1,\dots,A_{n-1} \subseteq E$.
+    Supongamos además que
   </p>
   <p style="text-align: center;">
-    $\mathbb{P}(X_{n+1}=y \mid \mathcal{F}_n)=\mathbb{P}(X_{n+1}=y \mid X_n)=p_{X_n,y} \quad \text{c.s.}$
+    $\mathbb{P}(X_n=z,\;X_{n-1}\in A_{n-1},\dots,X_1\in A_1,\;X_0\in A_0)>0.$
   </p>
   <p>
-    Fijemos ahora $x,y,z \in E$ y $m,n \in \mathbb{N}_{0}$ con $0 \leq m \leq n-1$, y supongamos que
-    $\mathbb{P}(X_n=z,\;X_m=x)>0$, de modo que la probabilidad condicional esté bien definida.
-    Definamos el evento
-  </p>
-  <p style="text-align: center;">
-    $A:=\{X_n=z,\;X_m=x\}.$
-  </p>
-  <p>
-    Como $m \leq n-1$, tanto $X_m$ como $X_n$ son $\mathcal{F}_n$-medibles, y por tanto $A \in \mathcal{F}_n$.
     Entonces,
   </p>
   <p style="text-align: center;">
-    $\mathbb{P}(X_{n+1}=y,\;A)=\mathbb{E}\big[\mathbf{1}_{A}\mathbf{1}_{\{X_{n+1}=y\}}\big].$
-  </p>
-  <p>
-    Aplicando la propiedad de torre para la esperanza condicional respecto de $\mathcal{F}_n$, obtenemos
-  </p>
-  <p style="text-align: center;">
-    $\mathbb{P}(X_{n+1}=y,\;A)
-    =\mathbb{E}\Big[\mathbb{E}\big[\mathbf{1}_{A}\mathbf{1}_{\{X_{n+1}=y\}} \mid \mathcal{F}_n\big]\Big].$
-  </p>
-  <p>
-    Dado que $\mathbf{1}_{A}$ es $\mathcal{F}_n$-medible, puede extraerse de la esperanza condicional:
+    $\mathbb{P}(X_{n+1}=y \mid X_n=z,\;X_{n-1}\in A_{n-1},\dots,X_1\in A_1,\;X_0\in A_0)=p_{z,y}.$
+  </p>  
+  <button class="btn-toggle-respuestas" onclick="toggleRespuestas(this)">Solución</button>
+  <div class="respuestas-container">
+    <p>      Definamos el evento
   </p>
   <p style="text-align: center;">
-    $\mathbb{P}(X_{n+1}=y,\;A)
-    =\mathbb{E}\Big[\mathbf{1}_{A}\,\mathbb{E}\big[\mathbf{1}_{\{X_{n+1}=y\}} \mid \mathcal{F}_n\big]\Big].$
+    $B:=\{X_n=z,\;X_{n-1}\in A_{n-1},\dots,X_1\in A_1,\;X_0\in A_0\}.$
   </p>
   <p>
-    Además,
+    Por hipótesis, $\mathbb{P}(B)>0$, de modo que la probabilidad condicional
+    $\mathbb{P}(X_{n+1}=y \mid B)$ está bien definida. Por definición de probabilidad condicional,
   </p>
   <p style="text-align: center;">
-    $\mathbb{E}\big[\mathbf{1}_{\{X_{n+1}=y\}} \mid \mathcal{F}_n\big]
-    =\mathbb{P}(X_{n+1}=y \mid \mathcal{F}_n)
-    =p_{X_n,y}.$
+    $\mathbb{P}(X_{n+1}=y \mid B)=\dfrac{\mathbb{P}(X_{n+1}=y,\;B)}{\mathbb{P}(B)}.$
   </p>
   <p>
-    Sustituyendo en la expresión anterior,
+    Ahora desarrollamos el numerador. El evento $\{X_{n+1}=y\}\cap B$ puede descomponerse como unión disjunta de los eventos
   </p>
   <p style="text-align: center;">
-    $\mathbb{P}(X_{n+1}=y,\;A)=\mathbb{E}\big[\mathbf{1}_{A}\,p_{X_n,y}\big].$
+    $\{X_{n+1}=y,\;X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0\},$
   </p>
   <p>
-    Pero en el evento $A=\{X_n=z,\;X_m=x\}$ se cumple necesariamente que $X_n=z$, y por lo tanto
-    $p_{X_n,y}=p_{z,y}$ sobre $A$. En consecuencia,
+    donde $x_0 \in A_0,\;x_1 \in A_1,\dots,x_{n-1}\in A_{n-1}$.
+    Por lo tanto,
   </p>
   <p style="text-align: center;">
-    $\mathbb{P}(X_{n+1}=y,\;A)
-    =\mathbb{E}\big[\mathbf{1}_{A}\,p_{z,y}\big]
-    =p_{z,y}\,\mathbb{E}[\mathbf{1}_{A}]
-    =p_{z,y}\,\mathbb{P}(A).$
+    $\mathbb{P}(X_{n+1}=y,\;B)=\displaystyle\sum_{x_0 \in A_0}\sum_{x_1 \in A_1}\cdots\sum_{x_{n-1}\in A_{n-1}}
+    \mathbb{P}(X_{n+1}=y,\;X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0).$
   </p>
   <p>
-    Es decir,
+    Sustituyendo en la expresión de la probabilidad condicional, obtenemos
   </p>
   <p style="text-align: center;">
-    $\mathbb{P}(X_{n+1}=y,\;X_n=z,\;X_m=x)
-    =p_{z,y}\,\mathbb{P}(X_n=z,\;X_m=x).$
+    $\mathbb{P}(X_{n+1}=y \mid B)
+    =\dfrac{\displaystyle\sum_{x_0 \in A_0}\sum_{x_1 \in A_1}\cdots\sum_{x_{n-1}\in A_{n-1}}
+    \mathbb{P}(X_{n+1}=y,\;X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0)}
+    {\mathbb{P}(B)}.$
   </p>
   <p>
-    Como $\mathbb{P}(X_n=z,\;X_m=x)>0$, al dividir entre $\mathbb{P}(X_n=z,\;X_m=x)$ se obtiene
+    Para cada elección de $x_0,\dots,x_{n-1}$ con $x_i \in A_i$, aplicamos la regla del producto:
   </p>
   <p style="text-align: center;">
-    $\mathbb{P}(X_{n+1}=y \mid X_n=z,\;X_m=x)
-    =\dfrac{\mathbb{P}(X_{n+1}=y,\;X_n=z,\;X_m=x)}{\mathbb{P}(X_n=z,\;X_m=x)}
+    $\mathbb{P}(X_{n+1}=y,\;X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0)$
+  </p>
+  <p style="text-align: center;">
+    $=\mathbb{P}(X_{n+1}=y \mid X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0)\,
+    \mathbb{P}(X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0).$
+  </p>
+  <p>
+    Entonces,
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y \mid B)
+    =\dfrac{\displaystyle\sum_{x_0 \in A_0}\sum_{x_1 \in A_1}\cdots\sum_{x_{n-1}\in A_{n-1}}
+    \mathbb{P}(X_{n+1}=y \mid X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0)}{\mathbb{P}(B)}$
+  </p>
+  <p style="text-align: center;">
+    $\cdot\;
+    \mathbb{P}(X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0).$
+  </p>
+  <p>
+    En este punto aplicamos la propiedad de Markov: dado el estado presente $X_n=z$, la distribución del siguiente estado
+    no depende de la historia previa. Por tanto,
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y \mid X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0)
+    =\mathbb{P}(X_{n+1}=y \mid X_n=z).$
+  </p>
+  <p>
+    Como la cadena es homogénea, esta última cantidad no depende del tiempo $n$, y vale precisamente
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y \mid X_n=z)=p_{z,y}.$
+  </p>
+  <p>
+    Sustituyendo esto en la suma anterior,
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y \mid B)
+    =\dfrac{\displaystyle\sum_{x_0 \in A_0}\sum_{x_1 \in A_1}\cdots\sum_{x_{n-1}\in A_{n-1}}
+    p_{z,y}\,\mathbb{P}(X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0)}
+    {\mathbb{P}(B)}.$
+  </p>
+  <p>
+    Como $p_{z,y}$ es constante respecto de los índices de sumación, puede factorizarse:
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y \mid B)
+    =p_{z,y}\,
+    \dfrac{\displaystyle\sum_{x_0 \in A_0}\sum_{x_1 \in A_1}\cdots\sum_{x_{n-1}\in A_{n-1}}
+    \mathbb{P}(X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0)}
+    {\mathbb{P}(B)}.$
+  </p>
+  <p>
+    Pero la suma del numerador es exactamente la probabilidad del evento $B$, ya que estamos sumando sobre todos los valores
+    posibles de $X_0,\dots,X_{n-1}$ compatibles con las restricciones
+    $X_0 \in A_0,\dots,X_{n-1}\in A_{n-1}$ y con $X_n=z$. Es decir,
+  </p>
+  <p style="text-align: center;">
+    $\displaystyle\sum_{x_0 \in A_0}\sum_{x_1 \in A_1}\cdots\sum_{x_{n-1}\in A_{n-1}}
+    \mathbb{P}(X_n=z,\;X_{n-1}=x_{n-1},\dots,X_1=x_1,\;X_0=x_0)
+    =\mathbb{P}(B).$
+  </p>
+  <p>
+    En consecuencia,
+  </p>
+  <p style="text-align: center;">
+    $\mathbb{P}(X_{n+1}=y \mid B)
+    =p_{z,y}\,\dfrac{\mathbb{P}(B)}{\mathbb{P}(B)}
     =p_{z,y}.$
+  </p>
+  <p>
+    Por lo tanto,
+  </p>
+  <p style="text-align: center;">
+    $\boxed{\mathbb{P}(X_{n+1}=y \mid X_n=z,\;X_{n-1}\in A_{n-1},\dots,X_1\in A_1,\;X_0\in A_0)=p_{z,y}.}$
   </p>
   <p>
     Esto concluye la demostración.
   </p>
   </div>
 </div>
-
 <div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
   <p>
@@ -256,8 +810,6 @@
     </ol>
   </div>
 </div>
-
-
   </body>
 
 
