@@ -1,0 +1,231 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="./main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="./style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Procesos Estocásticos</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Examenes.html"> Archivos </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Links.html"> Links</a> </li> -->
+          </ul>
+          </nav>
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+        
+      <title>Información general</title>
+    </head>  
+
+    <body class="fondo-body" ><h1 class="page-title"> Información general</h1>  
+
+      <div class="info-box" ><center><h1 class="titulo" >Evaluación</h1></center>  
+      
+        <p>En este curso se llevarán a cabo <b>tres evaluaciones parciales</b> y, al finalizar, 
+          <b>una evaluación ordinaria</b>. Cada evaluación se aplicará en la fecha y hora asignadas por 
+          Servicios Escolares, durante el horario de clase.</p>
+      
+        <h2 class="subtitulo">Evaluaciones parciales</h2>
+        
+              <p><FONT COLOR="navy"> Aspectos importantes a considerar para las <u>evaluaciones parciales</u></FONT>. La calificación final correspondiente a cada evaluación parcial se determinará de la siguiente manera:</p>
+        
+              <p>
+                <ul>
+                  <li><h5 class="title">📝Examen:</h5>  $40 \%$</li><br>
+                  <li><h5 class="title">📚Quizes</h5>  $30 \%$
+                    <p>El Quiz correspondiente a cada semana se aplica el lunes inmediato de la siguiente semana
+                      durante la segunda hora de clase. En éste se evaluarán conceptos fundamentales 
+                      vistos durante la semana previa. En la semana de examenes parciales no habra Quiz.
+                    </p>
+                </li>
+                <li><h5 class="title">🏋🏻‍♀️Presentación de ejercicios:</h5>  $30 \%$
+                  <p>Se asignarán ejercicios para su exposición en clase. Durante la presentación se evaluará:
+                    Dominio del tema, claridad y formalidad en la exposición, Capacidad de respuesta ante preguntas 
+                    o imprevistos
+                  </p>
+
+                <!--
+                  <li> <h5 class="title">Bono de Puntualidad:</h5> Se otorgarán <strong>0.5 puntos</strong> adicionales sobre la calificación final del parcial.
+                  <p>
+                    <ul>
+                      <li>El bono se pierde automáticamente si el estudiante llega tarde una vez.</li>
+                      <li>Se permite una tolerancia máxima de <strong>10 minutos</strong> de retraso.</li>
+                      <li>Las faltas solo se justificarán con un permiso oficial emitido por el departamento de escolares.</li>
+                      <li>El beneficio será válido únicamente para quienes asistan el primer día de clases.</li>
+                    </ul>
+                  </p>
+                </li> -->
+                  <!-- <li><b>🥊Prácticas🏋🏻:</b> 
+                  <p>Semanalmente se publicarán en la página del curso 
+                    <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Practicas.html"><b> prácticas</b></a> 
+                    para reforzar los temas vistos en clase.               
+                  </p> -->
+                </ul> 
+              </p>
+      
+      <h2 class="subtitulo">Evaluación ordinaria</h2>
+
+        <p><FONT COLOR="navy">Aspectos importante a considerar para la <u>evaluación ordinaria</u></FONT>. 
+          La calificación final correspondiente a la evaluación ordinaria se determinará de la siguiente manera:</p>
+        </li>
+          <ul>
+            <li><b>📝Examen:</b> $100\%$</li><br>
+            <li><b>📚Proyecto:</b> Puntos extras</li> 
+          </ul>
+      </ul>
+
+  <h2 class="subtitulo">Derecho a evaluaciones</h2>
+    <p>De acuerdo con el <b>Artículo $50$</b>  del <a href="https://www.umar.mx/DocsUMAR/2024/Reglamento%20de%20Estudiantes%20de%20Licenciatura%20-%20UMAR.pdf" target="_blank"> reglamento de alumnos de licenciatura</a> 
+    de la <b>Universidad del Mar</b> para tener derecho a evaluaciones parciales y ordinarias el alumno deberá:
+  </p>
+  <p>
+    <ol>
+      <li>Cumplir con el $85\%$ de asistencias como mínimo en cada periodo a evaluar, conforme al <a href="./Archivos/2025-2026.pdf" target="_blank"> <b> Calendario de 
+        Actividades Escolares</b></a> vigente. 
+        <!-- La asistencia deberá registrarse y reflejarse en la lista de  
+        asistencia oficial del profesor en el horario establecido para la asignatura correspondiente por el
+        Departamento de Servicios Escolares.-->
+      </li><br>
+      <li>Entregar por escrito los reportes de las lecturas que le hayan sido asignadas a más tardar tres días hábiles antes del inicio del periodo de exámenes.
+        La misma regla se aplicará cuando se trate del segundo y tercer parcial.
+        El alumno que haya omitido la entrega de las lecturas a que se refiere el presente artículo en un periodo parcial previo, para poder tener derecho a evaluación en el siguiente periodo parcial, deberá entregar los informes de lectura omitidos en el periodo anterior y los que correspondan al parcial a evaluar.
+        La entrega parcial y/o extemporánea de los informes no le genera derecho alguno de evaluación al alumno.
+      </li>
+    </ol>
+  </p>
+
+  </div>
+
+  <!--
+      <div class="info-box"><h1 class="titulo">Fechas importantes</h1>
+        <p>
+          <ol>
+            <li><b>Primer examen parcial</b></li>
+              <ul>
+                <li>Fecha de aplicación:  </li>
+              </ul>
+            <li><b>Segundo examen parcial</b></li>
+              <ul>
+                <li>Fecha de aplicación:  </li>
+              </ul>
+            <li><b>Tercer examen parcial</b></li>
+              <ul>
+                <li>Fecha de aplicación: </li>
+              </ul>
+            <li><b>Ordinario</b></li>
+              <ul>
+                <li>Fecha de aplicación: </li>
+              </ul> 
+          </ol>
+        </p>        
+      </div>
+  -->   
+  <div class="info-box"><center><h1 class="titulo">Medios de comunicación</h1></center>
+    <p></p>
+  <!-- <h2 class="titulo">Grupo de Classroom</h2>
+  <p>
+  Utilizaremos Classroom para publicar material sobre el curso: <a href="" target="_blank"><b> Enlace de invitación a la clase</b></a>.
+  Registrarse con la <b>cuenta de correo electronico
+  proporcionado por la universidad</b> (<b>@aulavirtual.umar.mx</b>)</p> -->
+  <h2 class="subtitulo">Grupo de WhatsApp</h2>
+  <p>
+    El principal medio de comunicación será un grupo de WhatsApp. Puedes unirte a través del siguiente 
+    <a href="https://chat.whatsapp.com/FbbFRcyjg69FeWlj1XApzP?mode=gi_t" target="_blank"><b>enlace de invitación al grupo de la clase</b></a>.
+</p>
+
+  </div>
+
+
+      </body>
+
+
+      </html>
