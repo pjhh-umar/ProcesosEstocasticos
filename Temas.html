@@ -6,7 +6,6 @@
     <!-- Following part is mathjax, for latex-->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
-
     <!-- This part is for jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -14,7 +13,7 @@
     <script type="text/javascript" src="./main.js"></script>
 
     <!-- CSS -->
-
+ 
     <link rel="stylesheet" , href="./style.css" />
 
     <!-- Next part is for new coomands -->
@@ -32,6 +31,7 @@
       };
     </script>
 
+    
     
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
@@ -103,31 +103,37 @@
 
       <!-- This part is for title in tab-->
           
-      <title>Notas</title>
+      <title>Ejercicios propuestos</title>
       </head>  
+  
+    <body class="fondo-body" > <h1 class="page-title"> Ejercicios propuestos</h1>  
 
-      <body class="fondo-body" ><h1 class="page-title"> Notas</h1>  
+    <div class="links-box" style = "font-family: 'Oldenburg', cursive;">
+     <a  href="https://pjhh-umar.github.io/ProcesosEstocasticos/Ejercicios/EP1.html"> Ejercicios propuestos primer examen parcial</a>
+     <!-- <a  href="https://pjhh-umar.github.io/ProcesosEstocasticos/Ejercicios/EP2.html"> Ejercicios propuestos segundo examen parcial</a>
+     <a  href="https://pjhh-umar.github.io/ProcesosEstocasticos/Ejercicios/EP3.html"> Ejercicios propuestos tercer examen parcial</a> -->
+    </div>   
+<footer>
+  <center>
+   <p id="ultima-actualizacion"></p>
+  </center>
+</footer>
+<script>
+// Obtenemos la fecha y hora de la última modificación del documento
+const fechaModificacion = new Date(document.lastModified);
 
+// Opciones para formatear la fecha (por ejemplo, DD/MM/AAAA)
+const opcionesFecha = { day: '2-digit', month: '2-digit', year: 'numeric' };
+const fechaFormateada = fechaModificacion.toLocaleDateString('es-ES', opcionesFecha);
 
-      <!-- <h1 class="page-subtitle"></h1>  -->
-      <div class="links-box"  style = "font-family: 'Oldenburg', cursive;">
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Espacio_muestral.html"> Espacio muestral</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Sigma_Algebra.html">$\sigma$-Álgebra</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Espacio_probabilidad.html">Espacio de probabilidad</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Variables_aleatorias.html">Variables aleatorias</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Funcion_distribucion_probabilidad.html"> Función de distribución de probabilidad</a> 
-        
-        
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Convergencia.html">Convergencia</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Teorema_limite_central.html">Teorema del límite Central</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Ley_grandes_numeros.html">Ley de los grandes números</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Distribucion_vectores_aleatorios.html"> Distribución de vectores aleatorios</a> 
-        <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas/Vectores_gaussianos.html"> Vectores Gaussianos</a> 
+// Obtenemos la hora (HH:MM:SS)
+const horaFormateada = fechaModificacion.toLocaleTimeString('es-ES', {
+    hour: '2-digit', minute: '2-digit'
+});
 
-        
-    </div> 
+// Insertamos la fecha y la hora en el elemento con el ID "ultima-modificacion"
+document.getElementById("ultima-actualizacion").textContent = `Última actualización: ${fechaFormateada}`;
+</script>
 
-  </body>
-
-
+    </body>
 </html>

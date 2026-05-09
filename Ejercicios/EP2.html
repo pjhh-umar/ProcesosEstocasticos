@@ -109,11 +109,89 @@
 
 <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos segundo examen parcial</h1>   
 
-  <div class="nota-box">
+<div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
-  <p></p>
+  <p>
+    Suponga que el que llueva o no en cierto lugar depende de lo que pasó los tres días anteriores. Por ejemplo: si los tres días anteriores hubo lluvia, mañana lloverá con probabilidad $p_1$; si en los tres anteriores no llovió, mañana lloverá con probabilidad $p_2$; si anteayer no llovió, pero ayer y hoy sí llovió, mañana lloverá con probabilidad $p_3$, etc. Se supone que $p_i\in(0,1)$, $i=1,2,\ldots$. ¿Se puede modelar esto como una cadena de Markov? En caso afirmativo, encontrar el modelo y calcular la probabilidad de que llueva mañana si hoy llovió.
+  </p>
 </div>
 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Para los ejemplos de las líneas telefónicas abordados en clase, utiliza algún software científico o lenguaje de programacíón para calcular:
+    $$\displaystyle{P_{x,y}^{(n)}}$$
+    para todo $x,y\in E$, al menos para $n\in\{1,2,3,4\}$.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Probar que las siguientes afirmaciones son equivalentes:
+  </p>
+  <ol>
+    <li>La clase de comunicación $C$ es cerrada.</li><br>
+    <li>$\mathbb{P}(X_n\in C \text{ para todo } n\in\mathbb{N}\mid X_0=x)=1$ para todo $x\in C$.</li><br>
+    <li>Si $A=E-C$, $\mathbb{P}_x(K_A=\infty)=1$ para cada $x\in C$.</li><br>
+  </ol>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Sea $E=\{1,2,3,4\}$ y sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$ y matriz de transición
+    $$\displaystyle{
+    P=
+    \begin{pmatrix}
+    \frac{1}{2} & \frac{1}{2} & 0 & 0 \\
+    \frac{1}{6} & \frac{1}{2} & \frac{1}{3} & 0 \\
+    0 & \frac{1}{3} & \frac{1}{2} & \frac{1}{6} \\
+    0 & 0 & \frac{1}{2} & \frac{1}{2}
+    \end{pmatrix}.
+    }$$
+    Es decir, para $i,j\in E$, la entrada $p_{ij}$ representa la probabilidad de transición en un paso
+    $$\displaystyle{p_{ij}=\mathbb{P}(X_{n+1}=j\mid X_n=i).}$$
+  </p>
+
+  <p>
+    Determine las clases de comunicación de la cadena. Para cada clase de comunicación, indique si es cerrada o no. Finalmente, clasifique los estados de acuerdo con la clase de comunicación a la que pertenecen.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio (Proceso de Bernoulli)</h1>
+  <p>
+    Sea $E=\{0,1,2,\ldots\}$ y sea $(X_n)_{n\in\mathbb{N}_{0}}$ la cadena de Markov del <a href="EP1.html#Ejercicio_Caminata_Aleatoria"> Ejercicio 1.14</a> 
+    si $Y_0=0$ y $Y_i$ es una variable aleatoria de Bernoulli de parámetro $p\in(0,1)$ para todo $i \in \mathbb{N}$, es decir, $\mathbb{P}(Y_i=1)=p$ y $\mathbb{P}(Y_i=0)=1-p$.
+    Prueba que:
+    $$\displaystyle{
+    \mathbb{P}(X_{n+m}=y\mid X_m=x)
+    =
+    \binom{n}{y-x}p^{\,y-x}(1-p)^{n-y+x},
+    \qquad 0\leq y-x\leq n.
+    }$$
+  </p>
+</div>
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio </h1>
+  <p>
+    Sea $(X_n)_{n \in \mathbb{N}_{0}}$ una cadena de Markov con espacio de estados $E$. Si $x\in E$ es un estado recurrente, entonces
+    $$\displaystyle{
+    \mathbb{P}\left(X_n=x \text{ para una infinidad de índices } n \mid X_0=x\right)=1.
+    }$$
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio </h1>
+  <p>
+    Sea $(X_n)_{n \in \mathbb{N}_{0}}$ una cadena de Markov con espacio de estados $E$. Si $x\in E$ es un estado transitorio, entonces
+    $$\displaystyle{
+    \mathbb{P}\left(X_n=x \text{ para una infinidad de índices } n \mid X_0=x\right)=0.
+    }$$
+  </p>
+</div>
 <!-- Donde aparecerá la fecha de la última modificación -->
 <footer>
   <center>

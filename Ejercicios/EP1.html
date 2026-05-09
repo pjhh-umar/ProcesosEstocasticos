@@ -31,6 +31,19 @@
       };
     </script>
 
+    <script>
+  function toggleRespuestas(btn) {
+    var respuestas = btn.nextElementSibling;
+    if (respuestas.style.display === "none" || respuestas.style.display === "") {
+      respuestas.style.display = "block";
+      btn.textContent = "Ocultar Respuestas";
+    } else {
+      respuestas.style.display = "none";
+      btn.textContent = "Mostrar Respuestas";
+    }
+  }
+</script>
+
     
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
@@ -531,33 +544,33 @@
   <!-- <p><em>Este ejercicio ilustra que cuando la $\sigma$-álgebra contiene toda la información de la variable, la esperanza condicional no realiza ningún 'promedio', sino que devuelve la variable original.</em></p> -->
 </div>
 
-<div class="nota-box">
+<div class="ejercicio-box">
 <h1 class="number-title-practica">Ejercicio (Clima en el país de Oz)</h1>
 <p>El país de Oz tiene un clima extraño. Nunca hay dos días seguidos con buen tiempo. Si un día hubo buen tiempo, al siguiente habrá nieve o lluvia con igual probabilidad. Si hubo nieve (o lluvia) un día hay la misma probabilidad de tener lo mismo al día siguiente que de tener un cambio. Si hay un cambio de nieve o lluvia, sólo la mitad de las veces es para tener un buen día.
   Construye una cadena de Markov con su espacio de estados y su matriz de transición. 
 </p>
 </div>
 
-<div class="nota-box">
+<div class="ejercicio-box">
 <h1 class="number-title-practica">Ejercicio (Caminata del borracho)</h1>
 <p>Un borracho sale de una cantina ubicada en el lugar con número $k \in \mathbb{N}, k < n$. Los lugares por los que puede pasar están numerados del $0$ al $n$ y sólo puede ir en cada paso de un punto $m \in \{1, 2, \dots, n-1\}$ al que sigue $(m+1)$ o al anterior $(m-1)$. En el número $0$ está un lago (si el borracho llega al lago se ahoga) y en el número $n$ está su casa. Camina hacia casa con probabilidad $1 > p > 0$ y hacia el lago con probabilidad $q = 1 - p > 0$.
 Construye una cadena de Markov con su espacio de estados y su matriz de transición. </p>
 </div>
 
-<div class="nota-box">
+<div class="ejercicio-box">
 <h1 class="number-title-practica">Ejercicio (Ruina del jugador)</h1>
 <p>Supongamos que dos jugadores, $A$ y $B$, enfrentan sus fortunas, de $m$ y $n$ pesos respectivamente, en un juego de volados (donde los lanzamientos son independientes y la moneda puede o no ser justa). Si el resultado del $k$-ésimo volado es águila, el jugador $A$ paga $1$ peso al jugador $B$, mientras que si es sol, es el jugador $B$ quien paga dicha cantidad. El juego termina cuando alguno de los jugadores se queda sin dinero. Dar la cadena de Markov asociada al capital de $A$ en cada etapa del juego.
   Construye una cadena de Markov con su espacio de estados y su matriz de transición. 
 </p>
 </div>
 
-<div class="nota-box">
+<div class="ejercicio-box" id="Ejercicio_Caminata_Aleatoria">
 <h1 class="number-title-practica">Ejercicio</h1>
 <p>Sean $Y_0, Y_1, \cdots, Y_n$ variables aleatorias no negativas, independientes e idénticamente distribuidas.
   Para cada $n \in \mathbb{N}_{0}$, definamos </p>
 <p style="text-align: center;">
-$X_0 := Y_0$<br>
-$X_n := X_0 + Y_1 + \cdots + Y_n$
+$$X_0 := Y_0$$
+$$X_n := X_0 + Y_1 + \cdots + Y_n$$
 </p>
 <p>Prueba que $(X_n)_{n\in\mathbb{N}_{0}}$ es una cadena de Markov.</p>
 </div>
@@ -571,7 +584,7 @@ $X_n := X_0 + Y_1 + \cdots + Y_n$
   </p>
 </div>
 
-<div class="nota-box">
+<div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1> 
   <p>Demuestre que la distribución de $(X_n)_{n \in \mathbb{N}_{0}}$ queda determinada por 
     las probabilidades de transición y la distribución inicial, es decir, para cada 
@@ -585,7 +598,7 @@ $X_n := X_0 + Y_1 + \cdots + Y_n$
 
 
 
-<div class="nota-box">
+<div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
   <p>
     Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$ y  
