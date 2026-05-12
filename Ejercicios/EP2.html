@@ -133,7 +133,7 @@
   <ol>
     <li>La clase de comunicación $C$ es cerrada.</li><br>
     <li>$\mathbb{P}(X_n\in C \text{ para todo } n\in\mathbb{N}\mid X_0=x)=1$ para todo $x\in C$.</li><br>
-    <li>Si $A=E-C$, $\mathbb{P}_x(K_A=\infty)=1$ para cada $x\in C$.</li><br>
+    <li>Si $A=E-C$, entonces $\mathbb{P}_x(K_A=\infty)=1$ para cada $x\in C$.</li><br>
   </ol>
 </div>
 
@@ -191,6 +191,54 @@
     \mathbb{P}\left(X_n=x \text{ para una infinidad de índices } n \mid X_0=x\right)=0.
     }$$
   </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+
+  <p>
+    Un ratón se coloca en un laberinto formado por nueve casillas numeradas del $0$ al $8$, cómo el que se muestra a continuación:
+  </p>
+  <p>
+    <center>
+      <img src="./Imagenes/Laberinto.png" alt="" width="15%" height="auto"></a>
+      </center>
+  </p>
+
+  <p>
+    Modela el movimiento del ratón mediante una cadena de Markov homogénea $(X_n)_{n \in \mathbb{N}_{0}}$, donde $X_n$ representa la casilla en la que se 
+    encuentra el ratón después de $n$ movimientos. Suponga que en cada paso el ratón se mueve, con igual probabilidad, hacia una de las casillas accesibles 
+    desde su posición actual.
+  </p>
+  <p>
+    La casilla $7$ contiene alimento y la casilla $8$ contiene una descarga eléctrica. Una vez que el ratón llega a cualquiera de estas dos casillas, 
+    permanece ahí para siempre. 
+  </p>
+
+    <p>
+    Suponga que el movimiento del ratón se modela mediante una cadena de Markov homogénea $(X_n)_{n \in \mathbb{N}_{0}}$, donde $X_n$ representa la posición del ratón después de $n$ pasos.
+  </p>
+
+  <ol class="two-column">
+    <li>Determine el espacio de estados de la cadena.</li><br>
+
+    <li>Construya la matriz de transición asociada al laberinto.</li><br>
+
+    <li>Identifique los estados absorbentes y los estados transitorios.</li><br>
+
+    <li>Calcule la probabilidad de que el ratón llegue al estado absorbente $7$ antes que al estado absorbente $8$, suponiendo que inicia en la casilla $0$.</li><br>
+  </ol>
+
+  
+
+  <ol class="two-column">
+    <li>
+      Construya la matriz de transición $P=(p_{ij})_{i,j\in E}$ de la cadena de Markov.
+    </li><br>
+
+    <li>
+      Identifique los estados absorbentes y los estados transitorios de la cadena.
+    </li><br>
 </div>
 <!-- Donde aparecerá la fecha de la última modificación -->
 <footer>
