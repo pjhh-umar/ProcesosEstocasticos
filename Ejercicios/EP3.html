@@ -111,13 +111,105 @@
   <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos tercer examen parcial </h1>   
 
 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    ¿Cuál es el número máximo y mínimo de clases de comunicación que puede existir para una cadena de Markov de $n$ estados? Dibuje un diagrama de transición ilustrando cada una de estas dos situaciones.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Dibuje el diagrama de transición de una cadena de Markov que sea:
+  </p>
+  <ol class="two-column">
+    <li>finita e irreducible.</li><br>
+    <li>finita y reducible.</li><br>
+    <li>infinita e irreducible.</li><br>
+    <li>infinita y reducible.</li><br>
+  </ol>
+</div>
+
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Considere una cadena de Markov con $n$ estados. Demuestre que si $i \to j$ con $i \neq j$, entonces es posible pasar de $i$ a $j$ en a lo más $n-1$ pasos.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Demuestre que no existe una cadena de Markov irreducible de periodo cero.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Demuestre que toda cadena de Markov finita tiene por lo menos un estado de periodo positivo.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Demuestre que $i \to j$ si, y sólo si, $f_{ij} > 0$.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Use la identidad
+    $$\displaystyle{
+    p_{ij}(n)=\sum_{k=1}^{n} f_{ij}(k)p_{jj}(n-k)
+    }$$
+    para demostrar que para cada $n\geq 1$, se cumple la desigualdad
+    $$\displaystyle{
+    p_{ij}(n)\leq \mathbb{P}(\tau_{ij}\leq n).
+    }$$
+    Observe que la igualdad se cumple en particular cuando $j$ es un estado absorbente.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Demuestre las siguientes igualdades.
+  </p>
+  <ol>
+    <li>
+      $\displaystyle{\mathbb{P}(\tau_{ij}=1)=p_{ij}(1).}$
+    </li><br>
+
+    <li>
+      $\displaystyle{\mathbb{P}(\tau_{ij}=2)=\sum_{k\neq j} p_{ik}(1)p_{kj}(1).}$
+    </li><br>
+
+    <li>
+      $\displaystyle{\mathbb{P}(\tau_{ij}=n+1)=\sum_{k\neq j} p_{ik}(1)\mathbb{P}(\tau_{kj}=n), \qquad \text{para } n\geq 1.}$
+    </li><br>
+  </ol>
+</div>
+
 <div class="nota-box">
   <h1 class="number-title-practica">Ejercicio</h1>
   <p>
-    
+    Demuestre que no existe una cadena de Markov irreducible de periodo cero.
   </p>
-  
 </div>
+
+<div class="nota-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+  <p>
+    Demuestre que toda cadena de Markov finita tiene por lo menos un estado de periodo positivo.
+  </p>
+</div>
+
+
 <!-- Donde aparecerá la fecha de la última modificación -->
 <footer>
   <center>

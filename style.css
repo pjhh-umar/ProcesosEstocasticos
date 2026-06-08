@@ -1513,9 +1513,9 @@ tbody tr:nth-child(odd) {
 
 
 /* Listas en columnas para incisos */
-.two-column { columns: 2; list-style-type: lower-alpha; padding-left: 20px; }
-.three-column { columns: 3; list-style-type: lower-alpha; padding-left: 20px; }
-.four-column { columns: 4; list-style-type: lower-alpha; padding-left: 20px; }
+.two-column { columns: 2;  padding-left: 20px; }
+.three-column { columns: 3;padding-left: 20px; }
+.four-column { columns: 4; padding-left: 20px; }
 
 
 
