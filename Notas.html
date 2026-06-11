@@ -1,0 +1,319 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="./main.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="./style.css" />
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            id: "\\operatorname{id}",
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    <script>
+  function toggleRespuestas(btn) {
+    var respuestas = btn.nextElementSibling;
+    if (respuestas.style.display === "none" || respuestas.style.display === "") {
+      respuestas.style.display = "block";
+      btn.textContent = "Ocultar";
+    } else {
+      respuestas.style.display = "none";
+      btn.textContent = "Mostrar Respuestas";
+    }
+  }
+</script>
+    
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+      /* body.number-title
+      {
+      counter-reset: temaCounter 1 subsectioncounter ;
+      } */
+      body.fondo-body{
+        counter-reset: temaCounter 1 sectionCounter;
+      }
+
+      /* h1.page-number-title
+      {
+      counter-reset: sectionCounter 0;
+      }  */
+
+      h1.tema-number-title
+          {
+          counter-reset: sectionCounter 0;
+          } 
+
+      h1.number-title
+      {
+      counter-reset: subsectionCounter;
+      /* counter-reset: subsectionCounter; */
+      }
+
+    </style>
+
+
+  
+    <!-- Top Menu  -->
+    
+      
+        <header class="main-header">
+        
+          <div class="logo_superior_umar">
+          <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+          <div class="contenedor_titulo">
+          <div class="title">Notas Probabilidad II</div>
+          <div class="subtitle">Universidad del Mar, campus Huatulco</div>
+          <div class="subsubtitle">Licenciatura en Actuaría</div>
+          <!-- <div class="subsubtitle"><a href="https://www.umar.mx/web/ensenanza/licenciaturas/licenciatura_en_administracion_turistica" target="_blank">Licenciatura en Administración Turística</a> </div>    -->
+          </div>
+          <div class="logo_superior_umar">
+            <a href="https://www.umar.mx" target="_blank"><img src="./Imagenes/umar_logo_hd.webp" alt="Logo_UMAR" width="110%" height="auto"></a>
+          </div>
+
+      
+        </header> 
+
+        <nav class="top-nav">
+          <ul>
+            <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Informacion_General.html"> Información</a> </li>
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Notas.html"> Notas  </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Quizes.html"> Quizes  </a> </li>-->
+            <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Ejercicios.html">Ejercicios</a></li> 
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Examenes.html"> Archivos </a> </li> -->
+            <!-- <li> <a href="https://pjhh-umar.github.io/ProcesosEstocasticos/Links.html"> Links</a> </li> -->
+          </ul>
+          </nav>
+        <!-- 
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav> 
+        -->
+
+      <!-- This part is for title in tab-->
+          
+      <title>Notas Procesos Estocásticos</title>
+      </head>  
+
+      <body class="fondo-body" ><h1 class="page-title"> Notas</h1>  
+
+<div class="nota-box">
+  <h1 class="title-practica">Definición</h1>
+
+  <p> Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$.  
+    Sea $C\subseteq E$ una colección no vacía de estados. Decimos que $C$ es
+    <strong>irreducible</strong> si para cualesquiera $i,j\in C$ se cumple que
+    $i\leftrightarrow j.$
+  </p>
+
+</div>
+
+<div class="teorema-box">
+  <h1 class="title-practica">Proposición </h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$. Si $C\subseteq E$ es una coleccion de estados cerrada e irreducible, entonces $C$ es 
+    una clase de comunicación.
+  </p>
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+  
+  <p>
+    La hipótesis de que $C$ sea irreducible garantiza que todos los estados de $C$ se comunican entre sí. 
+    Sin embargo, por sí sola esta condición no asegura que $C$ sea una clase de comunicación, ya que podría existir un estado fuera de $C$ que también se comunique con los estados de $C$.
+  </p>
+
+  <p>
+    La condición de que $C$ sea cerrada elimina esta posibilidad. En efecto, si $i\in C$ y $j\in E\setminus C$, entonces, como $C$ es cerrada, la cadena no puede pasar de $i$ a $j$. Por tanto,
+    $$
+    p_{ij}^{(n)}=0,
+    \qquad n\in\mathbb{N}.
+    $$
+  </p>
+
+  <p>
+    Así, ningún estado fuera de $C$ puede comunicarse con un estado de $C$, pues para que $i$ y $j$ se comunicaran sería necesario que tanto
+    $$
+    i\to j
+    \qquad\text{como}\qquad
+    j\to i
+    $$
+    se cumplieran. La primera relación es imposible cuando $i\in C$ y $j\in E\setminus C$.
+  </p>
+
+  <p>
+    Por lo tanto, la colección $C$ no sólo es irreducible, sino que además coincide exactamente con una clase de equivalencia bajo la relación de comunicación. En consecuencia, $C$ es una clase de comunicación.
+  </p>
+
+</div>
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$. Sean $i,j\in E$. 
+    Cuando la cadena se considera con condición inicial $X_0=i$, se define el 
+    <strong>número de visitas al estado $j$ hasta el tiempo $n$</strong> como la variable aleatoria
+    $$
+    N_{ij}(n)
+    =
+    \sum_{k=1}^{n}\mathbf{1}_{\{X_k=j\}},
+    \qquad n\in\mathbb{N}.
+    $$
+  </p>
+
+  <p>
+    La variable $N_{ij}(n)$ cuenta cuántas veces la cadena visita el estado $j$ durante los tiempos
+    $1,2,\ldots,n$, partiendo del estado inicial $i$.
+  </p>
+
+</div>
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición</h1>
+  <p>  Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$. Sean $i,j\in E$. 
+    Cuando la cadena se considera con condición inicial $X_0=i$, se define el 
+    <strong>número total de visitas al estado $j$</strong>, partiendo de $i$, se define como
+    $$
+    N_{ij}
+    =
+    \sum_{k=1}^{\infty}\mathbf{1}_{\{X_k=j\}}.
+    $$
+  </p>
+</div>
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+  <p>
+    En particular, cuando $i=j$, vamos se denota: $N_i(n):=N_{ii}(n)$ y $N_i:=N_{ii}$.
+  </p>
+
+</div>
+
+<div class="teorema-box">
+  <h1 class="title-practica">Proposición</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$. 
+    Sean $i,j\in E$, se cumplen las siguientes afirmaciones.
+  </p>
+    <!-- Sean $i,j\in E$ y sea
+    $$
+    N_{ij}
+    =
+    \sum_{n=1}^{\infty}\mathbf{1}_{\{X_n=j\}}
+    $$
+    el número total de visitas al estado $j$, bajo la condición inicial $X_0=i$.
+  </p>
+
+  <p>
+    Denotemos por
+    $$
+    f_{ij}
+    =
+    \mathbb{P}(T_j<\infty\mid X_0=i),
+    \qquad
+    T_j=\inf\{n\in\mathbb{N}:X_n=j\},
+    $$
+    la probabilidad de visitar eventualmente el estado $j$ partiendo de $i$.
+  </p> -->
+
+
+  <ol>
+    <li>
+      Para todo $k\in\mathbb{N}_{0}$,
+      $$
+      \mathbb{P}(N_{ij}\geq k\mid X_0=i)
+      =
+      \begin{cases}
+      1, & \text{si } k=0,\\[4pt]
+      f_{ij}(f_{jj})^{k-1}, & \text{si } k\geq 1.
+      \end{cases}
+      $$
+    </li>
+
+    <li>
+      Para todo $k\in\mathbb{N}_{0}$,
+      $$
+      \mathbb{P}(N_{ij}=k\mid X_0=i)
+      =
+      \begin{cases}
+      1-f_{ij}, & \text{si } k=0,\\[4pt]
+      f_{ij}(f_{jj})^{k-1}(1-f_{jj}), & \text{si } k\geq 1.
+      \end{cases}
+      $$
+    </li>
+
+    <li>
+      La esperanza del número total de visitas satisface
+      $$
+      \mathbb{E}[N_{ij}\mid X_0=i]
+      =
+      \sum_{n=1}^{\infty}p_{ij}^{(n)}
+      =
+      \begin{cases}
+      0, & \text{si } f_{ij}=0,\\[6pt]
+      \displaystyle{\frac{f_{ij}}{1-f_{jj}}}, & \text{si } f_{ij}\neq 0 \text{ y } f_{jj}< 1,\\[12pt]
+      \infty, & \text{si } f_{ij}\neq 0 \text{ y } f_{jj}=1.
+      \end{cases}
+      $$
+    </li>
+
+    <li>
+      La probabilidad de que el número de visitas sea infinito está dada por
+      $$
+      \mathbb{P}(N_{ij}=\infty\mid X_0=i)
+      =
+      \begin{cases}
+      0, & \text{si } j \text{ es transitorio},\\[4pt]
+      f_{ij}, & \text{si } j \text{ es recurrente}.
+      \end{cases}
+      $$
+    </li>
+
+    <li>
+      La probabilidad de que el número de visitas sea finito está dada por
+      $$
+      \mathbb{P}(N_{ij}<\infty\mid X_0=i)
+      =
+      \begin{cases}
+      1, & \text{si } j \text{ es transitorio},\\[4pt]
+      1-f_{ij}, & \text{si } j \text{ es recurrente}.
+      \end{cases}
+      $$
+    </li>
+  </ol>
+
+</div>
+
+
+  </body>
+
+
+</html>
