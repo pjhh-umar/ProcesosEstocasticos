@@ -312,6 +312,124 @@
 
 </div>
 
+<div class="definicion-box">
+  <h1 class="title-practica">Definición</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$.
+    La <strong>filtración natural</strong> asociada a la cadena es la sucesión
+    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ definida por
+    $$\displaystyle{
+      \mathcal{F}_n=\sigma(X_0,X_1,\ldots,X_n),
+      \qquad n\in\mathbb{N}_{0}.
+    }$$
+    Es decir, $\mathcal{F}_n$ representa la información generada por la trayectoria de la cadena
+    hasta el tiempo $n$.
+  </p>
+
+  <p>
+    Una variable aleatoria
+    $$\displaystyle{
+      T:\Omega\longrightarrow \mathbb{N}_{0}\cup\{\infty\}
+    }$$
+    se llama <strong>tiempo de paro</strong> respecto de la filtración
+    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ si, para cada $n\in\mathbb{N}_{0}$,
+    $$\displaystyle{
+      \{T\leq n\}\in\mathcal{F}_n.
+    }$$
+  </p>
+
+  <p>
+    En otras palabras, $T$ es un tiempo de paro si, para decidir si $T$ ya ocurrió antes o en el
+    tiempo $n$, basta conocer la información disponible hasta ese instante, es decir,
+    $X_0,X_1,\ldots,X_n$, sin utilizar información futura.
+  </p>
+</div>
+
+<!-- <div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    La condición
+    $$\displaystyle{
+      \{T\leq n\}\in\mathcal{F}_n
+    }$$
+    expresa que $T$ no anticipa el futuro. Por esta razón, los tiempos de primera visita y de
+    primer regreso son ejemplos naturales de tiempos de paro.
+  </p>
+
+  <p>
+    Por ejemplo, si $A\subseteq E$ y
+    $$\displaystyle{
+      \tau_A=\min\{n\geq 1:X_n\in A\},
+    }$$
+    entonces $\tau_A$ es un tiempo de paro, pues para $n\geq 1$ se tiene
+    $$\displaystyle{
+      \{\tau_A\leq n\}
+      =
+      \bigcup_{m=1}^{n}\{X_m\in A\}\in\mathcal{F}_n.
+    }$$
+  </p>
+
+  <p>
+    En particular, si $A=\{j\}$, entonces
+    $$\displaystyle{
+      \tau_j=\min\{n\geq 1:X_n=j\}
+    }$$
+    es el tiempo de primera visita positiva al estado $j$, y también es un tiempo de paro.
+  </p>
+</div> -->
+
+<div class="teorema-box">
+  <h1 class="title-practica">Propiedad fuerte de Markov</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$
+    y matriz de transición $P=(p_{ij})_{i,j\in E}$. Sea
+    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ su filtración natural y sea $T$ un tiempo de paro
+    respecto de esta filtración.
+  </p>
+
+  <p>
+    Entonces, sobre el evento $\{T<\infty\}$, el proceso posterior al tiempo $T$,
+    $$\displaystyle{
+      (X_{T+n})_{n\in\mathbb{N}_{0}},
+    }$$
+    se comporta, condicionalmente a $\mathcal{F}_T$, como una cadena de Markov que inicia en
+    el estado $X_T$.
+  </p>
+
+  <p>
+    De manera formal, para cualesquiera $m\in\mathbb{N}$ y $j_1,\ldots,j_m\in E$, se cumple
+    $$\displaystyle{
+      \mathbb{P}_i
+      \left(
+        X_{T+1}=j_1,\ldots,X_{T+m}=j_m
+        \mid \mathcal{F}_T
+      \right)
+      =
+      \mathbb{P}_{X_T}
+      \left(
+        X_1=j_1,\ldots,X_m=j_m
+      \right)
+    }$$
+    en el evento $\{T<\infty\}$.
+  </p>
+
+  <p>
+    Equivalentemente,
+    $$\displaystyle{
+      \mathbb{P}_i
+      \left(
+        X_{T+1}=j_1,\ldots,X_{T+m}=j_m
+        \mid \mathcal{F}_T
+      \right)
+      =
+      p_{X_Tj_1}p_{j_1j_2}\cdots p_{j_{m-1}j_m},
+    }$$
+    sobre $\{T<\infty\}$.
+  </p>
+</div>
 
   </body>
 
