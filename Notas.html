@@ -47,7 +47,7 @@
     
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
-      /* body.number-title
+      /* body.title
       {
       counter-reset: temaCounter 1 subsectioncounter ;
       } */
@@ -55,17 +55,17 @@
         counter-reset: temaCounter 1 sectionCounter;
       }
 
-      /* h1.page-number-title
+      /* h1.page-title
       {
       counter-reset: sectionCounter 0;
       }  */
 
-      h1.tema-number-title
+      h1.tema-title
           {
           counter-reset: sectionCounter 0;
           } 
 
-      h1.number-title
+      h1.title
       {
       counter-reset: subsectionCounter;
       /* counter-reset: subsectionCounter; */
@@ -344,19 +344,56 @@
 </div>
 
 <div class="definicion-box">
+  <h1 class="number-title-practica">Definición</h1>
+
+  <p>
+    Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Una sucesión
+    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ de sub-$\sigma$-álgebras de $\mathcal{F}$ se llama
+    <strong>filtración</strong> si es creciente, es decir, si para todo
+    $n\in\mathbb{N}_{0}$ se cumple
+    $$\displaystyle{
+      \mathcal{F}_n\subseteq \mathcal{F}_{n+1}.
+    }$$
+  </p>
+
+  <p>
+    Equivalentemente,
+    $$\displaystyle{
+      \mathcal{F}_0\subseteq \mathcal{F}_1\subseteq \mathcal{F}_2\subseteq \cdots
+      \subseteq \mathcal{F}.
+    }$$
+  </p>
+
+  <p>
+    Cada $\mathcal{F}_n$ representa la información disponible hasta el tiempo $n$.
+    La condición $\mathcal{F}_n\subseteq \mathcal{F}_{n+1}$ expresa que la información
+    no disminuye con el paso del tiempo.
+  </p>
+</div>
+
+<div class="definicion-box">
   <h1 class="title-practica">Definición</h1>
 
   <p>
-    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$.
-    La <strong>filtración natural</strong> asociada a la cadena es la sucesión
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ un proceso estocástico definido sobre un espacio de
+    probabilidad $(\Omega,\mathcal{F},\mathbb{P})$. La <strong>filtración natural</strong>
+    asociada al proceso $(X_n)_{n\in\mathbb{N}_{0}}$ es la sucesión
     $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ definida por
     $$\displaystyle{
       \mathcal{F}_n=\sigma(X_0,X_1,\ldots,X_n),
       \qquad n\in\mathbb{N}_{0}.
     }$$
-    Es decir, $\mathcal{F}_n$ representa la información generada por la trayectoria de la cadena
+  </p>
+
+  <p>
+    Es decir, $\mathcal{F}_n$ es la $\sigma$-álgebra generada por las variables aleatorias
+    $X_0,X_1,\ldots,X_n$. Por tanto, representa toda la información disponible sobre el proceso
     hasta el tiempo $n$.
   </p>
+</div>
+
+<div class="definicion-box">
+  <h1 class="title-practica">Definición</h1>
 
   <p>
     Una variable aleatoria
@@ -412,31 +449,12 @@
 </div> -->
 
 
-<div class="definicion-box">
-  <h1 class="number-title-practica">Definición</h1>
 
-  <p>
-    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ un proceso estocástico definido sobre un espacio de
-    probabilidad $(\Omega,\mathcal{F},\mathbb{P})$. La <strong>filtración natural</strong>
-    asociada al proceso $(X_n)_{n\in\mathbb{N}_{0}}$ es la sucesión
-    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ definida por
-    $$\displaystyle{
-      \mathcal{F}_n=\sigma(X_0,X_1,\ldots,X_n),
-      \qquad n\in\mathbb{N}_{0}.
-    }$$
-  </p>
-
-  <p>
-    Es decir, $\mathcal{F}_n$ es la $\sigma$-álgebra generada por las variables aleatorias
-    $X_0,X_1,\ldots,X_n$. Por tanto, representa toda la información disponible sobre el proceso
-    hasta el tiempo $n$.
-  </p>
-</div>
 
 
 
 <div class="teorema-box">
-  <h1 class="number-title-practica">Propiedad fuerte de Markov</h1>
+  <h1 class="title-practica">Propiedad fuerte de Markov</h1>
 
   <p>
     Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$,
