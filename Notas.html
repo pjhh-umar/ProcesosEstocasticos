@@ -209,7 +209,7 @@
 </div>
 
 <div class="nota-box">
-  <h1 class="title-practica">Observación</h1>
+  <h1 class="title-practica">Notación</h1>
   <p>
     En particular, cuando $i=j$, vamos se denota: $N_i(n):=N_{ii}(n)$ y $N_i:=N_{ii}$.
   </p>
@@ -312,6 +312,37 @@
 
 </div>
 
+<div class="teorema-box">
+  <h1 class="title-practica">Proposición</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$.
+  La distribución del número total de visitas $N_{ij}$ al estado $j$ partiendo del estado $i$ está dada por
+  $$
+  \mathbb{P}_i(N_{ij}=m)
+  =
+  \begin{cases}
+  1, 
+  & \text{si } f_{ij}=0 \text{ y } m=0, \\[0.2cm]
+
+  1-f_{ij}, 
+  & \text{si } f_{ij}>0 \text{ y } m=0, \\[0.2cm]
+
+  f_{ij}, 
+  & \text{si } f_{ij}>0,\ f_{jj}=1 \text{ y } m=\infty, \\[0.2cm]
+
+  f_{ij}(1-f_{jj})f_{jj}^{\,m-1}, 
+  & \text{si } f_{ij}>0,\ f_{jj}< 1 \text{ y } m\in\mathbb{N}, \\[0.2cm]
+
+  0, 
+  & \text{en otro caso}.
+  \end{cases}
+  $$
+</p>
+
+
+</div>
+
 <div class="definicion-box">
   <h1 class="title-practica">Definición</h1>
 
@@ -380,44 +411,42 @@
   </p>
 </div> -->
 
+
+<div class="definicion-box">
+  <h1 class="number-title-practica">Definición</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ un proceso estocástico definido sobre un espacio de
+    probabilidad $(\Omega,\mathcal{F},\mathbb{P})$. La <strong>filtración natural</strong>
+    asociada al proceso $(X_n)_{n\in\mathbb{N}_{0}}$ es la sucesión
+    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ definida por
+    $$\displaystyle{
+      \mathcal{F}_n=\sigma(X_0,X_1,\ldots,X_n),
+      \qquad n\in\mathbb{N}_{0}.
+    }$$
+  </p>
+
+  <p>
+    Es decir, $\mathcal{F}_n$ es la $\sigma$-álgebra generada por las variables aleatorias
+    $X_0,X_1,\ldots,X_n$. Por tanto, representa toda la información disponible sobre el proceso
+    hasta el tiempo $n$.
+  </p>
+</div>
+
+
+
 <div class="teorema-box">
-  <h1 class="title-practica">Propiedad fuerte de Markov</h1>
+  <h1 class="number-title-practica">Propiedad fuerte de Markov</h1>
 
   <p>
-    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$
-    y matriz de transición $P=(p_{ij})_{i,j\in E}$. Sea
-    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ su filtración natural y sea $T$ un tiempo de paro
-    respecto de esta filtración.
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$,
+    matriz de transición $P=(p_{ij})_{i,j\in E}$ y filtración natural
+    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$. Si $T$ es un tiempo de paro, entonces, sobre
+    $\{T<\infty\}$, la cadena puede reiniciarse en el estado $X_T$.
   </p>
 
   <p>
-    Entonces, sobre el evento $\{T<\infty\}$, el proceso posterior al tiempo $T$,
-    $$\displaystyle{
-      (X_{T+n})_{n\in\mathbb{N}_{0}},
-    }$$
-    se comporta, condicionalmente a $\mathcal{F}_T$, como una cadena de Markov que inicia en
-    el estado $X_T$.
-  </p>
-
-  <p>
-    De manera formal, para cualesquiera $m\in\mathbb{N}$ y $j_1,\ldots,j_m\in E$, se cumple
-    $$\displaystyle{
-      \mathbb{P}_i
-      \left(
-        X_{T+1}=j_1,\ldots,X_{T+m}=j_m
-        \mid \mathcal{F}_T
-      \right)
-      =
-      \mathbb{P}_{X_T}
-      \left(
-        X_1=j_1,\ldots,X_m=j_m
-      \right)
-    }$$
-    en el evento $\{T<\infty\}$.
-  </p>
-
-  <p>
-    Equivalentemente,
+    En particular, para todo $m\in\mathbb{N}$ y $j_1,\ldots,j_m\in E$,
     $$\displaystyle{
       \mathbb{P}_i
       \left(
@@ -427,9 +456,17 @@
       =
       p_{X_Tj_1}p_{j_1j_2}\cdots p_{j_{m-1}j_m},
     }$$
-    sobre $\{T<\infty\}$.
+    sobre el evento $\{T<\infty\}$.
+  </p>
+
+  <p>
+    Es decir, condicionado al estado alcanzado en el tiempo de paro $T$, el comportamiento futuro
+    no depende de la trayectoria previa.
   </p>
 </div>
+
+
+
 
   </body>
 
