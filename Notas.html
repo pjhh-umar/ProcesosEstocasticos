@@ -344,7 +344,7 @@
 </div>
 
 <div class="definicion-box">
-  <h1 class="number-title-practica">Definición</h1>
+  <h1 class="title-practica">Definición</h1>
 
   <p>
     Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad. Una sucesión
@@ -371,6 +371,8 @@
   </p>
 </div>
 
+
+
 <div class="definicion-box">
   <h1 class="title-practica">Definición</h1>
 
@@ -384,18 +386,46 @@
       \qquad n\in\mathbb{N}_{0}.
     }$$
   </p>
-
-  <p>
+ <p>
     Es decir, $\mathcal{F}_n$ es la $\sigma$-álgebra generada por las variables aleatorias
     $X_0,X_1,\ldots,X_n$. Por tanto, representa toda la información disponible sobre el proceso
     hasta el tiempo $n$.
   </p>
+
 </div>
+<!-- 
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    La $\sigma$-álgebra $\mathcal{F}_n$ es generada por las variables aleatorias
+    $X_0,X_1,\ldots,X_n$. Intuitivamente, la filtración natural describe cómo se acumula la información conforme
+    evoluciona el proceso. En el tiempo $0$, la información disponible está dada por el valor
+    inicial $X_0$; en el tiempo $1$, se conocen $X_0$ y $X_1$; en general, en el tiempo $n$
+    se conoce la trayectoria observada
+    $$\displaystyle{
+      X_0,X_1,\ldots,X_n.
+    }$$
+  </p>
+
+  <p>
+    La palabra <em>natural</em> indica que esta filtración contiene exactamente la información
+    generada por el propio proceso hasta cada instante, sin agregar información externa. Por ello,
+    un evento pertenece a $\mathcal{F}_n$ si puede decidirse observando únicamente los valores
+    $X_0,X_1,\ldots,X_n$, sin utilizar información futura.
+  </p>
+</div>
+ -->
+
+
+
 
 <div class="definicion-box">
   <h1 class="title-practica">Definición</h1>
 
-  <p>
+  <p> Sea $(\Omega,\mathcal{F},\mathbb{P})$ un espacio de probabilidad, $(X_n)_{n\in\mathbb{N}_{0}}$ un proceso estocástico definido sobre un espacio de
+    probabilidad $(\Omega,\mathcal{F},\mathbb{P})$ y $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ una filtración.
     Una variable aleatoria
     $$\displaystyle{
       T:\Omega\longrightarrow \mathbb{N}_{0}\cup\{\infty\}
@@ -450,21 +480,28 @@
 
 
 
-
-
-
 <div class="teorema-box">
   <h1 class="title-practica">Propiedad fuerte de Markov</h1>
 
   <p>
-    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$,
-    matriz de transición $P=(p_{ij})_{i,j\in E}$ y filtración natural
-    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$. Si $T$ es un tiempo de paro, entonces, sobre
-    $\{T<\infty\}$, la cadena puede reiniciarse en el estado $X_T$.
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$
+    y matriz de transición $P=(p_{ij})_{i,j\in E}$. Sea
+    $(\mathcal{F}_n)_{n\in\mathbb{N}_{0}}$ su filtración natural, donde
+    $$\displaystyle{
+      \mathcal{F}_n=\sigma(X_0,X_1,\ldots,X_n).
+    }$$
+    Si $T$ es un tiempo de paro respecto de esta filtración, entonces, sobre el evento
+    $\{T<\infty\}$, el proceso posterior al tiempo $T$,
+    $$\displaystyle{
+      (X_{T+n})_{n\in\mathbb{N}_{0}},
+    }$$
+    se comporta como una cadena de Markov que inicia en el estado $X_T$ y tiene la misma matriz
+    de transición $P$.
   </p>
 
   <p>
-    En particular, para todo $m\in\mathbb{N}$ y $j_1,\ldots,j_m\in E$,
+    Para todo $m\in\mathbb{N}$ y cualesquiera estados
+    $j_1,\ldots,j_m\in E$, se cumple
     $$\displaystyle{
       \mathbb{P}_i
       \left(
@@ -472,21 +509,102 @@
         \mid \mathcal{F}_T
       \right)
       =
-      p_{X_Tj_1}p_{j_1j_2}\cdots p_{j_{m-1}j_m},
+      \mathbb{P}_{X_T}
+      \left(
+        X_1=j_1,\ldots,X_m=j_m
+      \right),
     }$$
-    sobre el evento $\{T<\infty\}$.
+    sobre $\{T<\infty\}$.
   </p>
 
   <p>
-    Es decir, condicionado al estado alcanzado en el tiempo de paro $T$, el comportamiento futuro
-    no depende de la trayectoria previa.
+    Por tanto, condicionado a la información disponible hasta el tiempo de paro $T$, el futuro
+    de la cadena depende únicamente del estado actual $X_T$, y no de la trayectoria previa
+    $X_0,X_1,\ldots,X_{T-1}$.
+  </p>
+</div>
+
+
+<div class="nota-box">
+  <h1 class="title-practica">Observación</h1>
+
+  <p>
+    En la propiedad fuerte de Markov, la expresión
+    $$\displaystyle{
+      \mathbb{P}_i
+      \left(
+        X_{T+1}=j_1,\ldots,X_{T+m}=j_m
+        \mid \mathcal{F}_T
+      \right)
+    }$$
+    debe interpretarse como la probabilidad de que la cadena siga la trayectoria
+    $j_1,\ldots,j_m$ después del tiempo de paro $T$, suponiendo conocida toda la información
+    disponible hasta ese tiempo.
+  </p>
+
+  <p>
+    La $\sigma$-álgebra $\mathcal{F}_T$ contiene la información acumulada hasta el tiempo
+    aleatorio $T$. En particular, contiene el valor de $T$ y la trayectoria observada hasta ese
+    instante:
+    $$\displaystyle{
+      X_0,X_1,\ldots,X_T.
+    }$$
+  </p>
+
+  <p>
+    La propiedad fuerte de Markov afirma que, aun conociendo toda esa información, el futuro de
+    la cadena depende únicamente del estado actual $X_T$. Por ello, sobre el evento
+    $\{T<\infty\}$,
+    $$\displaystyle{
+      \mathbb{P}_i
+      \left(
+        X_{T+1}=j_1,\ldots,X_{T+m}=j_m
+        \mid \mathcal{F}_T
+      \right)
+      =
+      p_{X_Tj_1}p_{j_1j_2}\cdots p_{j_{m-1}j_m}.
+    }$$
+  </p>
+
+  <p>
+    En otras palabras, una vez que la cadena se detiene en el tiempo de paro $T$, el pasado
+    $X_0,\ldots,X_{T-1}$ ya no influye en la evolución futura, salvo por el estado en el que la
+    cadena quedó detenida, es decir, $X_T$.
   </p>
 </div>
 
 
 
 
+
+
   </body>
+
+
+  
+<!-- Donde aparecerá la fecha de la última modificación -->
+<footer>
+  <center>
+   <p id="ultima-actualizacion"></p>
+  </center>
+</footer>
+<script>
+// Obtenemos la fecha y hora de la última modificación del documento
+const fechaModificacion = new Date(document.lastModified);
+
+// Opciones para formatear la fecha (por ejemplo, DD/MM/AAAA)
+const opcionesFecha = { day: '2-digit', month: '2-digit', year: 'numeric' };
+const fechaFormateada = fechaModificacion.toLocaleDateString('es-ES', opcionesFecha);
+
+// Obtenemos la hora (HH:MM:SS)
+const horaFormateada = fechaModificacion.toLocaleTimeString('es-ES', {
+    hour: '2-digit', minute: '2-digit'
+});
+
+// Insertamos la fecha y la hora en el elemento con el ID "ultima-modificacion"
+document.getElementById("ultima-actualizacion").textContent = `Última actualización: ${fechaFormateada}`;
+</script>
+
 
 
 </html>
