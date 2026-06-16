@@ -108,7 +108,7 @@
 
 
 
-  <body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos tercer examen parcial </h1>   
+<body class="fondo-body" ><h1 class="page-title-practica"> Ejercicios propuestos tercer examen parcial </h1>   
 
 
 <div class="ejercicio-box">
@@ -174,38 +174,84 @@
     Observe que la igualdad se cumple en particular cuando $j$ es un estado absorbente.
   </p>
 </div>
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados
+    $E$, finito o numerable, y matriz de transición $(p_{xy})_{x,y\in E}$. Use la identidad:
+    $$
+    \displaystyle{
+    p_{ij}(n)=\sum_{k=1}^{n} f_{ij}(k)p_{jj}(n-k),
+    \qquad n\geq 1,
+    }
+    $$
+    para demostrar que, para cada $n\geq 1$,
+    $$
+    \displaystyle{
+    p_{ij}(n)\leq \mathbb{P}(\tau_{ij}\leq n \mid X_0=i).
+    }
+    $$
+  </p>
+
+  <p>
+    Observe que la igualdad se cumple, en particular, cuando $j$ es un estado absorbente.
+  </p>
+</div>
+
+
 
 <div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
+
   <p>
-    Demuestre las siguientes igualdades.
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados $E$,
+    finito o numerable, y matriz de transición $(p_{xy})_{x,y\in E}$. Demuestre las siguientes igualdades:
   </p>
+
   <ol>
     <li>
-      $\displaystyle{\mathbb{P}(\tau_{ij}=1)=p_{ij}(1).}$
+      $\displaystyle{\mathbb{P}(\tau_{ij}=1\mid X_0=i)=p_{ij}.}$
     </li><br>
 
     <li>
-      $\displaystyle{\mathbb{P}(\tau_{ij}=2)=\sum_{k\neq j} p_{ik}(1)p_{kj}(1).}$
+      $\displaystyle{\mathbb{P}(\tau_{ij}=2\mid X_0=i)=\sum_{k\neq j} p_{ik}p_{kj}.}$
     </li><br>
 
     <li>
-      $\displaystyle{\mathbb{P}(\tau_{ij}=n+1)=\sum_{k\neq j} p_{ik}(1)\mathbb{P}(\tau_{kj}=n), \qquad \text{para } n\geq 1.}$
+      Para todo $n\geq 1$,
+      $$
+      \displaystyle{
+      \mathbb{P}(\tau_{ij}=n+1\mid X_0=i)
+      =
+      \sum_{k\neq j} p_{ik}\,
+      \mathbb{P}(\tau_{kj}=n\mid X_0=k).
+      }
+      $$
     </li><br>
   </ol>
 </div>
 
-<div class="nota-box">
+<div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
   <p>
     Demuestre que no existe una cadena de Markov irreducible de periodo cero.
   </p>
 </div>
 
-<div class="nota-box">
+<div class="ejercicio-box">
   <h1 class="number-title-practica">Ejercicio</h1>
   <p>
     Demuestre que toda cadena de Markov finita tiene por lo menos un estado de periodo positivo.
+  </p>
+</div>
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+
+  <p>
+    <strong>El problema del mono.</strong> Suponga que un mono escribe caracteres al azar en una máquina de escribir.
+    ¿Cuál es la probabilidad de que eventualmente el mono escriba exactamente, y sin ningún error, las obras completas de Shakespeare?
   </p>
 </div>
 
