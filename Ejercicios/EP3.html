@@ -361,6 +361,86 @@
   </ol>
 </div>
 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+
+  <p>
+    <strong>El sistema Bonus-Malus en el seguro de automóviles.</strong>
+    Considere un sistema de tarificación Bonus-Malus con seis clases, donde la clase $1$
+    representa el mayor bonus y la clase $6$ representa el mayor malus.
+  </p>
+
+  <p>
+    Suponga que, en cada periodo, un asegurado puede tener o no tener siniestros. Denote por
+    $q$ la probabilidad de que el asegurado tenga al menos un siniestro durante un periodo, con
+    $0<q<1$. Por lo tanto, la probabilidad de que no tenga siniestros durante un periodo es $1-q$.
+  </p>
+
+  <p>
+    El sistema evoluciona de acuerdo con las siguientes reglas:
+  </p>
+
+  <ul>
+    <li>
+      Si el asegurado no tiene siniestros durante el periodo, entonces pasa de la clase $i$ a la clase
+      $\max\{1,i-1\}$.
+    </li><br>
+
+    <li>
+      Si el asegurado tiene al menos un siniestro durante el periodo, entonces pasa de la clase $i$ a la clase $6$.
+    </li><br>
+  </ul>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ la cadena de Markov que representa la clase de tarificación
+    del asegurado al inicio del periodo $n$. El espacio de estados es
+    $$
+    \displaystyle{
+    E=\{1,2,3,4,5,6\}.
+    }
+    $$
+  </p>
+
+  <ol>
+    <li>
+      Escriba la matriz de transición de la cadena de Markov $(X_n)_{n\in\mathbb{N}_{0}}$.
+    </li><br>
+
+    <li>
+      Demuestre que la cadena es irreducible y aperiódica.
+    </li><br>
+
+    <li>
+      Sea
+      $$
+      \displaystyle{
+      N_n^{(j)}=\sum_{m=0}^{n-1}\mathbf{1}_{\{X_m=j\}},
+      \qquad j\in E,
+      }
+      $$
+      el número de periodos, entre los tiempos $0,1,\ldots,n-1$, en los que el asegurado se encuentra
+      en la clase $j$. Determine la proporción de tiempo que, en el largo plazo, el asegurado pasa en la clase $j$; es decir, calcule
+      $$
+      \displaystyle{
+      \lim_{n\to\infty}\frac{N_n^{(j)}}{n},
+      \qquad j=1,\ldots,6.
+      }
+      $$
+    </li><br>
+
+    <li>
+      Sean $c_1,c_2,\ldots,c_6>0$ las primas correspondientes a las clases $1,2,\ldots,6$,
+      respectivamente. Determine la prima promedio de largo plazo que paga un asegurado, es decir,
+      calcule
+      $$
+      \displaystyle{
+      \lim_{n\to\infty}
+      \frac{1}{n}\sum_{m=0}^{n-1} c_{X_m}.
+      }
+      $$
+    </li><br>
+  </ol>
+</div>
 
 
 
