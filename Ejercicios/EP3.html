@@ -251,6 +251,118 @@
   </p>
 </div>
 
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea con espacio de estados
+    $E=\{0,1\}$. Suponga que, respecto del orden de estados $(0,1)$, su matriz de transición está dada por
+    $$
+    \displaystyle{
+    P=
+    \begin{pmatrix}
+    1-\alpha & \alpha\\
+    \beta & 1-\beta
+    \end{pmatrix},
+    }
+    $$
+    donde $\alpha,\beta\in[0,1]$ y
+    $$
+    \displaystyle{
+    0<\alpha+\beta < 2.
+    }
+    $$
+  </p>
+
+  <p>
+    Determine todas las probabilidades de transición en $n$ pasos de la cadena, es decir,
+    encuentre explícitamente
+    $$
+    \displaystyle{
+    p_{00}^{(n)},\quad p_{01}^{(n)},\quad p_{10}^{(n)},\quad p_{11}^{(n)},
+    \qquad n\geq 1.
+    }
+    $$
+    En particular, calcule
+    $$
+    \displaystyle{
+    \mathbb{P}(X_n=0\mid X_0=0)=p_{00}^{(n)}.
+    }
+    $$
+  </p>
+</div>
+
+
+<div class="ejercicio-box">
+  <h1 class="number-title-practica">Ejercicio</h1>
+
+  <p>
+    <strong>Problema de la ruina.</strong> Un jugador tiene inicialmente $i$ unidades de capital,
+    donde $i\in\{0,1,\ldots,N\}$ y $N\in\mathbb{N}$. En cada jugada, el jugador gana una unidad
+    con probabilidad $p$ y pierde una unidad con probabilidad $q=1-p$, donde $0<p<1$.
+  </p>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ la cadena de Markov que representa el capital del jugador
+    después de $n$ jugadas. El juego termina cuando el jugador alcanza el estado $0$ o el estado $N$.
+    Es decir, los estados $0$ y $N$ son absorbentes.
+  </p>
+
+  <ol>
+    <li>
+      Escriba la matriz de transición de la cadena de Markov $(X_n)_{n\in\mathbb{N}_{0}}$.
+    </li><br>
+
+    <li>
+      Clasifique los estados de la cadena en transitorios, recurrentes y absorbentes.
+    </li><br>
+
+    <li>
+      Defina
+      $$
+      \displaystyle{
+      T_0=\min\{n\geq 0:X_n=0\},
+      \qquad
+      T_N=\min\{n\geq 0:X_n=N\}.
+      }
+      $$
+      Interprete los eventos $\{T_0 < T_N\}$ y $\{T_N < T_0\}$.
+    </li><br>
+
+    <li>
+      Sea
+      $$
+      \displaystyle{
+      r_i=\mathbb{P}_i(T_0 < T_N),
+      \qquad i=0,1,\ldots,N,
+      }
+      $$
+      la probabilidad de ruina cuando el capital inicial es $i$. Demuestre que
+      $$
+      \displaystyle{
+      r_i=pr_{i+1}+qr_{i-1},
+      \qquad i=1,\ldots,N-1,
+      }
+      $$
+      con condiciones de frontera
+      $$
+      \displaystyle{
+      r_0=1,
+      \qquad
+      r_N=0.
+      }
+      $$
+    </li><br>
+
+    <li>
+      Resuelva la ecuación anterior y obtenga una expresión explícita para $r_i$ en los casos
+      $p\neq q$ y $p=q=\frac{1}{2}$.
+    </li><br>
+  </ol>
+</div>
+
+
+
 
 <!-- Donde aparecerá la fecha de la última modificación -->
 <footer>
