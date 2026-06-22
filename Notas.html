@@ -459,11 +459,11 @@
   <p>
     Por ejemplo, si $A\subseteq E$ y
     $$\displaystyle{
-      \tau_A=\min\{n\geq 1:X_n\in A\},
+      T_A=\min\{n\geq 1:X_n\in A\},
     }$$
-    entonces $\tau_A$ es un tiempo de paro, pues para $n\geq 1$ se tiene
+    entonces $T_A$ es un tiempo de paro, pues para $n\geq 1$ se tiene
     $$\displaystyle{
-      \{\tau_A\leq n\}
+      \{T_A\leq n\}
       =
       \bigcup_{m=1}^{n}\{X_m\in A\}\in\mathcal{F}_n.
     }$$
@@ -472,7 +472,7 @@
   <p>
     En particular, si $A=\{j\}$, entonces
     $$\displaystyle{
-      \tau_j=\min\{n\geq 1:X_n=j\}
+      T_j=\min\{n\geq 1:X_n=j\}
     }$$
     es el tiempo de primera visita positiva al estado $j$, y también es un tiempo de paro.
   </p>
@@ -574,8 +574,440 @@
 </div>
 
 
+<div class="definicion-box">
+  <h1 class="title-practica">Definición</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea irreducible con espacio
+    de estados $E$. Para $i,j\in E$ y $n\geq 1$, se define
+    $$\displaystyle{
+      N_{ij}(n)=\sum_{s=1}^{n}\mathbf{1}_{\{X_s=j\}}.
+    }$$
+  </p>
+
+  <p>
+    La variable $N_{ij}(n)$ representa el número de visitas al estado $j$ hasta el tiempo $n$,
+    suponiendo que la cadena inicia en el estado $i$.
+  </p>
+
+  <p>
+    Además, se define el tiempo de primer regreso al estado $j$ por
+    $$\displaystyle{
+      T_j=\min\{n\geq 1:X_n=j\},
+    }$$
+    bajo la medida $\mathbb{P}_j$, es decir, suponiendo que la cadena inicia en $j$.
+  </p>
+
+  <p>
+    El <strong>tiempo medio de recurrencia</strong> del estado $j$ se define como
+    $$\displaystyle{
+      \mu_j=\mathbb{E}_j[T_j].
+    }$$
+    <ul>
+      <li>Si $\mu_j<\infty$, se dice que el estado $j$ tiene tiempo medio de recurrencia finito.</li>
+      <li>Si
+    $\mu_j=\infty$, se adopta la convención
+    $$\displaystyle{
+      \frac{1}{\mu_j}=0.
+    }$$</li>
+    </ul> 
+  </p>
+</div>
 
 
+
+<div class="nota-box">
+  <h1 class="title-practica">Teorema ergódico para cadenas de Markov</h1>
+
+  <p>
+    Sea $(X_n)_{n\in\mathbb{N}_{0}}$ una cadena de Markov homogénea irreducible con espacio
+    de estados $E$. Para cualesquiera estados $i,j\in E$,
+    $$\displaystyle{
+      \lim_{n\to\infty}\frac{N_{ij}(n)}{n}
+      =
+      \frac{1}{\mu_j}
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+    con la convención de que $1/\infty=0$.
+  </p>
+        <button class="respButton hvr-grow"> Demostración </button>
+        <div class="resp-box flexbox">
+          
+  <p>
+    Fijemos $i,j\in E$. La demostración se divide en dos casos: cuando la cadena es transitoria
+    y cuando la cadena es recurrente.
+  </p>
+
+
+  <p>
+    Supongamos ahora que la cadena es recurrente. Como la cadena es irreducible, todos sus
+    estados son recurrentes y se comunican entre sí. En particular,
+    $$\displaystyle{
+      \mathbb{P}_i(T_j<\infty)=1.
+    }$$
+    Es decir, empezando desde $i$, la cadena visita eventualmente al estado $j$ casi seguramente.
+  </p>
+
+  <p>
+    Definimos el tiempo de la $r$-ésima visita positiva al estado $j$ por
+    $$\displaystyle{
+      T_j^{(1)}=\min\{n\geq 1:X_n=j\},
+    }$$
+    y, para $r\geq 1$,
+    $$\displaystyle{
+      T_j^{(r+1)}
+      =
+      \min\{n>T_j^{(r)}:X_n=j\}.
+    }$$
+  </p>
+  <p><b>Afirmación:</b>
+    $$\displaystyle{
+      T_j^{(r)}<\infty
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+    para todo $r\geq 1$.
+  </p>
+
+<!-- 
+  <p>
+    Recordemos que $T_j^{(r)}$ representa el tiempo en que ocurre la $r$-ésima visita
+    al estado $j$. Por tanto, afirmar que
+    $$\displaystyle{
+      T_j^{(r)}<\infty
+      \qquad \mathbb{P}_i\text{-c.s.}
+    }$$
+    significa que, si la cadena inicia en el estado $i$, entonces la $r$-ésima visita
+    a $j$ ocurre en algún tiempo finito con probabilidad uno.
+  </p> -->
+
+  <p>
+    Como la cadena es irreducible, todos los estados se comunican entre sí. En particular,
+    desde el estado inicial $i$ se puede llegar al estado $j$. Además, como la cadena es
+    recurrente, esta visita ocurre eventualmente con probabilidad uno. Es decir,
+    $$\displaystyle{
+      \mathbb{P}_i(T_j^{(1)}<\infty)=1.
+    }$$
+    Así, la primera visita al estado $j$ ocurre casi seguramente.
+  </p>
+
+  <p>
+    Una vez que la cadena llega a $j$, la recurrencia de $j$ implica que, empezando desde
+    $j$, la cadena regresa nuevamente a $j$ con probabilidad uno:
+    $$\displaystyle{
+      \mathbb{P}_j(\tau_j<\infty)=1.
+    }$$
+    Por tanto, después de la primera visita a $j$, la cadena volverá a visitar $j$ casi
+    seguramente. Esa será la segunda visita.
+  </p>
+
+  <p>
+    El mismo razonamiento se repite después de cada nueva visita a $j$. En efecto, cada vez
+    que la cadena visita el estado $j$, el proceso se reinicia probabilísticamente desde $j$
+    por la propiedad fuerte de Markov. Como $j$ es recurrente, la cadena vuelve otra vez a
+    $j$ con probabilidad uno.
+  </p>
+
+  <p>
+    Por consiguiente, la cadena visita $j$ una primera vez, luego una segunda vez, luego una
+    tercera vez, y así sucesivamente, siempre en tiempos finitos, con probabilidad uno. Por
+    ello, para todo $r\geq 1$,
+    $$\displaystyle{
+      T_j^{(r)}<\infty
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+  </p>
+
+  <!-- <p> Supongamos que la cadena es irreducible y recurrente. Entonces todos los estados pertenecen a la misma clase recurrente. En particular, para cualesquiera $i,j\in E$ se tiene $$\displaystyle{ f_{ij}=\mathbb{P}_i(\tau_j<\infty)=1, }$$ donde $$\displaystyle{ \tau_j=\min\{n\geq 1:X_n=j\}. }$$ Por tanto, $$\displaystyle{ \mathbb{P}_i(T_j^{(1)}<\infty)=1. }$$ Es decir, la primera visita positiva al estado $j$ ocurre casi seguramente. </p> <p> Ahora probaremos por inducción que $$\displaystyle{ \mathbb{P}_i(T_j^{(r)}<\infty)=1 }$$ para todo $r\geq 1$. </p> <p> El caso $r=1$ ya fue demostrado. Supongamos ahora que, para cierto $r\geq 1$, $$\displaystyle{ \mathbb{P}_i(T_j^{(r)}<\infty)=1. }$$ Sobre el evento $\{T_j^{(r)}<\infty\}$, por definición del tiempo de la $r$-ésima visita, se cumple $$\displaystyle{ X_{T_j^{(r)}}=j. }$$ </p> <p> Como $T_j^{(r)}$ es un tiempo de paro, podemos aplicar la propiedad fuerte de Markov en dicho tiempo. Esta propiedad implica que, a partir de $T_j^{(r)}$, la cadena se comporta probabilísticamente como una nueva cadena que inicia en $j$. </p> <p> Por tanto, la probabilidad de que exista una visita adicional al estado $j$ después de $T_j^{(r)}$ es $$\displaystyle{ \mathbb{P}_j(\tau_j<\infty)=f_{jj}. }$$ Como $j$ es recurrente, se tiene $f_{jj}=1$. Luego, $$\displaystyle{ \mathbb{P}_i \left( T_j^{(r+1)}<\infty \mid T_j^{(r)}<\infty \right) = 1. }$$ </p> <p> Entonces, $$\displaystyle{ \mathbb{P}_i(T_j^{(r+1)}<\infty) = \mathbb{P}_i(T_j^{(r)}<\infty) \mathbb{P}_i \left( T_j^{(r+1)}<\infty \mid T_j^{(r)}<\infty \right) = 1\cdot 1 = 1. }$$ </p> <p> Por inducción, $$\displaystyle{ \mathbb{P}_i(T_j^{(r)}<\infty)=1 \qquad \text{para todo } r\geq 1. }$$ Equivalentemente, $$\displaystyle{ T_j^{(r)}<\infty \qquad \mathbb{P}_i\text{-c.s.} }$$ para todo $r\geq 1$. </p> -->
+
+  <b>Afirmación.</b> $T_j^{(r)}$ es un tiempo de paro.
+</p>
+
+<p>
+  En efecto, para cada $n\geq 1$ se tiene la igualdad de eventos
+  $$\displaystyle{
+    \left(T_j^{(r)}\leq n\right)
+    =
+    \left(
+      \sum_{s=1}^{n}\mathbf{1}_{(X_s=j)}\geq r
+    \right).
+  }$$
+</p>
+
+<p>
+  El evento $\{T_j^{(r)}\leq n\}$ significa que la $r$-ésima visita  al estado
+  $j$ ocurrió antes o en el tiempo $n$. Esto sucede si, y sólo si, entre los tiempos
+  $1,2,\ldots,n$ la cadena ha visitado el estado $j$ al menos $r$ veces.
+</p>
+
+<p>
+  Como
+  $$\displaystyle{
+    \sum_{s=1}^{n}\mathbf{1}_{(X_s=j)}
+  }$$
+  cuenta el número de visitas al estado $j$ hasta el tiempo $n$, se obtiene la igualdad anterior.
+</p>
+
+<p>
+  Además, el evento
+  $$\displaystyle{
+    \left(
+      \sum_{s=1}^{n}\mathbf{1}_{(X_s=j)}\geq r
+    \right)
+  }$$
+  depende únicamente de las variables $X_1,\ldots,X_n$. Por tanto, pertenece a
+  $\mathcal{F}_n=\sigma(X_0,X_1,\ldots,X_n)$.
+</p>
+
+<p>
+  En consecuencia,
+  $$\displaystyle{
+    \{T_j^{(r)}\leq n\}\in\mathcal{F}_n,
+  }$$
+  para todo $n\geq 1$. Por lo tanto, $T_j^{(r)}$ es un tiempo de paro.
+<!-- </p>
+    El evento del lado derecho puede decidirse observando únicamente la trayectoria
+    $X_0,X_1,\ldots,X_n$. Por tanto,
+    $$\displaystyle{
+      \{T_j^{(r)}\leq n\}\in \mathcal{F}_n.
+    }$$
+  </p> -->
+
+  <p>
+    Definimos ahora los tiempos entre visitas sucesivas a $j$ por
+    $$\displaystyle{
+      Y_r=T_j^{(r+1)}-T_j^{(r)},
+      \qquad r\geq 1.
+    }$$
+    La variable $Y_r$ mide cuántos pasos transcurren entre la $r$-ésima visita al estado $j$
+    y la siguiente visita al mismo estado.
+  </p>
+
+  <p>
+    Por la propiedad fuerte de Markov aplicada al tiempo de paro $T_j^{(r)}$, una vez que la cadena
+    visita el estado $j$, el proceso se reinicia probabilísticamente desde $j$. Como
+    $$\displaystyle{
+      X_{T_j^{(r)}}=j
+    }$$
+    sobre el evento $\{T_j^{(r)}<\infty\}$, el proceso posterior
+    $$\displaystyle{
+      (X_{T_j^{(r)}+m})_{m\in\mathbb{N}_{0}}
+    }$$
+    se comporta como una nueva cadena de Markov que inicia en $j$.
+  </p>
+
+  <p>
+    En particular, para $m\geq 1$, el evento $\{Y_r=m\}$ significa que después de la $r$-ésima
+    visita a $j$, la siguiente visita ocurre exactamente $m$ pasos después. Es decir,
+    $$\displaystyle{
+      \{Y_r=m\}
+      =
+      \{X_{T_j^{(r)}+1}\neq j,\ldots,
+      X_{T_j^{(r)}+m-1}\neq j,\,
+      X_{T_j^{(r)}+m}=j\}.
+    }$$
+    Por la propiedad fuerte de Markov,
+    $$\displaystyle{
+      \mathbb{P}_i(Y_r=m\mid \mathcal{F}_{T_j^{(r)}})
+      =
+      \mathbb{P}_j(T_j=m),
+      \qquad m\geq 1.
+    }$$
+  </p>
+
+  <p>
+    Por lo tanto, cada $Y_r$ tiene la misma distribución que $T_j$ bajo $\mathbb{P}_j$.
+    Además, al aplicar este argumento sucesivamente en los tiempos
+    $T_j^{(1)},T_j^{(2)},\ldots$, se obtiene que
+    $$\displaystyle{
+      Y_1,Y_2,\ldots
+    }$$
+    son variables aleatorias independientes e idénticamente distribuidas, con
+    $$\displaystyle{
+      Y_r\overset{d}{=}T_j
+      \quad \text{bajo } \mathbb{P}_j.
+    }$$
+    En particular,
+    $$\displaystyle{
+      \mathbb{E}_i[Y_r]=\mathbb{E}_j[T_j]=\mu_j.
+    }$$
+  </p>
+
+  <p>
+    Para $r\geq 2$, se tiene la descomposición
+    $$\displaystyle{
+      T_j^{(r)}
+      =
+      T_j^{(1)}+Y_1+\cdots+Y_{r-1}.
+    }$$
+    Dividiendo entre $r$, obtenemos
+    $$\displaystyle{
+      \frac{T_j^{(r)}}{r}
+      =
+      \frac{T_j^{(1)}}{r}
+      +
+      \frac{Y_1+\cdots+Y_{r-1}}{r}.
+    }$$
+  </p>
+
+  <p>
+    Como $T_j^{(1)}<\infty$ casi seguramente, se tiene
+    $$\displaystyle{
+      \frac{T_j^{(1)}}{r}\longrightarrow 0
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+    Por otro lado, por la ley fuerte de los grandes números,
+    $$\displaystyle{
+      \frac{Y_1+\cdots+Y_{r-1}}{r-1}
+      \longrightarrow
+      \mu_j
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+    cuando $\mu_j<\infty$. Si $\mu_j=\infty$, se usa la versión para variables no negativas con
+    esperanza infinita, que implica que el promedio converge a $\infty$ casi seguramente.
+  </p>
+
+  <p>
+    Como
+    $$\displaystyle{
+      \frac{Y_1+\cdots+Y_{r-1}}{r}
+      =
+      \frac{Y_1+\cdots+Y_{r-1}}{r-1}
+      \cdot
+      \frac{r-1}{r},
+    }$$
+    se concluye que
+    $$\displaystyle{
+      \frac{T_j^{(r)}}{r}
+      \longrightarrow
+      \mu_j
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+    con la posibilidad de que $\mu_j=\infty$.
+  </p>
+
+  <p>
+    Ahora relacionamos los tiempos de visita con el contador $N_{ij}(n)$. Si
+    $$\displaystyle{
+      N_{ij}(n)=r,
+    }$$
+    entonces hasta el tiempo $n$ han ocurrido exactamente $r$ visitas positivas a $j$. Por tanto,
+    la $r$-ésima visita ocurrió antes o en $n$, pero la $(r+1)$-ésima visita aún no ocurre antes
+    de $n$. Es decir,
+    $$\displaystyle{
+      T_j^{(r)}\leq n< T_j^{(r+1)}.
+    }$$
+  </p>
+
+  <p>
+    Tomando $r=N_{ij}(n)$, se obtiene
+    $$\displaystyle{
+      T_j^{(N_{ij}(n))}
+      \leq
+      n
+      <
+      T_j^{(N_{ij}(n)+1)}.
+    }$$
+    Como la cadena es recurrente e irreducible,
+    $$\displaystyle{
+      N_{ij}(n)\longrightarrow \infty
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+  </p>
+
+  <p>
+    Dividiendo la desigualdad anterior entre $N_{ij}(n)$, para $N_{ij}(n)\geq 1$, obtenemos
+    $$\displaystyle{
+      \frac{T_j^{(N_{ij}(n))}}{N_{ij}(n)}
+      \leq
+      \frac{n}{N_{ij}(n)}
+      <
+      \frac{T_j^{(N_{ij}(n)+1)}}{N_{ij}(n)}.
+    }$$
+    Además,
+    $$\displaystyle{
+      \frac{T_j^{(N_{ij}(n)+1)}}{N_{ij}(n)}
+      =
+      \frac{T_j^{(N_{ij}(n)+1)}}{N_{ij}(n)+1}
+      \cdot
+      \frac{N_{ij}(n)+1}{N_{ij}(n)}.
+    }$$
+  </p>
+
+  <p>
+    Como
+    $$\displaystyle{
+      \frac{T_j^{(r)}}{r}\longrightarrow \mu_j
+    }$$
+    y
+    $$\displaystyle{
+      \frac{N_{ij}(n)+1}{N_{ij}(n)}\longrightarrow 1,
+    }$$
+    se obtiene, por el teorema del sándwich, que si $\mu_j<\infty$, entonces
+    $$\displaystyle{
+      \frac{n}{N_{ij}(n)}
+      \longrightarrow
+      \mu_j
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+    Por tanto,
+    $$\displaystyle{
+      \frac{N_{ij}(n)}{n}
+      \longrightarrow
+      \frac{1}{\mu_j}
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+  </p>
+
+  <p>
+    Si $\mu_j=\infty$, entonces
+    $$\displaystyle{
+      \frac{T_j^{(N_{ij}(n))}}{N_{ij}(n)}
+      \longrightarrow
+      \infty,
+    }$$
+    y la desigualdad anterior implica que
+    $$\displaystyle{
+      \frac{n}{N_{ij}(n)}
+      \longrightarrow
+      \infty.
+    }$$
+    En consecuencia,
+    $$\displaystyle{
+      \frac{N_{ij}(n)}{n}
+      \longrightarrow
+      0.
+    }$$
+    Como en este caso $1/\mu_j=0$, también se cumple
+    $$\displaystyle{
+      \frac{N_{ij}(n)}{n}
+      \longrightarrow
+      \frac{1}{\mu_j}.
+    }$$
+  </p>
+
+  <p>
+    Combinando los casos transitorio y recurrente, concluimos que, para cualesquiera estados
+    $i,j\in E$,
+    $$\displaystyle{
+      \lim_{n\to\infty}\frac{N_{ij}(n)}{n}
+      =
+      \frac{1}{\mu_j}
+      \qquad
+      \mathbb{P}_i\text{-c.s.}
+    }$$
+    
+  </p>
+</div>
+</div>
 
 
   </body>
